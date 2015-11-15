@@ -2,38 +2,77 @@
 
 ## Rails
 ### Models
-* Notebook
-* Tag
-* Tagging
+* Shipping Addresses
+* Payments
+* Purchase Histories
 
 ### Controllers
-* Api::NotebooksController (create, destroy, index, show, update)
+* Api::ShippingAddressesController (index, show, create, destroy)
+* Api::PaymentsController (index, create, destroy)
+* Api::PurchaseHistoriesController (index, show, new, create)
+  - member: Return
 
 ### Views
-* notebooks/index.json.jbuilder
-* notebooks/show.json.jbuilder
-* tags/show.json.jbuilder
+* static_pages/point_of_sale.html.erb
+
+* shipping/index.json.jbuilder
+* shipping/show.json.jbuilder
+* payment/index.json.jbuilder
+* purchase/new.json.jbuilder
+* purchase/index.json.jbuilder
+* purchase/show.json.jbuilder
 
 ## Flux
 ### Views (React Components)
-* NotebooksIndex
-  - NotebookIndexItem
-* NotebookForm
-* SearchIndex
+* ShippingAddressIndex
+  - ShippingAddressIndexItem
+* ShippingAddressForm
+
+* PaymentIndex
+  - PaymentIndexItem
+* PaymentForm
+
+* FinalizePurchaseIndex
+  - FinalizePurchaseIndexItem
+  - FinalizePurchaseItemForm
+* FinalizePurchaseForm
+
+* PurchasesHistoryIndex
+  - PurchaseHistoryIndexItem
+* RefundForm
 
 ### Stores
-* Notebook
+* Shipping Address
+* Payment
+* Final Purchases (or should I just use the ShoppingCart Store?)
+* Purchase History
 
 ### Actions
-* ApiActions.receiveAllNotebooks
-* ApiActions.receiveSingleNotebook
-* ApiActions.deleteNotebook
+* receiveShippingAddresses
+* deleteShippingAddress
+
+* receivePaymentInfo
+* deletePaymentInfo
+
+* receivePurchaseHistory
+* receiveRefundConfirmation (?)
 
 ### ApiUtil
-* ApiUtil.fetchAllNotebooks
-* ApiUtil.fetchSingleNotebook
-* ApiUtil.createNotebook
-* ApiUtil.editNotebook
-* ApiUtil.destroyNotebook
+* fetchShippingAddresses
+* createShippingAddress
+* deleteShippingAddress
+
+* fetchPaymentInfo
+* createPaymentInfo
+* deletePaymentInfo
+
+* fetchAllPastPurchases
+* fetchOnePastPurchase
+
+* sendRefundRequest
 
 ## Gems/Libraries
+* openssl for [self-signed HTTPS][https]
+* BCrypt
+
+[https]: https://blog.heroku.com/archives/2012/5/3/announcing_better_ssl_for_your_app

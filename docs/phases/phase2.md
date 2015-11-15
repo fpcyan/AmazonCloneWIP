@@ -9,25 +9,34 @@
 
 ## Flux
 ### Views (React Components)
-* NotesIndex
-  - NotesIndexItem
-* NoteForm
+* Product Index
+  - Product
+* Shopping Cart Index
+  - Shopping Cart Form
 
 ### Stores
-* Note
+* Product
+* Shopping Cart
 
-### Actions
-* ApiActions.receiveAllNotes
-* ApiActions.receiveSingleNote
-* ApiActions.deleteNote
+### ApiActions
+* receiveAllProducts
+* receiveSingleProduct
+
+* receiveShoppingCart
+* deleteShoppingCart
 
 ### ApiUtil
-* ApiUtil.fetchAllNotes
-* ApiUtil.fetchSingleNote
-* ApiUtil.createNote
-* ApiUtil.editNote
-* ApiUtil.destroyNote
+* fetchAllProducts
+* fetchSingleProduct
+
+* fetchShoppingCart
+* destroyShoppingCart
+
+* createShoppingCartProduct
+* editShoppingCartProduct
+* destroyShoppingCartProduct
 
 ## Gems/Libraries
 * Flux Dispatcher
-* Twitter Bootstrap
+* React.js
+* EventEmitter

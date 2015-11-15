@@ -1,51 +1,95 @@
 # Schema Information
 
-## notes
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-title       | string    | not null
-body        | text      | not null
-author_id   | integer   | not null, foreign key (references users), indexed
-notebook_id | integer   | not null, foreign key (references notebooks), indexed
-archived    | boolean   | not null, default: false
+## products
+column name            | data type | details
+-----------------------|-----------|-----------------------------------
+id                     | integer   | not null, primary key
+product name           | string    | not null, unique
+price                  | integer   | not null
+review score           | integer   | not null
+description            | text      | not null
+specifications         | text      | not null
+in stock               | boolean   | not null
 
-## notebooks
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-author_id   | integer   | not null, foreign key (references users), indexed
-title       | string    | not null
-description | string    | 
+## product_categories
+column name   | data type | details
+--------------|-----------|-----------------------
+id            | integer   | not null, primary key
+section       | string    | not null, unique
+product_id    | integer   | not null, foreign key (references products), indexed
+department_id | integer   | not null, foreign key (references departments), indexed
 
-## reminders
+
+## departments
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+title           | string    | not null, unique
+department_id   | integer   | foreign key (references products), indexed
+(look up how this works again)
+
+## reviews
+column name | data type  | details
+------------|------------|-----------------------
+id          | integer    | not null, primary key
+user_id     | integer    | not null, foreign key (references users), indexed
+product_id  | integer    | not null, foreign key (references products), indexed
+date        | datetime   | not null
+score       | integer    | not null
+title       | string     |
+body        | text       |
+
+## shopping_carts
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 user_id     | integer   | not null, foreign key (references users), indexed
-note_id     | string    | not null, foreign key (references notes), indexed
-date        | datetime  | not null
-type        | string    | not null
-prev_id     | integer   | foreign key (references reminders), indexed
+product_id  | integer   | not null, foreign key (references products), indexed
 
-## tags
+
+
+## shipping_addresses
+column name    | data type | details
+------------   |-----------|-----------------------
+id             | integer   | not null, primary key
+user_id        | string    | not null, foreign key (references users), indexed
+full_name      | string    | not null
+address_one    | string    | not null
+address_two    | string    |
+city           | string    | not null
+region         | string    | not null
+zip            | integer   | not null
+phone number   | integer   | not null
+
+
+## payment_info
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-name        | string    | not null
+user_id     | integer   | not null, foreign key (references users), indexed
+full_name   | string    | not null
+expiration  | datetime  | not null
+cc_token    | string    | not null
 
-## taggings
+## order_manifests
+column name   | data type | details
+--------------|-----------|-----------------------
+id            | integer   | not null, primary key
+product_id    | integer   | not null, foreign key (references users), indexes
+purchase_date | datetime  | not null
+price         | integer   | not null
+
+## user_orders
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-name        | string    | not null
-note_id     | integer   | not null, foreign key (references notes), indexed, unique [tag_id]
-tag_id      | integer   | not null, foreign key (references tags), indexed
+user_id     | integer   | not null, foreign key (references users), indexed
+manifest_id | integer   | not null, foreign key (references order manifests, indexed)
 
 ## users
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
-username        | string    | not null, indexed, unique
+email           | string    | not null, indexed, unique
 password_digest | string    | not null
 session_token   | string    | not null, indexed, unique

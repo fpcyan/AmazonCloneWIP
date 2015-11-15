@@ -2,34 +2,55 @@
 
 ## Rails
 ### Models
-* Reminder
+* Review
 
 ### Controllers
-* Api::RemindersController (create, destroy, index, show, update)
+* Api::ReviewController (index, show, create, edit, update, destroy)
 
 ### Views
-* reminders/index.json.jbuilder
+* reviews/index.json.jbuilder
+* reviews/show.json.jbuilder
 
 ## Flux
 ### Views (React Components)
-* RemindersIndex
-  - ReminderIndexItem
-* ReminderShow
-* ReminderForm
+* Review Index
+  - Review Index Item
+  - Review Item Edit Form
+* Review Form
+
+* Sidebar
+  - Results Suggest Index
+    + Results Suggest Index Item
+
+  - Refine By Index
+    + Refine By Index Topic
+      * Refine By Topic Item
 
 ### Stores
-* Reminder
+* Review
+* Result Suggestion
+* Common Attributes
+* Filtered Attributes
 
 ### Actions
-* ApiActions.receiveAllReminders
-* ApiActions.receiveSingleReminder
-* ApiActions.deleteReminder
+* receiveAllReviews
+* receiveOneReview
+* deleteReview
+
+* receiveResultSuggestions
+
+* receiveCommonAttributes
+* receiveFilteredAttributes
 
 ### ApiUtil
-* ApiUtil.fetchAllReminders
-* ApiUtil.fetchSingleReminder
-* ApiUtil.createReminder
-* ApiUtil.updateReminder
-* ApiUtil.destroyReminder
+* fetchAllReviews
+* fetchOneReview
+* createReview
+* updateReview
+* deleteReview
+
+* fetchBySubCategory
+
+* fetchByAttributes
 
 ## Gems/Libraries

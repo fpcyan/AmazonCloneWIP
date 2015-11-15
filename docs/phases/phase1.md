@@ -3,18 +3,27 @@
 ## Rails
 ### Models
 * User
-* Note
+* Products
+* Product Categories
+* Departments
+* Shopping Cart
 
 ### Controllers
 * UsersController (create, new)
 * SessionsController (create, new, destroy)
-* Api::NotesController (create, destroy, index, show, update)
+* Api::ProductsController (index, show)
+  - Api::ShoppingCartsController (create, destroy, index, update)
+
 
 ### Views
+
 * users/new.html.erb
 * session/new.html.erb
-* notes/index.json.jbuilder
-* notes/show.json.jbuilder
+* static_pages/root.html.erb
+
+* products/index.json.jbuilder
+* products/show.json.jbuilder
+* shopping_cart/index.json.jbuilder
 
 ## Flux
 ### Views (React Components)
