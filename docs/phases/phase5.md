@@ -1,4 +1,4 @@
-# Phase 5: Reminders and Garbage Collection
+# Phase 5: Filtering Purchases During Browsing and Leaving Reviews (1 day)
 
 ## Rails
 ### Models

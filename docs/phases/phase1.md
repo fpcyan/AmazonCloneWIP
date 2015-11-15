@@ -1,4 +1,4 @@
-# Phase 1: User Authentication, Note Model and JSON API
+# Phase 1: User Authentication, Product and Shopping Cart Model, and JSON API (1 days)
 
 ## Rails
 ### Models
@@ -36,3 +36,4 @@
 
 ## Gems/Libraries
 * BCrypt
+* Kaminari

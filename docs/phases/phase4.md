@@ -1,4 +1,4 @@
-# Phase 4: Allow Complex Styling in Notes (1 day)
+# Phase 4: The Search Bar and User Account Page (1.5 day)
 
 ## Rails
 ### Models
