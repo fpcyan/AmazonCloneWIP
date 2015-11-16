@@ -7,7 +7,7 @@
 
 ## Purchase - Cart / Shipping / Payment / Final Order
 ![cart_shipping_payment]
-![finalize_order]
+![finalize order]
 
 ## Product Item
 ![product page]
