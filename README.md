@@ -36,7 +36,7 @@ React.js. The Bazaar offers users the ability to:
 
 ### Phase 1: User Authentication, Product and Shopping Cart Model, and JSON API (1 days)
 
-I will begin the project with user sign up and authentication. Signing up or signing in redirects to a customized version of the home page as a landing page. The home page acts as the container for the application's root React components, particularly for browsing products. After authentication and models, I will end Phase 1 by implementing a full JSON API for Products.
+To kick off the project, I will  with user sign up and authentication. Signing up or signing in redirects to a customized version of the home page as a landing page. The home page acts as the container for the application's root React components, particularly for browsing products. After authentication and models, I will end Phase 1 by implementing a full JSON API for Products.
 
 [Details][phase-one]
 
@@ -99,6 +99,7 @@ Phase 6 will be used to add polish to styling elements and make some elements in
 - [ ] Pagination of Products Index
 - [ ] "Today's Deals" and other flavor pages
 - [ ] "Items you viewed" side-scroll bar
+- [ ] Likes and Shares on products
 - [ ] Basic Product Advertising API Features (Bonus Points: Conveniently modular implementation!)
 
 [phase-one]: ./docs/phases/phase1.md
