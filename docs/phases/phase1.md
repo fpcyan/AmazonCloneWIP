@@ -19,7 +19,7 @@
 
 * users/new.html.erb
 * session/new.html.erb
-* static_pages/root.html.erb
+* static_pages/home.html.erb
 
 * products/index.json.jbuilder
 * products/show.json.jbuilder

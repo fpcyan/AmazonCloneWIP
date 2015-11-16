@@ -72,7 +72,8 @@
 * sendRefundRequest
 
 ## Gems/Libraries
-* openssl for [self-signed HTTPS][https]
+* openssl (for [self-signed HTTPS][https])
 * BCrypt
+* ActionMailer (for email confirmation)
 
 [https]: https://blog.heroku.com/archives/2012/5/3/announcing_better_ssl_for_your_app
