@@ -90,6 +90,8 @@ manifest_id | integer   | not null, foreign key (references order manifests, ind
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
+first_name      | string    | not null
+last_name       | string    | not null
 email           | string    | not null, indexed, unique
 password_digest | string    | not null
 session_token   | string    | not null, indexed, unique
