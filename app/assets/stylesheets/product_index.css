@@ -1,0 +1,30 @@
+section.product-home, .sidebar, .product-index {
+  display: block;
+}
+
+section.product-home {
+  height: 1000px;
+  width: 100%;
+  background-color: white;
+}
+
+.sidebar {
+  height: 100%;
+  width: 200px;
+  background: #ccc;
+  float: left;
+}
+
+.featured {
+  height: 300px;
+  width: (100% - 400px);
+
+}
+
+.carousel {
+  height: 220px;
+}
+
+.product-item-image {
+  height: 200px;
+}
