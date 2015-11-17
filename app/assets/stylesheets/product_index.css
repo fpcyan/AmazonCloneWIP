@@ -17,7 +17,7 @@ section.product-home {
 
 .featured {
   height: 300px;
-  #{calc(width, 100% - 400px)};
+  width: calc(100% - 400px);
 
 }
 
