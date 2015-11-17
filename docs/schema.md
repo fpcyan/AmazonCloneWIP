@@ -4,12 +4,11 @@
 column name            | data type | details
 -----------------------|-----------|-----------------------------------
 id                     | integer   | not null, primary key
-product name           | string    | not null, unique
+product_name           | string    | not null, unique
 price                  | integer   | not null
-review score           | integer   | not null
 description            | text      | not null
 specifications         | text      | not null
-in stock               | boolean   | not null
+quantity               | integer   | not null
 
 ## product_categories
 column name   | data type | details
