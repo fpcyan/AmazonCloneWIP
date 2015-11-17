@@ -1,7 +1,8 @@
+require 'byebug'
 class User < ActiveRecord::Base
 
-  validates :email, :first_name, :last_name, :password_digest, :session_token,
-    presence: true
+  validates :email, :first_name, :last_name, :password_digest, :session_token, presence: true
+  validates :email, :session_token, uniqueness: true
   validates :password, length: { minimum: 8, allow_nil: true }
 
   after_initialize :ensure_session_token
@@ -11,7 +12,7 @@ class User < ActiveRecord::Base
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
-    return nil if !user
+    return nil if user.nil?
 
     if user.password_digest.is_password?(password)
       user

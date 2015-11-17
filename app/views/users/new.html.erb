@@ -1,0 +1,43 @@
+<h1>Sign Up</h1>
+
+<form method="post" action="<%= users_url %>">
+
+  <input
+    type="hidden"
+    name="authenticity_token"
+    value="<%= form_authenticity_token %>">
+
+  <label>
+    First Name
+    <input
+      type="text"
+      name="user[first_name]"
+      placeholder="Anita">
+  </label>
+
+  <label>
+    Last Name
+    <input
+      type="text"
+      name="user[last_name]"
+      placeholder="Ahcount">
+  </label>
+
+  <label>
+    Email Address
+    <input
+      type="text"
+      name="user[email]"
+      placeholder="example@bazaar.nyc">
+  </label>
+
+  <label>
+    Password (must have at least 8 characters)
+    <input
+      type="password"
+      name="user[password]">
+  </label>
+
+  <button>Sign Up</button>
+
+</form>
