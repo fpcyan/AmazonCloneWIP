@@ -12,7 +12,7 @@ quantity               | integer   | not null
 
 
 
-## product_categories
+## products_categories
 column name   | data type | details
 --------------|-----------|-----------------------
 id            | integer   | not null, primary key
