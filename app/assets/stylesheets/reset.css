@@ -15,7 +15,7 @@ ul {
   list-style: none;
 }
 
-group: after {
+.group:after {
   content: "";
   display: block;
   clear: both;
