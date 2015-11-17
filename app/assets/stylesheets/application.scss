@@ -16,12 +16,6 @@
  *= require_self
  */
 
-
- @mixin calc($property, $expression) {
-   #{$property}: -webkit-calc(#{$expression});
-   #{$property}: calc(#{$expression});
- }
-
  body {
    font-family: Helvetica sans-serif;
  }
