@@ -10,10 +10,17 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+
  *= require_reset
  *= require_tree .
  *= require_self
  */
+
+
+ @mixin calc($property, $expression) {
+   #{$property}: -webkit-calc(#{$expression});
+   #{$property}: calc(#{$expression});
+ }
 
  body {
    font-family: Helvetica sans-serif;
