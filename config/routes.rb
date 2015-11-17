@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :products
   root to: "static_pages#home"
 
   resources :users, only: [:new, :create, :destroy]
