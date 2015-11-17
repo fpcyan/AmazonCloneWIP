@@ -1,0 +1,22 @@
+html, nav, div, h1, label, ul, li, header, body {
+  font: inherit;
+  color: inherit;
+  text-decoration: none;
+
+  background: transparent;
+  box-sizing: border-box;
+
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+group: after {
+  content: "";
+  display: block;
+  clear: both;
+}

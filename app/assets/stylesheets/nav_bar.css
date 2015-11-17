@@ -1,0 +1,10 @@
+header {
+  display: block;
+}
+
+.navbar {
+  background: #6298DC;
+  height: 99px;
+  width: auto;
+  border-bottom: 1px solid #232f3e;
+}

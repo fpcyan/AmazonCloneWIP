@@ -1,3 +1,18 @@
+<header class="navbar">
+  <% if signed_in? %>
+    <%= render "sessions/sign_out" %>
+  <% else %>
+    <%= render "sessions/sign_in_sign_up" %>
+  <% end %>
+</header>
+
+<%= flash[:notice] if flash[:notice] %>
+
+<section class="product-home">
+
+  
+</section>
+
 <div id="content">
 
 </div>
