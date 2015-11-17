@@ -7,25 +7,33 @@ id                     | integer   | not null, primary key
 product_name           | string    | not null, unique
 price                  | integer   | not null
 description            | text      | not null
-specifications         | text      | not null
+specs                  | text      | not null
 quantity               | integer   | not null
+
+
 
 ## product_categories
 column name   | data type | details
 --------------|-----------|-----------------------
 id            | integer   | not null, primary key
-section       | string    | not null, unique
-product_id    | integer   | not null, foreign key (references products), indexed
-department_id | integer   | not null, foreign key (references departments), indexed
+product_id    | integer   | not null, foreign key (references products)
+category_id   | integer   | not null, foreign key (references categories)
 
+
+## categories
+column name   | data type | details
+--------------|-----------|-----------------------
+id            | integer   | not null, primary key
+section       | string    | not null, unique
+department_id | integer   | not null, foreign key (references departments), indexed
 
 ## departments
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
 title           | string    | not null, unique
-department_id   | integer   | foreign key (references products), indexed
-(look up how this works again)
+parent_dept_id  | integer   | foreign key (references parent department), indexed
+
 
 ## reviews
 column name | data type  | details
