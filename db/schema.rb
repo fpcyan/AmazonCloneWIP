@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20151117201020) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "categories", force: :cascade do |t|
     t.string   "section",       null: false
     t.integer  "department_id", null: false
@@ -20,7 +23,7 @@ ActiveRecord::Schema.define(version: 20151117201020) do
     t.datetime "updated_at",    null: false
   end
 
-  add_index "categories", ["department_id"], name: "index_categories_on_department_id"
+  add_index "categories", ["department_id"], name: "index_categories_on_department_id", using: :btree
 
   create_table "departments", force: :cascade do |t|
     t.string   "title",          null: false
@@ -29,7 +32,7 @@ ActiveRecord::Schema.define(version: 20151117201020) do
     t.datetime "updated_at",     null: false
   end
 
-  add_index "departments", ["parent_dept_id"], name: "index_departments_on_parent_dept_id"
+  add_index "departments", ["parent_dept_id"], name: "index_departments_on_parent_dept_id", using: :btree
 
   create_table "products", force: :cascade do |t|
     t.string   "product_name", null: false
@@ -48,8 +51,8 @@ ActiveRecord::Schema.define(version: 20151117201020) do
     t.datetime "updated_at",  null: false
   end
 
-  add_index "products_categories", ["category_id"], name: "index_products_categories_on_category_id"
-  add_index "products_categories", ["product_id"], name: "index_products_categories_on_product_id"
+  add_index "products_categories", ["category_id"], name: "index_products_categories_on_category_id", using: :btree
+  add_index "products_categories", ["product_id"], name: "index_products_categories_on_product_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name",      null: false
@@ -61,6 +64,6 @@ ActiveRecord::Schema.define(version: 20151117201020) do
     t.datetime "updated_at",      null: false
   end
 
-  add_index "users", ["session_token"], name: "index_users_on_session_token"
+  add_index "users", ["session_token"], name: "index_users_on_session_token", using: :btree
 
 end
