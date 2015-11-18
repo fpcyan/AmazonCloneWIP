@@ -1,18 +1,23 @@
 (function (root) {
-  var _products, ProductStore, CHANGE_EVENT;
+  var _featureProducts, FeatureProductStore, CHANGE_EVENT;
 
   CHANGE_EVENT = "change event";
 
-  _products = [];
+  _featureProducts = {};
 
   function _resetProducts(newProducts) {
-    _products = newProducts || [];
+    _featureProducts = newProducts || {};
   }
 
-  ProductStore = root.ProductStore = $.extend({}, EventEmitter.prototype, {
+  FeatureProductStore = root.ProductStore = $.extend({}, EventEmitter.prototype, {
 
-    all: function () {
-      _products.slice();
+
+    allFeatures: function () {
+      return _featureProducts[features];
+    },
+
+    byFeature: function (feature) {
+      return _featureProducts[feature].slice();
     },
 
     addChangeListener: function (callback) {

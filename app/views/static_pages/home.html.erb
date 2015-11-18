@@ -1,14 +1,9 @@
-<header class="nav-bar">
-  <nav class="nav-logo">
-  </nav>
-  <nav class="nav-main">
-    <% if signed_in? %>
-      <%= render "sessions/sign_out" %>
-    <% else %>
-      <%= render "sessions/sign_in_sign_up" %>
-    <% end %>
-  </nav>
-</header>
+
+<% if signed_in? %>
+  <%= render "sessions/sign_out" %>
+<% else %>
+  <%= render "sessions/sign_in_sign_up" %>
+<% end %>
 
 <%= flash[:notice] if flash[:notice] %>
 

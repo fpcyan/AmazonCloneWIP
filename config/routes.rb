@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-
-  resources :products
+  
   root to: "static_pages#home"
 
   namespace :api, defaults: { format: :json } do
