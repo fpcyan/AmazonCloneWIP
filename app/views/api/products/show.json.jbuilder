@@ -1,1 +1,1 @@
-json.extract! ( @park, :id, :product_name, :price, :description, :specs, :stock )
+json.extract!( @product, :id, :product_name, :price, :description, :specs, :stock )

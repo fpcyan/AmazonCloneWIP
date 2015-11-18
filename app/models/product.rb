@@ -20,6 +20,7 @@ class Product < ActiveRecord::Base
     else
       self.stock = true
     end
+    return self
   end
 
 end
