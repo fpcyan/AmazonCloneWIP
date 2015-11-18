@@ -5,8 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-User.destroy_all
-Product.destroy_all
 
 User.create!(first_name: "Fiona", last_name: "Conn", email: "fiona@example.com", password: "password")
 
@@ -19,27 +17,36 @@ User.create!(first_name: "Fiona", last_name: "Conn", email: "fiona@example.com",
   )
 end
 
-25.times do
-  Product.create!(
-    product_name: Faker::Commerce.product_name,
-    price: Faker::Commerce.price * 100,
-    description: Faker::Lorem.paragraph,
-    specs: Faker::Lorem.paragraph,
-    quantity: rand(0...100)
-  )
+parent_departments = []
+sub_departments = []
+5.times do
+
+  new_dept = nil
+  until new_dept
+    title = Faker::Commerce.department(3, true)
+    new_dept = Department.create(title: title)
+  end
+  parent_departments << new_dept
+
+  new_dept = nil
+  until new_dept
+    title = Faker::Commerce.department(2, true)
+    new_dept = parent_departments.last.sub_departments.create(title: title)
+  end
+  sub_departments << new_dept
 end
 
-# parent_departments = []
-# 5.times do
-#   title = Faker::Commerce.department
-#   departments << Department.create!(title: title)
-#
-# sub_departments = []
-#
-# 10.times do
-#   section = Faker::Commerce.department
-#   Category.create!(
-#     section: section,
-#
-#   )
-# end
+categories = []
+
+10.times do |t|
+  new_cat = nil
+  until new_cat
+    new_cat = sub_departments[t % 5].categories.create(section: Faker::Commerce.department(1, true))
+  end
+  categories << new_cat
+end
+
+
+25.times do
+  categories.sample.products.create(product_name: Faker::Commerce.product_name, price: Faker::Commerce.price * 100, description: Faker::Lorem.paragraph, specs: Faker::Lorem.paragraph, quantity: rand(0...100) )
+end

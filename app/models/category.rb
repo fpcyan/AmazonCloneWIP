@@ -2,9 +2,9 @@ class Category < ActiveRecord::Base
   validates :section, :department_id, presence: true
   validates :section, uniqueness: true
 
-  validates :department_id, absence: true # if the department is a parent_department
+  validate :must_belong_to_a_subdepartment
 
-  belongs_to :sub_department, inverse_of: :categories
+  belongs_to :sub_department, inverse_of: :categories, class_name: "Department", foreign_key: :department_id
   has_many :products_categories, inverse_of: :category
   has_many :products, through: :products_categories, source: :product
 
@@ -13,8 +13,8 @@ class Category < ActiveRecord::Base
   private
 
     def must_belong_to_a_subdepartment
-      if !!Department.find(self.department_id).parent_department
-        errors.add(:department_id, "can't belong to a parent department")
+      if !Department.find(self.department_id).parent_department
+        errors.add(:department_id, "can't be a parent department")
       end
     end
 end
