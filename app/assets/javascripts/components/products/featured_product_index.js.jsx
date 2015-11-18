@@ -6,12 +6,14 @@ var FeaturedProductIndex = React.CreateClass({
 
   render: function () {
     var products = this.state.products.map(function (product) {
-      return <div key={product.id}><FeaturedProductItem item={product} /></div>;
+      return <li key={product.id}><FeaturedProductItem item={product} /></li>;
     });
 
     return (
-      <div>
-        { products }
+      <div className="featured">
+        <ul className="carousel">
+          { products }
+        </ul>
       </div>
     );
   }
