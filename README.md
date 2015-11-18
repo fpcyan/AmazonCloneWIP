@@ -122,6 +122,7 @@ Phase 6 will be used to add polish to styling elements and make some elements in
 [phase-four]: ./docs/phases/phase4.md
 [phase-five]: ./docs/phases/phase5.md
 
+[day-one]: http://fpcyan.tumblr.com/post/133442467860/w8d2
 
 #### Notes
 
