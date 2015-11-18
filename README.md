@@ -4,6 +4,8 @@
 
 [heroku]: http://the-bazaar.herokuapp.com
 
+*Last Updated: End of Day One*
+
 ## Minimum Viable Product
 
 The Bazaar is a web application clone of Amazon built using Ruby on Rails and
@@ -11,8 +13,8 @@ React.js. The Bazaar offers users the ability to:
 
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
-- [ ] Create an account
-- [ ] Log in / Log out
+- [x] Create an account
+- [x] Log in / Log out
 - [ ] Browse products for sale
 - [ ] Navigate through the store for products via search or by department
 - [ ] Narrow product types using filter options while browsing
@@ -28,19 +30,30 @@ React.js. The Bazaar offers users the ability to:
 ## Design Docs
 * [View Wireframes][view]
 * [DB schema][schema]
+* [Model Associations][associations]
 
 [view]: ./docs/views.md
 [schema]: ./docs/schema.md
+[associations]: ./docs/associations.png
 
 ## Implementation Timeline
 
-### Phase 1: User Authentication, Product and Shopping Cart Model, and JSON API (1 days)
+### Phase 1: User Authentication, Product model and JSON API (1 days)
 
 To kick off the project, I will  with user sign up and authentication. Signing up or signing in redirects to a customized version of the home page as a landing page. The home page acts as the container for the application's root React components, particularly for browsing products. After authentication and models, I will end Phase 1 by implementing a full JSON API for Products.
 
 [Details][phase-one]
+[Blog Post][day-one]
 
-### Phase 2: Flux Architecture, Product views, and Shopping CRUD (2.5 days)
+### Phase 1.5: Product React Views, Shopping Cart Model and JSON API (1.5 days)
+
+Phase One Point Five was added as an organizational phase. Phase 1 and 2 were better described by 3 phases based on development-by-feature instead of development by location in the stack. Phase One Point Five will be used to implement the Product views such that the website is *navigable* from home page to a specific product. Remaining time will be used to start on the Shopping Cart back end.
+
+[Details][phase-one-point-five]
+
+### Phase 2: Flux Architecture, Product views, and Shopping CRUD (2 "days" (plus the weekend) )
+
+*edit* Phase 2 has been broken up, and will now only contain Shopping Cart front end, and any remaining back end development from Phase One Point Five. The details have been updated to reflect this.
 
 The second phase will be dedicated first to setting up Flux architecture for the main application. Next, React Router and View structure will be made for the basic app use flow. A Product Store, Api Actions, and Utility structure the data required for Searching for products, viewing multiple products, and viewing a single product. A Shopping Cart Store will be implemented with functionality for shopping before checking out. This includes:
 
@@ -103,6 +116,7 @@ Phase 6 will be used to add polish to styling elements and make some elements in
 - [ ] Basic Product Advertising API Features (Bonus Points: Conveniently modular implementation!)
 
 [phase-one]: ./docs/phases/phase1.md
+[phase-one-point-five]: ./docs/phases/phase1_5.md
 [phase-two]: ./docs/phases/phase2.md
 [phase-three]: ./docs/phases/phase3.md
 [phase-four]: ./docs/phases/phase4.md

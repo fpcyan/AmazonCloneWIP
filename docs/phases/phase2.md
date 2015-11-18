@@ -9,25 +9,18 @@
 
 ## Flux
 ### Views (React Components)
-* Product Index
-  - Product
 * Shopping Cart Index
   - Shopping Cart Form
 
 ### Stores
-* Product
 * Shopping Cart
 
 ### ApiActions
-* receiveAllProducts
-* receiveSingleProduct
-
 * receiveShoppingCart
 * deleteShoppingCart
 
 ### ApiUtil
-* fetchAllProducts
-* fetchSingleProduct
+
 
 * fetchShoppingCart
 * destroyShoppingCart

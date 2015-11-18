@@ -1,4 +1,4 @@
-# Phase 1: User Authentication, Product and Shopping Cart Model, and JSON API (1 days)
+# Phase 1: User Authentication, Product Model and JSON API (1 days)
 
 ## Rails
 ### Models
@@ -6,13 +6,11 @@
 * Products
 * Product Categories
 * Departments
-* Shopping Cart
 
 ### Controllers
 * UsersController (create, new)
 * SessionsController (create, new, destroy)
 * Api::ProductsController (index, show)
-  - Api::ShoppingCartsController (create, destroy, index, update)
 
 
 ### Views
@@ -23,7 +21,6 @@
 
 * products/index.json.jbuilder
 * products/show.json.jbuilder
-* shopping_cart/index.json.jbuilder
 
 ## Flux
 ### Views (React Components)
