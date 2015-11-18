@@ -1,7 +1,13 @@
 class Api::ProductsController < ApplicationController
 
   def index
-    @products = Product.all
+    if params[:home]
+      @feature_products = Product.featured_products.load
+      @products
+    else
+      @feature_products
+      @products = Product.all
+    end
     render :index
   end
 

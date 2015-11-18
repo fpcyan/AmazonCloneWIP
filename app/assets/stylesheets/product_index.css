@@ -1,4 +1,4 @@
-section.product-home, .sidebar, .product-index {
+section.product-home, .sidebar, .featured, .featured-department, .carousel .product-item-image {
   display: block;
 }
 
@@ -21,10 +21,19 @@ section.product-home {
 
 }
 
+.featured-department {
+  display:
+}
+
 .carousel {
   height: 220px;
 }
 
 .product-item-image {
-  height: 200px;
+  height: auto;
+  width: auto;
+  max-height: 200px;
+  max-width: 270px;
+  vertical-align: middle;
+  float: left;
 }

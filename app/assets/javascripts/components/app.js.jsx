@@ -4,7 +4,6 @@ var App = React.createClass({
 
     return (
       <main>
-        <header>Internet Bazaar</header>
         { this.props.children }
       </main>
     );

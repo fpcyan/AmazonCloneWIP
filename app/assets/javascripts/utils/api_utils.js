@@ -3,11 +3,13 @@
 var ApiUtil = {
 
   fetchFeaturedProducts: function () {
+
     $.ajax({
       url: "/api/products",
       type: "get",
       data: { home: true },
       success: function (data) {
+        debugger
         ProductActions.receiveFeaturedProducts(data);
       }
     });

@@ -1,30 +1,36 @@
 var Home = React.createClass({
 
   getInitialState: function () {
-    return ({ features: FeatureProductStore.allFeatures() });
+    return ({ features: FeaturedProductStore.allFeatures() });
   },
 
   componentDidMount: function () {
     ApiUtil.fetchFeaturedProducts();
-    FeatureProductStore.addChangeListener(this._onChange);
+    FeaturedProductStore.addChangeListener(this._onChange);
   },
 
   componentWillUnmount: function () {
-    FeatureProductStore.removeChangeListener(this._onChange);
+    FeaturedProductStore.removeChangeListener(this._onChange);
   },
 
   _onChange: function () {
-    return this.setState({ feature: FeatureProductStore.allFeatures() });
+    return this.setState({ feature: FeaturedProductStore.allFeatures() });
   },
 
   render: function () {
-    var features = this.state.features.map(function (feature) {
-      return <div key={feature}><FeaturedProductIndex feature={feature} /></div>;
-    });
+    var features;
+    if (this.state.features) {
+      features = this.state.features.map(function (feature) {
+        return <div key={feature}><FeaturedProductIndex feature={feature} /></div>;
+      });
+
+    }
     return(
       <div>
-        { this.state.products }
         <NavBar />
+        <section className="product-home group">
+          { features }
+        </section>
       </div>
     );
   }

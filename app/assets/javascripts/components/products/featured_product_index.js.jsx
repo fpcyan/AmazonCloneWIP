@@ -1,4 +1,4 @@
-var FeaturedProductIndex = React.CreateClass({
+var FeaturedProductIndex = React.createClass({
 
   getInitialState: function () {
     return ({ products: FeatureProductStore.byFeature(this.state.props.feature)});
@@ -11,7 +11,7 @@ var FeaturedProductIndex = React.CreateClass({
 
     return (
       <div className="featured">
-        <ul className="carousel">
+        <ul className="carousel group">
           { products }
         </ul>
       </div>

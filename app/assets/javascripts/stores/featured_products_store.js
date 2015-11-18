@@ -1,23 +1,23 @@
 (function (root) {
-  var _featureProducts, FeatureProductStore, CHANGE_EVENT;
+  var _featuredProducts, FeaturedProductStore, CHANGE_EVENT;
 
   CHANGE_EVENT = "change event";
 
-  _featureProducts = {};
+  _featuredProducts = { features: null };
 
   function _resetProducts(newProducts) {
-    _featureProducts = newProducts || {};
+    _featuredProducts = newProducts || { features: null };
   }
 
-  FeatureProductStore = root.ProductStore = $.extend({}, EventEmitter.prototype, {
+  FeaturedProductStore = root.FeaturedProductStore = $.extend({}, EventEmitter.prototype, {
 
 
     allFeatures: function () {
-      return _featureProducts[features];
+      return _featuredProducts.features;
     },
 
     byFeature: function (feature) {
-      return _featureProducts[feature].slice();
+      return _featuredProducts[feature].slice();
     },
 
     addChangeListener: function (callback) {
@@ -33,7 +33,7 @@
       switch (payload.actionType) {
         case ProductConstants.PRODUCTS_RECEIVED:
           _resetProducts(payload.products);
-          ProductStore.emit(CHANGE_EVENT);
+          FeaturedProductStore.emit(CHANGE_EVENT);
           break;
       }
     })

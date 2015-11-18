@@ -30,7 +30,7 @@ class Department < ActiveRecord::Base
 
     else
       product_hash[categories] = Category.where(department_id: id)
-      product_hash[products] = Product.joins(categories:).where("categories.department_id = ?", id)
+      product_hash[products] = Product.joins(:categories).where("categories.department_id = ?", id)
     end
     return product_hash
   end
