@@ -50,6 +50,7 @@ To kick off the project, I will  with user sign up and authentication. Signing u
 Phase One Point Five was added as an organizational phase. Phase 1 and 2 were better described by 3 phases based on development-by-feature instead of development by location in the stack. Phase One Point Five will be used to implement the Product views such that the website is *navigable* from home page to a specific product. Remaining time will be used to start on the Shopping Cart back end.
 
 [Details][phase-one-point-five]
+[Blog Post][day-two]
 
 ### Phase 2: Flux Architecture, Product views, and Shopping CRUD (2 "days" (plus the weekend) )
 
@@ -123,6 +124,7 @@ Phase 6 will be used to add polish to styling elements and make some elements in
 [phase-five]: ./docs/phases/phase5.md
 
 [day-one]: http://fpcyan.tumblr.com/post/133442467860/w8d2
+[day-two]: http://fpcyan.tumblr.com/post/133500995135/w8d2
 
 #### Notes
 
