@@ -16,24 +16,40 @@ section.product-home {
 }
 
 .featured {
+  position: relative;
   height: 300px;
-  width: calc(100% - 400px);
+  max-width: calc(100% - 400px);
+  min-width: 1202px;
 
-}
-
-.featured-department {
-  display:
+  margin: 50px auto;
+  border: 1px solid black;
 }
 
 .carousel {
   height: 220px;
+  margin: 30px auto;
+
+  overflow: hidden;
+  border: 1px solid black;
+}
+
+.carousel-card {
+  width: 198px;
+  height: 198px;
+
+  padding: 10px 0;
+  border: 1px solid black;
+
+  float: left;
+  white-space: nowrap;
 }
 
 .product-item-image {
   height: auto;
   width: auto;
-  max-height: 200px;
-  max-width: 270px;
-  vertical-align: middle;
-  float: left;
+  max-height: 196px;
+  max-width: 268px;
+
+  margin: auto;
+  border: 1px solid black;
 }

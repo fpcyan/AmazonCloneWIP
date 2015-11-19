@@ -3,21 +3,24 @@
 
   CHANGE_EVENT = "change event";
 
-  _featuredProducts = { features: null };
+  _featuredProducts = [];
 
   function _resetProducts(newProducts) {
-    _featuredProducts = newProducts || { features: null };
+    _featuredProducts = newProducts;
   }
 
   FeaturedProductStore = root.FeaturedProductStore = $.extend({}, EventEmitter.prototype, {
 
 
     allFeatures: function () {
-      return _featuredProducts.features;
+      return _featuredProducts.slice();
     },
 
     byFeature: function (feature) {
-      return _featuredProducts[feature].slice();
+      var target = _featuredProducts.filter(function (dept) {
+        return dept.id === feature.id;
+      });
+      return target[0].products.slice();
     },
 
     addChangeListener: function (callback) {
@@ -31,7 +34,7 @@
     dispatcherId: AppDispatcher.register(function (payload) {
 
       switch (payload.actionType) {
-        case ProductConstants.PRODUCTS_RECEIVED:
+        case ProductConstants.FEATURED_PRODUCTS_RECEIVED:
           _resetProducts(payload.products);
           FeaturedProductStore.emit(CHANGE_EVENT);
           break;

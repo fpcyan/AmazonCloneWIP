@@ -14,17 +14,14 @@ var Home = React.createClass({
   },
 
   _onChange: function () {
-    return this.setState({ feature: FeaturedProductStore.allFeatures() });
+    return this.setState({ features: FeaturedProductStore.allFeatures() });
   },
 
   render: function () {
     var features;
-    if (this.state.features) {
-      features = this.state.features.map(function (feature) {
-        return <div key={feature}><FeaturedProductIndex feature={feature} /></div>;
-      });
-
-    }
+    features = this.state.features.map(function (feature) {
+      return <div key={feature.id}><FeaturedProductIndex feature={feature} /></div>;
+    });
     return(
       <div>
         <NavBar />

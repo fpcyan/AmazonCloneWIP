@@ -9,7 +9,6 @@ var ApiUtil = {
       type: "get",
       data: { home: true },
       success: function (data) {
-        debugger
         ProductActions.receiveFeaturedProducts(data);
       }
     });
