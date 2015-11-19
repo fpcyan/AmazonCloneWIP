@@ -17,39 +17,50 @@ User.create!(first_name: "Fiona", last_name: "Conn", email: "fiona@example.com",
   )
 end
 
-parent_departments = []
-sub_departments = []
-5.times do
+def construct_products_and_images(current_dir, category, *args)
+  current_dir.path =~ /-sub$/ ? main = true : main = false
+  product = args[0]
 
-  new_dept = nil
-  until new_dept
-    title = Faker::Commerce.department(3, true)
-    new_dept = Department.create(title: title)
-  end
-  parent_departments << new_dept
 
-  new_dept = nil
-  until new_dept
-    title = Faker::Commerce.department(2, true)
-    new_dept = parent_departments.last.sub_departments.create(title: title)
+  current_dir.each do |imagery|
+    next if imagery =~ /^\./
+
+    if imagery =~ /\.jpg$/ || imagery =~ /\.png$/
+      if product.nil?
+        product ||= category.create_product(
+          category.sub_department.title + category.section +
+            rand(0..10000),
+          Faker::Commerce.price * 100,
+          Faker::Lorem.paragraph,
+          Faker::Lorem.paragraph,
+          rand(0...100)
+        )
+        product = product.already_exists(category) unless product.errors.empty?
+      end
+      image_file = File.new(current_dir.path + "/" + imagery)
+      image = product.create_image(main, image_file)
+
+    else
+      next_directory = Dir.new(current_dir.path + "/" + imagery)
+      set_product_images(next_directory, category)
+    end
   end
-  sub_departments << new_dept
 end
 
-categories = []
+path = Rails.root.to_s + "/app/assets/images"
+parent_department = Department.create!(title: "Luxury Goods")
 
-10.times do |t|
-  new_cat = nil
-  until new_cat
-    new_cat = sub_departments[t % 5].categories.create(section: Faker::Commerce.department(1, true))
+parent_dir = Dir.new(path)
+parent_dir.each do |dept_folder|
+  next if dept_folder =~ /^\./ || dept_folder == "default"
+
+  dept = parent_department.sub_departments.create!(title: dept_folder)
+  dept_dir = Dir.new(parent_dir.path + "/" + dept_folder)
+
+  dept_dir.each do |cat_folder|
+    cat = dept.categories.create!(section: cat_folder.capitalize)
+    cat_dir = Dir.new(dept_dir.path + "/" + cat_folder)
+
+    construct_products_and_images(cat_dir, cat)
   end
-  categories << new_cat
-end
-
-
-25.times do
-  new_product = categories.sample.products.create(product_name: Faker::Commerce.product_name, price: Faker::Commerce.price * 100, description: Faker::Lorem.paragraph, specs: Faker::Lorem.paragraph, quantity: rand(0...100) )
-
-  new_product.
-
 end

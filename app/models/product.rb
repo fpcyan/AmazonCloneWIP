@@ -19,6 +19,20 @@ class Product < ActiveRecord::Base
     Department.featured_products
   end
 
+  def already_exists(category)
+    product = Product.find_by(product_name: self.product_name)
+    category.products << product
+    return product
+  end
+
+  def create_image(main, image_file)
+    self.images.create(
+      alt: self.product_name,
+      main_image: main,
+      image: image_file
+    )
+  end
+
   def in_stock?
     if self.quantity === 0
       self.stock = false

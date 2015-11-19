@@ -9,6 +9,18 @@ class Category < ActiveRecord::Base
   has_many :products, through: :products_categories, source: :product
 
 
+  def create_product(*params)
+    product = self.products.create(
+      product_name: params[0],
+      price: params[1],
+      description: params[2],
+      specs: params[3],
+      quantity: params[4]
+    )
+    unless product.errors.empty?
+      Product.already_exists(params[0], self)
+    end
+  end
 
   private
 
