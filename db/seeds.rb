@@ -48,5 +48,8 @@ end
 
 
 25.times do
-  categories.sample.products.create(product_name: Faker::Commerce.product_name, price: Faker::Commerce.price * 100, description: Faker::Lorem.paragraph, specs: Faker::Lorem.paragraph, quantity: rand(0...100) )
+  new_product = categories.sample.products.create(product_name: Faker::Commerce.product_name, price: Faker::Commerce.price * 100, description: Faker::Lorem.paragraph, specs: Faker::Lorem.paragraph, quantity: rand(0...100) )
+
+  new_product.
+
 end
