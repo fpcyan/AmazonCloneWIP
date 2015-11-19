@@ -12,6 +12,8 @@ class Product < ActiveRecord::Base
   has_many :sub_departments, through: :categories, source: :sub_department
   has_many :parent_departments, through: :sub_departments, source: :parent_department
 
+  has_many :images, inverse_of: :product
+
 
   def self.featured_products ## finds the 2 subdepartments with the most products
     Department.featured_products
