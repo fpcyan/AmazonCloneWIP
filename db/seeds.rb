@@ -61,7 +61,7 @@ def construct_products_and_images(current_dir, category, *args)
   end
 end
 
-path = Rails.root.to_s + "/app/assets/images"
+path = Rails.root.to_s + "/app/assets/images/products"
 parent_department = Department.create!(title: "Luxury Goods")
 puts "Parent Department: " + parent_department.title
 

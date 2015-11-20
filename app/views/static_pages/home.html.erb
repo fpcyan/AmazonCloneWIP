@@ -1,10 +1,9 @@
 <div id="content">
 
 </div>
-<% if signed_in? %>
-  <%= render "sessions/sign_out" %>
-<% else %>
-  <%= render "sessions/sign_in_sign_up" %>
-<% end %>
-
-<%= flash[:notice] if flash[:notice] %>
+<script>
+  var appImages = {
+    magnifyingGlass: "<%= asset_path('buttons/magnifying-glass.png') %>",
+    shoppingCart: "<%= asset_path('buttons/shopping-cart.png') %>"
+  }
+</script>
