@@ -1,61 +1,114 @@
-
-
 .nav-search {
   display: block;
+  position: relative;
   margin: 0 auto;
   width: 1400px;
   /* Get the content inside then remove this ø*/
   background: rgba(225, 52, 25, 0.4);
-  height: 60px;
 }
-.nav-logo, .search-submit, .cart, .search-form {
-  height: 40px;
-}
-.nav-logo {
 
+
+.nav-logo {
   float: left;
+  box-sizing: border-box;
+  font-size: 35px;
+  font-weight: bold;
+  text-align: center;
+
+  width: 200px;
+  padding: 10px;
+  /* ø */
+  background: rgba(67, 125, 231, 0.4);
+  white-space: nowrap;
+}
+
+/* layout:
+  logo
+  search form
+    department
+    input
+    submit
+    sign-in
+    cart
+*/
+.search-form {
+  float: left;
+  box-sizing: border-box;
+  width: 1000px;
+  padding: 10px;
 
   /* ø */
-  vertical-align: middle;
-  text-align: center;
-  background: rgba(67, 125, 231, 0.4);
-  font-size: 30px;
-}
-
-.search-form {
-  width: 1000px;
-  height: 30px;
   background: rgba(56, 126, 12, 0.4);
-  float: left;
-  padding: 5px;
 }
 
-.search-form > * {
-  float: left;
-}
-
-.search-department, .search-input, .sign-in {
-  font-size: 12px;
+.search-department, .search-input {
+  font-size: 16px;
   padding: 10px;
-}
-
-.search-input {
-  background: #fff;
 }
 
 .search-department {
   background: rgba(130, 130, 130, 0.4);
   border: 1px solid black;
   border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  float: left;
 }
 
-.nav-button {
+.search-input {
   display: block;
-  height: auto;
-  width: 40px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  width: 800px;
+  background: #fff;
+  float: left;
 }
 
+.search-submit {
+  float: left;
+  border: 1px solid black;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  margin-right: -10px;
+}
 
+.search-submit-img {
+  width: 51.333px;
+}
+
+.nav-search-link-wrapper{
+  float: right;
+  width: 200px;
+}
+
+.sign-in, .cart {
+  display: block;
+}
+.sign-in {
+  float: left;
+  width: 100px;
+  text-align: center;
+  padding: 21px 0;
+}
+
+.sign-in:after {
+  content: "";
+  display: block;
+  position: absolute;
+
+  right: 100px;
+  top: 10px;
+  bottom: 10px;
+  background: black;
+
+  width: 1px;
+}
+
+.cart {
+  float: right;
+  width: 40px;
+  padding: 10px 30px;
+}
 
 .header-ribbon {
   background: #4D0C02;

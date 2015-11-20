@@ -5,15 +5,17 @@ var NavBar = React.createClass({
       <header className="header">
 
         <div className="nav-search group">
-          <nav className="nav-logo">Internet Bazaar</nav>
+          <nav className="nav-logo">Bazaar</nav>
 
           <label className="search-form group">
             <button className="search-department">All</button>
             <input className="search-input" type="text" placeholder="Search" />
-            <button className="search-submit"><img className="nav-button" src={appImages.magnifyingGlass} alt="Go Search" /></button>
+            <button className="search-submit"><img className="search-submit-img" src={appImages.magnifyingGlass} alt="Go Search" /></button>
+          </label>
+          <nav className="nav-search-link-wrapper">
             <a href="#" className="sign-in">Sign in</a>
             <a href="#" className="cart"><img className="nav-button" src={appImages.shoppingCart} alt="Shopping cart" /></a>
-          </label>
+          </nav>
 
         </div>
 
