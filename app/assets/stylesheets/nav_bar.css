@@ -5,11 +5,14 @@
   margin: 0 auto;
   width: 1400px;
   /* Get the content inside then remove this ø*/
+  background: rgba(225, 52, 25, 0.4);
   height: 60px;
 }
-
-.nav-logo {
+.nav-logo, .search-submit, .cart, .search-form {
   height: 40px;
+}
+.nav-logo {
+
   float: left;
 
   /* ø */
@@ -20,9 +23,11 @@
 }
 
 .search-form {
-  height: 40px;
+  width: 1000px;
+  height: 30px;
   background: rgba(56, 126, 12, 0.4);
   float: left;
+  padding: 5px;
 }
 
 .search-form > * {
@@ -30,7 +35,7 @@
 }
 
 .search-department, .search-input, .sign-in {
-  font-size: 16px;
+  font-size: 12px;
   padding: 10px;
 }
 
@@ -42,6 +47,12 @@
   background: rgba(130, 130, 130, 0.4);
   border: 1px solid black;
   border-top-left-radius: 5px;
+}
+
+.nav-button {
+  display: block;
+  height: auto;
+  width: 40px;
 }
 
 

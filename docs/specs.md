@@ -16,7 +16,7 @@
 - light grey: #eee
 - light green: #5CE743
 - semitransparent blue: rgba(67, 125, 231, 0.4)
-- semitransparent red: rgba(225, 52, 25. 0.4)
+- semitransparent red: rgba(225, 52, 25, 0.4)
 - semitransparent green: rgba(56, 126, 12, 0.4)
 - semitransparent grey: rgba(130, 130, 130, 0.4)
 

@@ -10,9 +10,9 @@ var NavBar = React.createClass({
           <label className="search-form group">
             <button className="search-department">All</button>
             <input className="search-input" type="text" placeholder="Search" />
-            <button className="search-submit"><img src={appImages.magnifyingGlass} /></button>
+            <button className="search-submit"><img className="nav-button" src={appImages.magnifyingGlass} alt="Go Search" /></button>
             <a href="#" className="sign-in">Sign in</a>
-            <a href="#" className="cart"><img src={appImages.shoppingCart} /></a>
+            <a href="#" className="cart"><img className="nav-button" src={appImages.shoppingCart} alt="Shopping cart" /></a>
           </label>
 
         </div>
