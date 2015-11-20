@@ -3,7 +3,7 @@
 ## Colors
 - Black: #000
 - White: #fff
-- Orange: #FCAC39
+- Orange: rgba(252, 172, 57, 1)
 - Yellow: #FDE667
 - Dark Orange? Brown?: #AD5415
 - Dark Red: #4D0C02
