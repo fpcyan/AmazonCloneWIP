@@ -20,18 +20,4 @@ class Department < ActiveRecord::Base
       .includes(:products)
   end
 
-  def self.products_by_department(id) ## DRY this up
-    product_hash = {}
-    product_hash[dept] = Department.find(id)
-    if product_hash[dept].parent_dept_id.nil?
-      product_hash[sub_depts] = Department.where(parent_dept_id: id)
-      product_hash[categories] = Category.joins(:sub_department).where("departments.parent_dept_id = ?", id)
-      product_hash[products] = Product.joins(categories: :sub_department).where("departments.parent_dept_id = ?", id)
-
-    else
-      product_hash[categories] = Category.where(department_id: id)
-      product_hash[products] = Product.joins(:categories).where("categories.department_id = ?", id)
-    end
-    return product_hash
-  end
 end
