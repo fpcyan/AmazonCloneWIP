@@ -8,7 +8,10 @@
   header-ribbon
     nav-main
       nav-dept
-      feeling-lucky
+      dem-links-wrapper
+        feeling-lucky
+        adopt
+        about
       right-hand-wrapper
         sign-in
         wish-list
@@ -96,7 +99,10 @@
 
 .nav-dept {
   float: left;
+
 }
+
+
 
 .feeling-lucky {
   float: left;
@@ -108,22 +114,31 @@
 
 .sign-in {
   float: left;
-  width: 40px;
   text-align: center;
-  padding: 10px 0;
+  padding: 14px 32.5px;
 }
 
 .wish-list {
   float: left;
-  width: 40px;
   text-align: center;
-  padding: 10px;
+  margin: 0 5px;
+  padding: 14px 5px;
 }
 
 .cart {
   float: left;
-  width: 30px;
-  padding: 5px 10px;
+  width: 43px;
+  padding: 0 5px;
+  vertical-align: center;
+}
+.cart, .wish-list, .sign-in, .nav-dept {
+  border: 1px #4D0C02;
+  border-radius: 5px;
+}
+
+.cart:hover, .wish-list:hover, .sign-in:hover {
+  border: 1px #fff;
+  border-style: inset;
 }
 /*.sign-in:after {
   content: "";

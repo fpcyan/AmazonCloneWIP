@@ -15,8 +15,12 @@ var NavBar = React.createClass({
         </div>
 
         <div className="nav-main group">
-          <a className="nav-dept">Shop by Deparment</a>
-          <a className="feeling-lucky">I'm feeling lucky"</a>
+          <a className="nav-dept">Shop by <strong>Deparment</strong></a>
+          <small className="dem-links-wrapper">
+            <a className="feeling-lucky">I'm Feeling Lucky"</a>
+            <a className="adopt">Adopt a Cat</a>
+            <a className="about">About</a>
+          </small>
 
           <div className="right-hand-wrapper">
             <a href="#" className="sign-in">Sign in</a>
