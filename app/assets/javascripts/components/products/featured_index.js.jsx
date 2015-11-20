@@ -10,11 +10,12 @@ var FeaturedIndex = React.createClass({
     });
 
     return (
-      <div className="featured">
-        <ul className="carousel group">
-            { products }
-        </ul>
-      </div>
+        <div className="featured">
+          <h2 className="featured-dept">{this.props.feature.title}</h2>
+          <ul className="carousel">
+              { products }
+          </ul>
+        </div>
     );
   }
 

@@ -1,54 +1,37 @@
-section.product-home, .sidebar, .featured, .featured-department, .carousel .product-item-image {
-  display: block;
-}
+/* layout:
+  .product-home
+    .featured
+      .featured-dept
+      .carousel
+        .carousel-card
+        .product-image
+        .product-details-button
+*/
 
-section.product-home {
-  height: 1000px;
-  width: 100%;
-  background-color: white;
-}
+.product-home {
 
-.sidebar {
-  height: 100%;
-  width: 200px;
-  background: #ccc;
-  float: left;
 }
 
 .featured {
-  position: relative;
-  height: 400px;
-  max-width: calc(100% - 400px);
-  min-width: 1202px;
 
-  margin: 50px auto;
-  border: 1px solid black;
+}
+
+.featured-dept {
+
 }
 
 .carousel {
-  height: 320px;
-  margin: 30px auto;
 
-  overflow: hidden;
-  border: 1px solid black;
 }
 
 .carousel-card {
-  width: 399px;
-  height: 198px;
 
-  padding: 10px 0;
-  border: 1px solid black;
-
-  float: left;
-  white-space: nowrap;
 }
 
-.product-item-image {
-  height: auto;
-  max-height: 300px;
-  max-width: 400px;
+.product-image {
 
-  margin: auto;
-  border: 1px solid black;
+}
+
+.product-details-button {
+  
 }

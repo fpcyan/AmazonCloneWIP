@@ -25,7 +25,7 @@ var Home = React.createClass({
     return(
       <div>
         <NavBar />
-        <section className="product-home group">
+        <section className="product-home">
           { features }
         </section>
       </div>
