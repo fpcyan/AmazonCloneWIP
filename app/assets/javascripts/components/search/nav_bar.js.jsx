@@ -12,15 +12,17 @@ var NavBar = React.createClass({
             <input className="search-input" type="text" placeholder="Search" />
             <button className="search-submit"><img className="search-submit-img" src={appImages.magnifyingGlass} alt="Go Search" /></button>
           </label>
-          <nav className="nav-search-link-wrapper">
-            <a href="#" className="sign-in">Sign in</a>
-            <a href="#" className="cart"><img className="nav-button" src={appImages.shoppingCart} alt="Shopping cart" /></a>
-          </nav>
-
         </div>
 
-        <div className="header-ribbon">
-          <nav className="nav-main"></nav>
+        <div className="nav-main group">
+          <a className="nav-dept">Shop by Deparment</a>
+          <a className="feeling-lucky">I'm feeling lucky"</a>
+
+          <div className="right-hand-wrapper">
+            <a href="#" className="sign-in">Sign in</a>
+            <a href="#" className="wish-list">Wish list</a>
+            <a href="#" className="cart"><img className="nav-button" src={appImages.shoppingCart} alt="Shopping cart" /></a>
+          </div>
         </div>
       </header>
     );

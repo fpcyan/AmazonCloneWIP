@@ -4,9 +4,21 @@
     department
     input
     submit
-    sign-in
-    cart
+    tag-line
+  header-ribbon
+    nav-main
+      nav-dept
+      feeling-lucky
+      right-hand-wrapper
+        sign-in
+        wish-list
+        cart
 */
+
+.header {
+  background: #4D0C02;
+  color: white;
+}
 
 .nav-search {
   display: block;
@@ -68,23 +80,52 @@
 .search-submit-img {
   width: 51.333px;
 }
-
-.nav-search-link-wrapper{
-  float: right;
-  width: 200px;
-}
-
-.sign-in, .cart {
+.nav-main, .nav-dept, .feeling-lucky,
+.right-hand-wrapper, .sign-in,
+.wish-list, .cart {
   display: block;
 }
-.sign-in {
-  float: left;
-  width: 100px;
-  text-align: center;
-  padding: 21px 0;
+
+.nav-main {
+  display: block;
+  margin: 0 auto;
+  width: 1400px;
+  /* ø */
+  height: 50px;
 }
 
-.sign-in:after {
+.nav-dept {
+  float: left;
+}
+
+.feeling-lucky {
+  float: left;
+}
+
+.right-hand-wrapper {
+  float: right;
+}
+
+.sign-in {
+  float: left;
+  width: 40px;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.wish-list {
+  float: left;
+  width: 40px;
+  text-align: center;
+  padding: 10px;
+}
+
+.cart {
+  float: left;
+  width: 30px;
+  padding: 5px 10px;
+}
+/*.sign-in:after {
   content: "";
   display: block;
   position: absolute;
@@ -108,10 +149,4 @@
   background: black;
 
   width: 1px;
-}
-
-.cart {
-  float: right;
-  width: 40px;
-  padding: 10px 30px;
-}
+}*/
