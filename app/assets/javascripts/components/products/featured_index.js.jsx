@@ -5,6 +5,7 @@ var FeaturedIndex = React.createClass({
   },
 
   render: function () {
+    debugger;
     var products = this.state.products.map(function (product) {
       return <div key={product.id}><FeaturedItem item={product} /></div>;
     });

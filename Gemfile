@@ -25,6 +25,7 @@ gem 'react-rails', '~> 1.3.0'
 gem 'flux-rails-assets', '~> 2.1.0'
 
 gem 'paperclip'
+gem 'paperclip-meta'
 gem 'aws-sdk', '~> 1.6'
 gem 'figaro'
 gem 'faker'
