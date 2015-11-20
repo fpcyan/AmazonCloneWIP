@@ -4,7 +4,7 @@ html, nav, div, h1, label, ul, li, header, body, main, section, img {
   text-decoration: none;
 
   background: transparent;
-  
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   border: 0;

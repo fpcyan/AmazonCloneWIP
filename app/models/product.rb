@@ -12,9 +12,25 @@ class Product < ActiveRecord::Base
   has_many :sub_departments, through: :categories, source: :sub_department
   has_many :parent_departments, through: :sub_departments, source: :parent_department
 
+  has_many :images, inverse_of: :product
+
 
   def self.featured_products ## finds the 2 subdepartments with the most products
     Department.featured_products
+  end
+
+  def already_exists(category)
+    product = Product.find_by(product_name: self.product_name)
+    category.products << product
+    return product
+  end
+
+  def create_image(main, image_file)
+    self.images.create(
+      alt: self.product_name,
+      main_image: main,
+      image: image_file
+    )
   end
 
   def in_stock?
