@@ -13,11 +13,11 @@ class Department < ActiveRecord::Base
 
   def self.featured_products ## finds the 2 subdepartments with the most products
     Department
-      .joins(categories: { products_categories: :product })
+      .joins(categories: { products_categories: { product: :images }})
       .group("departments.id")
       .order("COUNT(products.id) DESC")
       .limit(2)
-      .includes(:products)
+      .includes(products: :images)
   end
 
 end

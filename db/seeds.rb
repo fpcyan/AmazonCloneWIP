@@ -69,7 +69,7 @@ parent_dir = Dir.new(path)
 parent_dir.each do |dept_folder|
   next if dept_folder =~ /^\./ || dept_folder == "default"
 
-  dept = parent_department.sub_departments.create!(title: dept_folder)
+  dept = parent_department.sub_departments.create!(title: dept_folder.capitalize)
   dept_dir = Dir.new(parent_dir.path + "/" + dept_folder)
   puts "Department: " + dept.title
 

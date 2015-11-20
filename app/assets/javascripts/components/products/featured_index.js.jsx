@@ -1,12 +1,12 @@
-var FeaturedProductIndex = React.createClass({
+var FeaturedIndex = React.createClass({
 
   getInitialState: function () {
-    return ({ products: FeaturedProductStore.byFeature(this.props.feature)});
+    return ({ products: FeaturedStore.byFeature(this.props.feature)});
   },
 
   render: function () {
     var products = this.state.products.map(function (product) {
-      return <div key={product.id}><FeaturedProductItem item={product} /></div>;
+      return <div key={product.id}><FeaturedItem item={product} /></div>;
     });
 
     return (
