@@ -57,8 +57,8 @@
 .search-department {
   background: #FCAC39;
   border: 1px solid black;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  border-top-left-radius: 10%;
+  border-bottom-left-radius: 10%;
   float: left;
 }
 
@@ -154,7 +154,7 @@
 }
 .cart, .wish-list, .sign-in, .nav-dept {
   border: 1px #4D0C02;
-  border-radius: 5px;
+  border-radius: 10%;
   cursor: pointer;
 }
 

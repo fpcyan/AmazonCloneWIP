@@ -1,8 +1,8 @@
 (function () {
 
 
-
   $(document).ready(function () {
+    
     var Router, Route, IndexRoute, home, routes;
     Router = ReactRouter.Router;
     Route = ReactRouter.Route;
