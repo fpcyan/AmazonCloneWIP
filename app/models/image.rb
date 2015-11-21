@@ -5,8 +5,8 @@ class Image < ActiveRecord::Base
       large: ["x900", :jpg],
       medium: ["x500>", :jpg],
       thumb: ["x200>", :jpg],
-      carousel: ["x250>", :jpg]
-      carousel_test: ["180x240#"]
+      carousel: ["x250>", :jpg],
+      carousel_test: ["180x240#", :jpg]
     },
     default_url: "./assets/images/default/kitten-looking-up1.jpg"
 
