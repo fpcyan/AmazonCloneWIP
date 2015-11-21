@@ -7,6 +7,7 @@
 - Yellow: #FDE667
 - Dark Orange? Brown?: #AD5415
 - Dark Red: #4D0C02
+- chill purple: #7055A3
 - Black: #000
 - White: #fff
 - Dark Green: #177C17
