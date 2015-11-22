@@ -20,10 +20,10 @@ button, article, footer, small {
 body {
   font-family: Helvetica sans-serif;
   font-size: 16px;
-  line-height: 1.1666666666;
+  line-height: 1;
   color: #000;
 
-  box-sizing: content-box;
+  box-sizing: border-box;
   background: #fff;
 }
 
@@ -31,12 +31,8 @@ ul {
   list-style: none;
 }
 
-a {
-  display: block;
-}
 
 img {
-  display: block;
   width: 100%;
   height: auto;
 }
