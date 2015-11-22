@@ -1,0 +1,105 @@
+html, body, header, nav, h1, a, ul, li,
+strong, main, section, img, div, h2, p,
+form, fieldset, label, input, textarea,
+button, article, footer, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+
+  box-sizing: inherit;
+
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  color: inherit;
+  background: transparent;
+}
+
+body {
+  font-family: Helvetica sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  color: #000;
+
+  box-sizing: border-box;
+  background: #fff;
+}
+
+ul {
+  list-style: none;
+}
+
+div {
+  display: block;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+
+.arrow-button {
+  width: 50px;
+}
+
+.desktop-wrapper {
+  width: 1000px;
+  margin: auto;
+}
+
+.featured {
+  width: 100%;
+  padding: 10px 20px;
+
+  /**/
+  background: black;
+}
+
+.featured-dept {
+  white-space: nowrap;
+  display: block;
+  font-size: 24px;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+}
+
+.carousel-viewport {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  max-height: 200px;
+}
+
+.carousel-card {
+  display: inline-block;
+  text-align: center;
+  min-width: 140px;
+  max-width: 270px;
+  min-height: 200px;
+  max-height: 200px;
+  margin: 0 10px 0 0;
+}
+
+.feature-link {
+  display: inline-block;
+  height: 100%;
+}
+
+.feature-image {
+  width: auto;
+  height: auto;
+  max-width: 270px;
+  max-height: 200px;
+  vertical-align: middle;
+}
+
+.feature-details-button {
+  display: none;
+}
