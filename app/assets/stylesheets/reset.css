@@ -31,6 +31,9 @@ ul {
   list-style: none;
 }
 
+div {
+  display: inherit;
+}
 
 img {
   width: 100%;

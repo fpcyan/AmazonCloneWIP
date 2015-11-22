@@ -15,20 +15,22 @@ var FeaturedIndex = React.createClass({
       );
     });
     return (
-        <div className="featured">
-          <h2 className="featured-dept"><a href="#" className="dept-link">{this.props.feature.title}</a></h2>
+        <div className="desktop-wrapper">
+          <div className="featured">
+            <h2 className="featured-dept"><a href="#" className="dept-link">{this.props.feature.title}</a></h2>
 
-          <button className="arrow-button slide-left" onClickCapture={this.handleButtonClick}>
-            <img src={appImages.leftArrow} alt="left arrow" />
-          </button>
-          <button className="arrow-button slide-right" onClickCapture={this.handleButtonClick} >
-            <img src={appImages.rightArrow} alt="right arrow" />
-          </button>
+            <button className="arrow-button slide-left" onClickCapture={this.handleButtonClick}>
+              <img src={appImages.leftArrow} alt="left arrow" />
+            </button>
+            <button className="arrow-button slide-right" onClickCapture={this.handleButtonClick} >
+              <img src={appImages.rightArrow} alt="right arrow" />
+            </button>
 
-          <div className="carousel">
-            <ul className="carousel-viewport" onMouseEnter={this.handleHover} onMouseLeave={this.handleStopHover}>
-              { images }
-            </ul>
+            <div className="carousel">
+              <ul className="carousel-viewport" onMouseEnter={this.handleHover} onMouseLeave={this.handleStopHover}>
+                { images }
+              </ul>
+            </div>
           </div>
         </div>
     );
