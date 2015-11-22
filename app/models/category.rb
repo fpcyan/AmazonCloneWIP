@@ -18,7 +18,7 @@ class Category < ActiveRecord::Base
       quantity: params[4]
     )
     unless product.errors.empty?
-      return Product.already_exists(params[0], self)
+      return product.already_exists(self)
     end
     return product
   end

@@ -28,9 +28,7 @@ def construct_products_and_images(current_dir, category, *args)
       if product.nil?
         name =
           category.sub_department.title + " " +
-          category.section + " " +
-          imagery.slice(/([[:alnum:]]+)\s?_?\.jpg/, 1) + " " +
-          rand(0..10000).to_s
+          imagery.slice(/([[:alnum:]]+)\s?_?\.jpg/, 1)
 
         prod = category.create_product(
           name,
@@ -40,12 +38,12 @@ def construct_products_and_images(current_dir, category, *args)
           rand(0...100)
         )
 
-      puts "Product: " + prod.product_name + " in Category: " +
-        category.section
       end
 
       image_file = File.new(current_dir.path + "/" + imagery)
       if prod
+        puts "Product: " + prod.product_name + " in Category: " +
+          category.section
         image = prod.create_image(main, image_file)
       else
         image = product.create_image(main, image_file)

@@ -21,8 +21,12 @@ class Product < ActiveRecord::Base
 
   def already_exists(category)
     product = Product.find_by(product_name: self.product_name)
-    category.products << product
-    return product
+    if category.products.include?(product)
+      return nil
+    else
+      category.products << product
+      return product
+    end
   end
 
   def create_image(main, image_file)
