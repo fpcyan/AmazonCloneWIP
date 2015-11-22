@@ -18,17 +18,18 @@ var FeaturedIndex = React.createClass({
         <div className="featured">
           <h2 className="featured-dept"><a href="#" className="dept-link">{this.props.feature.title}</a></h2>
 
-          <button className="slide-left" onClickCapture={this.handleButtonClick}>
+          <button className="arrow-button slide-left" onClickCapture={this.handleButtonClick}>
             <img src={appImages.leftArrow} alt="left arrow" />
           </button>
-          <button className="slide-right" onClickCapture={this.handleButtonClick} >
+          <button className="arrow-button slide-right" onClickCapture={this.handleButtonClick} >
             <img src={appImages.rightArrow} alt="right arrow" />
           </button>
 
-          <ul className="carousel group" onMouseEnter={this.handleHover} onMouseLeave={this.handleStopHover}>
-            { images }
-          </ul>
-
+          <div className="carousel">
+            <ul className="carousel-viewport" onMouseEnter={this.handleHover} onMouseLeave={this.handleStopHover}>
+              { images }
+            </ul>
+          </div>
         </div>
     );
   },
