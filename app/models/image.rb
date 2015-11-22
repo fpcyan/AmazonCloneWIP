@@ -3,10 +3,9 @@ class Image < ActiveRecord::Base
   has_attached_file :image,
     styles: {
       large: ["x900", :jpg],
-      medium: ["x500>", :jpg],
-      thumb: ["x200>", :jpg],
-      carousel: ["x250>", :jpg],
-      carousel_test: ["180x240#", :jpg]
+      medium: ["600x600>", :jpg],
+      thumb: ["x80#>", :jpg],
+      carousel: ["270x200>", :jpg],
     },
     default_url: "./assets/images/default/kitten-looking-up1.jpg"
 
