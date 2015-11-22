@@ -13,7 +13,7 @@ class Api::ProductsController < ApplicationController
 
 
   def show
-    @product = Product.find(params[:id]).includes(:images).in_stock?
+    @product = Product.includes(:images).find(params[:id]).in_stock?
     render :show
   end
 
