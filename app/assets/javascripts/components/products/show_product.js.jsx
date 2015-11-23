@@ -1,8 +1,24 @@
 var ShowProduct = React.createClass({
+
+  getInitialState: function () {
+    return ({ product: { product_name: "", price: 0, stock: 100, images: []} });
+  },
+
   render: function () {
-    var specs;
-    var description;
-    var reviews;
+    var specs = (
+      <ul className="spec-list">
+        <li className="spec-item">It does not smell (placeholder)</li>
+      </ul>
+    );
+    var description = (
+      <ul className="desc-list">
+        <li className="desc-item">
+          <p><strong className="desc-tagline">SO GOOD</strong>
+          No, really, check it out.
+          </p>
+        </li>
+      </ul>
+    );
 
     return(
       <main className="show-product-main">
@@ -25,7 +41,7 @@ var ShowProduct = React.createClass({
 
             { specs }
 
-            <div className="mgmt-box-outer">
+            <div className="form-outer-box">
               <ProductMgmtForm />
             </div>
           </div>
@@ -37,10 +53,8 @@ var ShowProduct = React.createClass({
         </section>
 
         <section className="review-wrapper">
-          <div className="review-index">
-            { reviews }
-          </div>
-          <div className="review-outer-box">
+            <ReviewIndex />
+          <div className="form-outer-box">
             <ReviewForm />
           </div>
         </section>

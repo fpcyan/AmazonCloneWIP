@@ -16,10 +16,10 @@ var ReviewForm = React.createClass({
               <div className="review-sprite"></div>
             </input>
 
-            <div className="textarea-toggle">
+            <div className="expand-form-toggle">
               <label className="write-review-label">
                 Write a Review.
-                <textarea className="review-form-textarea"
+                <textarea className="review-form-text"
                   placeholder="Write your review here."></textarea>
               </label>
               <button className="review-form-submit">Submit</button>
