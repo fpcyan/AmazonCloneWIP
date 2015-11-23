@@ -4,6 +4,7 @@ var App = React.createClass({
 
     return (
       <main>
+        <NavBar />
         { this.props.children }
       </main>
     );

@@ -24,7 +24,6 @@ var Home = React.createClass({
     });
     return(
       <div>
-        <NavBar />
         <section className="product-home">
           { features }
         </section>
