@@ -40,6 +40,17 @@ img {
   height: auto;
 }
 
+.normal-link {
+  text-decoration: none;
+  color: rgba(122, 85, 163, 1);
+  cursor: pointer;
+}
+
+.normal-link:hover {
+  text-decoration: underline;
+  color: rgba(173, 84, 21, 0.56)
+}
+
 .group:after {
   content: "";
   display: block;

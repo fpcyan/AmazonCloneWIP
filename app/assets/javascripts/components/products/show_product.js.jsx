@@ -29,15 +29,14 @@ var ShowProduct = React.createClass({
           </div>
 
           <div className="product-specs-wrapper">
-            <h1 className="product-name">{this.state.product.product_name}</h1>
-            <span className="review-summary"></span>
+            <h1 className="product-name">I am a Food Product 2000 Triple X AMA{this.state.product.product_name}</h1>
+            <span className="review-summary">Placeholder text</span>
             <span className="product-price-summary">
-              <strong className="product-price">{this.state.product.price}</strong> &
-                <strong className="free-shipping">FREE Shipping. </strong>
-                  <a href="#" className="shipping-link">Details</a>
+              <strong className="product-price">$153.00 {this.state.product.price}</strong>
+                <strong className="free-shipping">FREE Shipping! </strong><a href="#" className="shipping-details normal-link">Details</a>
             </span>
             <span className="stock">{this.state.product.stock}</span>
-            <span className="same-day-delivery"></span>
+            <span className="same-day-delivery"><a href="#">Time Travel Delivery</a></span>
 
             { specs }
 

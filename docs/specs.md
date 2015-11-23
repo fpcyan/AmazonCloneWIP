@@ -10,14 +10,8 @@
 - chill purple: rgba(122, 85, 163, 1)
 - Dark Green: rgba(23, 124, 23, 1)
 
-### test colors
-- faded red: #E17F70
-- light grey: #eee
-- light green: #5CE743
-- semitransparent blue: rgba(67, 125, 231, 0.4)
-- semitransparent red: rgba(225, 52, 25, 0.4)
-- semitransparent green: rgba(56, 126, 12, 0.4)
-- semitransparent grey: rgba(130, 130, 130, 0.4)
+- normal link: rgba(135, 45, 235, 1)
+
 
 ## Type
 - Font Family: Helvetica, sans-serif
