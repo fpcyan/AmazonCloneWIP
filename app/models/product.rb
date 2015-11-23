@@ -25,11 +25,12 @@ class Product < ActiveRecord::Base
       return nil
     else
       category.products << product
+      return product
     end
   end
 
   def create_image(main, image_file)
-    self.images.create(
+    image = self.images.create(
       alt: self.product_name,
       main_image: main,
       image: image_file
@@ -37,7 +38,7 @@ class Product < ActiveRecord::Base
     unless image.errors.empty?
       return image.already_exists(self)
     end
-    return product
+    return image
   end
 
   def in_stock?
