@@ -1,5 +1,31 @@
 .mgmt-box-inner {
+  display: block;
+  width: 100%;
+  padding: 20px;
+}
 
+.product-price-summary {
+  display: block;
+  padding: 5px 0;
+  margin: 0 20px;
+  font-size: 18px;
+
+}
+
+.product-price {
+  display: block;
+  font-size: 36px;
+}
+
+.free-shipping {
+  display: inline-block;
+  padding-right: 5px;
+  font-weight: 700;
+}
+
+.shipping-details {
+  display: inline-block;
+  font-size: 14px;
 }
 
 .mgmt-form {
@@ -27,5 +53,5 @@
 }
 
 .wish-list-button {
-  
+
 }

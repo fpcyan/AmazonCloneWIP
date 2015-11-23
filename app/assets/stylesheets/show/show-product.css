@@ -1,7 +1,8 @@
 .show-product-main {
   display: block;
   width: 100%;
-  margin: 20px;
+  padding: 20px;
+  vertical-align: top;
 }
 
 .product-image-specs-wrapper {
@@ -33,29 +34,6 @@
   display: block;
 }
 
-.product-price-summary {
-  display: block;
-  padding: 5px 0;
-  margin: 0 40px;
-  font-size: 18px;
-
-}
-
-.product-price {
-  display: block;
-  font-size: 36px;
-}
-
-.free-shipping {
-  display: inline-block;
-  padding-right: 5px;
-  font-weight: 700;
-}
-
-.shipping-details {
-  display: inline-block;
-  font-size: 14px;
-}
 
 .stock {
   display: block;

@@ -1,21 +1,29 @@
 .product-image-wrapper {
-
+  display: block;
+  width: 100%;
 }
 
 .alt-images {
-
+  display: inline-block;
+  width: 80px;
 }
 
 .button-thumb {
-
+  display: block;
+  width: 100%;
+  border: 1px solid rgba(77, 12, 2, 1);
+}
+.button-thumb:hover {
+  box-shadow: 0 0 10px rgba(252, 172, 57, 1);
 }
 
 .alt-thumb-image {
-
+  display: block;
 }
 
 .landing-image-wrapper {
-
+  display: inline-block;
+  cursor: pointer;
 }
 
 .zoom-modal-image {
