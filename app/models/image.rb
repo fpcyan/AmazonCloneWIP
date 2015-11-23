@@ -1,5 +1,6 @@
 class Image < ActiveRecord::Base
   validates :alt, :product, presence: true
+  validates :image_file_name, uniqueness: true
   has_attached_file :image,
     styles: {
       large: ["x900", :jpg],
@@ -13,4 +14,15 @@ class Image < ActiveRecord::Base
     content_type: /\Aimage\/.*\Z/
 
   belongs_to :product, inverse_of: :images
+
+
+  def already_exists(product)
+    image = Image.find_by(image_file_name: self.image_file_name)
+    if product.images.include?(image)
+      return nil
+    else
+      product.images << image
+    end
+  end
+
 end

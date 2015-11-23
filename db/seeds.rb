@@ -37,7 +37,6 @@ def construct_products_and_images(current_dir, category, *args)
           Faker::Lorem.paragraph,
           rand(0...100)
         )
-
       end
 
       image_file = File.new(current_dir.path + "/" + imagery)
