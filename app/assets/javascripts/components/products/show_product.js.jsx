@@ -41,9 +41,10 @@ var ShowProduct = React.createClass({
 
             { specs }
 
-            <div className="form-outer-box">
-              <ProductMgmtForm />
-            </div>
+          </div>
+
+          <div className="form-outer-box">
+            <ProductMgmtForm />
           </div>
 
         </section>

@@ -1,16 +1,14 @@
 # Specifications
 
 ## Colors
-- Black: #000
-- White: #fff
+- Black: rgba(0, 0, 0, 1)
+- White: rgba(255, 255, 255, 1)
 - Orange: rgba(252, 172, 57, 1)
-- Yellow: #FDE667
-- Dark Orange? Brown?: #AD5415
-- Dark Red: #4D0C02
-- chill purple: #7055A3
-- Black: #000
-- White: #fff
-- Dark Green: #177C17
+- Yellow: rgba(253, 230, 103, 1)
+- Dark Orange? Brown?: rgba(173, 84, 21, 0.56)
+- Dark Red: rgba(77, 12, 2, 1)
+- chill purple: rgba(122, 85, 163, 1)
+- Dark Green: rgba(23, 124, 23, 1)
 
 ### test colors
 - faded red: #E17F70

@@ -1,20 +1,24 @@
 .show-product-main {
-
+  display: block;
+  width: 100%;
+  border: 1px solid rgba()
 }
 
 .product-image-specs-wrapper {
-
+  padding: 20px;
 }
 /* image */
 
 .product-image-index {
-
+  display: inline-block;
+  width: 40%;
 }
 
 /* specs */
 
 .product-specs-wrapper {
-
+  display: inline-block;
+  width: 40%;
 }
 
 .product-name {
@@ -59,8 +63,9 @@
 
 /* mgmt form */
 
-.form-box-outer {
-
+.form-outer-box {
+  display: inline-block;
+  width: 20%;
 }
 
 
