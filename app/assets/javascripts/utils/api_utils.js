@@ -22,7 +22,18 @@ var ApiUtil = {
         ProductActions.receiveProducts(data);
       }
     });
+  },
+
+  fetchSingleProduct: function (productId) {
+    $.ajax({
+      url:"/api/products/" + productId,
+      type: "get",
+      success: function (data) {
+        debugger;
+        ShowActions.receiveProduct(data);
+      }
+    });
   }
-  // format: { features: [departments.name], department.name: [products] . . . }
+
 
 };

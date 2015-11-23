@@ -1,7 +1,20 @@
 var ShowProduct = React.createClass({
 
   getInitialState: function () {
-    return ({ product: { id: "", product_name: "", price: 0, stock: 100, images: []} });
+    return ({ product: ShowStore.all() });
+  },
+
+  componentDidMount: function () {
+    ApiUtil.fetchSingleProduct(this.props.params.productId);
+    ShowStore.addChangeListener(this._onChange);
+  },
+
+  componentWillUnmount: function () {
+    ShowStore.removeChangeListener(_onChange);
+  },
+
+  _onChange: function () {
+    return setState({ product: ShowStore.all() });
   },
 
   render: function () {
