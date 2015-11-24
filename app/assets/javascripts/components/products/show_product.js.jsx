@@ -63,7 +63,7 @@ var ShowProduct = React.createClass({
 
         <section className="product-image-specs-wrapper">
           <div className="product-image-index">
-            {imageIndex}
+            { imageIndex }
           </div>
 
           <div className="product-specs-wrapper">
