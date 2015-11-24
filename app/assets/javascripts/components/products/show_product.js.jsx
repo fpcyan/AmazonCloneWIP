@@ -28,7 +28,7 @@ var ShowProduct = React.createClass({
   render: function () {
     var imageIndex = <div className="loading" src={appImages.loadingGif}></div>;
     if (this.state.product.images) {
-      imageIndex = <ShowImageIndex images={this.state.product.images} />;
+      imageIndex = <ShowImageIndex images={this.state.product.images} location={this.props.location}/>;
     }
 
     var specs = (
