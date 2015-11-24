@@ -1,7 +1,7 @@
 var ShowProduct = React.createClass({
 
   getInitialState: function () {
-    return ({ product: ShowStore.all() });
+    return ({ product: { product_name: "", price: 0, description: "", specs: [], stock: false} });
   },
 
   componentDidMount: function () {
@@ -22,16 +22,30 @@ var ShowProduct = React.createClass({
     if (this.state.product.images) {
       imageIndex = <ShowImageIndex images={this.state.product.images} />;
     }
+
     var specs = (
       <ul className="spec-list">
-        <li className="spec-item">{this.state.product.specs}</li>
+      {
+        this.state.product.specs.map(function (spec, i) {
+          return <li key={i}className="spec-item">{spec}</li>;
+        })
+      }
       </ul>
     );
     var description = (
       <ul className="desc-list">
+        <article className="desc-body">{this.state.product.description}</article>
         <li className="desc-item">
-          <p><strong className="desc-tagline">{this.state.product.description}</strong>
-          </p>
+          <p><strong className="desc-tagline">Product Dimensions:</strong> 7.6 x 5 x 1.4 inches</p>
+        </li>
+        <li className="desc-item">
+          <p><strong className="desc-tagline">Shipping Weight:</strong> 9.9 ounces</p>
+        </li>
+        <li className="desc-item">
+          <p><strong className="desc-tagline">Date released:</strong> July 25, 2014</p>
+        </li>
+        <li className="desc-item">
+          <p><strong className="desc-tagline">Best Sellers Rank:</strong> #923 in Jewelry</p>
         </li>
       </ul>
     );
@@ -59,11 +73,12 @@ var ShowProduct = React.createClass({
           </div>
 
         </section>
-
+        <div className="divider"></div>
         <section className="product-description-index">
+        <h2 className="description-header"> Product Description </h2>
           { description }
         </section>
-
+        <div className="divider"></div>
         <section className="review-wrapper">
             <ReviewIndex />
           <div className="form-outer-box">
