@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :shopping_carts
   root to: "static_pages#home"
 
   namespace :api, defaults: { format: :json } do
