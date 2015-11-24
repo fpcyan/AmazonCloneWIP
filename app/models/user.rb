@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token
 
+  has_many :shopping_cart_items, inverse_of: :user, dependent: :destroy
+  has_many :products, through: :shopping_cart_items, source: :product
 
 ## Auth
 

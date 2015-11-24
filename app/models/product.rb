@@ -15,6 +15,9 @@ class Product < ActiveRecord::Base
   has_many :images, inverse_of: :product
 
 
+  has_many :shopping_cart_items, inverse_of: :product, dependent: :destroy
+  has_many :users, through: :shopping_cart_items, source: :user
+
   def self.featured_products ## finds the 2 subdepartments with the most products
     Department.featured_products
   end
