@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  
+
   resources :shopping_carts
   root to: "static_pages#home"
 
   namespace :api, defaults: { format: :json } do
     resources :products, only: [:index, :show]
-
+    resources :shopping_cart_items, only: :index
   end
 
 
