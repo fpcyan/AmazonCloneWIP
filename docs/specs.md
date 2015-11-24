@@ -5,11 +5,13 @@
 - White: rgba(255, 255, 255, 1)
 - Orange: rgba(252, 172, 57, 1)
 - Yellow: rgba(253, 230, 103, 1)
-- Dark Orange? Brown?: rgba(173, 84, 21, 0.56)
+- Dark Orange? Brown?: rgba(173, 84, 21, 1)
+- orangier orange: rgba(200, 100, 25, 1)
 - Dark Red: rgba(77, 12, 2, 1)
 - chill purple: rgba(122, 85, 163, 1)
 - Dark Green: rgba(23, 124, 23, 1)
 
+- light red grey: rgba(172, 162, 162, 1)
 - normal link: rgba(135, 45, 235, 1)
 
 

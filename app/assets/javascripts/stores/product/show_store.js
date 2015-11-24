@@ -31,7 +31,7 @@
 
       switch (payload.actionType) {
         case ProductConstants.SHOW_RECEIVED:
-          _resetProducts(payload.product);
+          _resetProduct(payload.product);
           ShowStore.emit(CHANGE_EVENT);
           break;
       }

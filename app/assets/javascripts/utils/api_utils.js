@@ -29,7 +29,6 @@ var ApiUtil = {
       url:"/api/products/" + productId,
       type: "get",
       success: function (data) {
-        debugger;
         ShowActions.receiveProduct(data);
       }
     });

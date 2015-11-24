@@ -14,20 +14,23 @@ var ShowProduct = React.createClass({
   },
 
   _onChange: function () {
-    return setState({ product: ShowStore.all() });
+    return this.setState({ product: ShowStore.all() });
   },
 
   render: function () {
+    var imageIndex = <div className="loading" src={appImages.loadingGif}></div>;
+    if (this.state.product.images) {
+      imageIndex = <ShowImageIndex images={this.state.product.images} />;
+    }
     var specs = (
       <ul className="spec-list">
-        <li className="spec-item">It does not smell (placeholder)</li>
+        <li className="spec-item">{this.state.product.specs}</li>
       </ul>
     );
     var description = (
       <ul className="desc-list">
         <li className="desc-item">
-          <p><strong className="desc-tagline">SO GOOD</strong>
-          No, really, check it out.
+          <p><strong className="desc-tagline">{this.state.product.description}</strong>
           </p>
         </li>
       </ul>
@@ -38,11 +41,11 @@ var ShowProduct = React.createClass({
 
         <section className="product-image-specs-wrapper">
           <div className="product-image-index">
-            <ShowImageIndex images={this.state.product.images} />
+            {imageIndex}
           </div>
 
           <div className="product-specs-wrapper">
-            <h1 className="product-name">I am a Food Product 2000 Triple X AMA{this.state.product.product_name}</h1>
+            <h1 className="product-name">{this.state.product.product_name}</h1>
             <span className="review-summary">Placeholder text</span>
 
             <span className="stock">{this.state.product.stock}</span>

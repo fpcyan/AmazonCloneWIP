@@ -1,27 +1,28 @@
 .show-product-main {
   display: block;
   width: 100%;
+  min-width: 1000px;
   padding: 20px;
   vertical-align: top;
 }
 
 .product-image-specs-wrapper {
-  border: 1px solid rgba(122, 85, 163, 1);
+  margin: 30px 0;
 }
 /* image */
 
 .product-image-index {
   display: inline-block;
-  width: 40%;
-  border: 1px solid rgba(122, 85, 163, 1);
+  max-width: 40%;
+  min-width: 400px;
 }
 
 /* specs */
 
 .product-specs-wrapper {
   display: inline-block;
-  width: 40%;
-  border: 1px solid rgba(122, 85, 163, 1);
+  max-width: 30%;
+  min-width: 300px;
 }
 
 .product-name {
@@ -65,8 +66,9 @@
 
 .form-outer-box {
   display: inline-block;
-  width: 20%;
-  border: 1px solid rgba(122, 85, 163, 1);
+  max-width: 40%;
+  min-width: 300px;
+  height: 100%;
 }
 
 

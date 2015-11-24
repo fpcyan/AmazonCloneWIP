@@ -6,7 +6,7 @@ var ProductMgmtForm = React.createClass({
       <div className="mgmt-box-inner">
         <form className="mgmt-form">
           <span className="product-price-summary">
-            <strong className="product-price">$153.00 {this.props.product.price}</strong>
+            <strong className="product-price">${(this.props.product.price / 100).toFixed(2)}</strong>
               <strong className="free-shipping">FREE Shipping! </strong><a href="#" className="shipping-details normal-link">Details</a>
           </span>
           <label className="quantity-dropdown">

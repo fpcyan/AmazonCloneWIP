@@ -8,8 +8,7 @@ button, article, footer, small {
   outline: 0;
   font: inherit;
 
-  box-sizing: inherit;
-
+  box-sizing: border-box;
   text-align: inherit;
   text-decoration: inherit;
   vertical-align: inherit;
