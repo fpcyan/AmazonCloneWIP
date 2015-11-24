@@ -13,6 +13,7 @@
       <Router>
         <Route path="/" component={App}>
           <IndexRoute component={Home} />
+          <Route path="cart" component={CartIndex} />
           <Route path="products/:productId" component={ShowProduct} />
         </Route>
       </Router>
