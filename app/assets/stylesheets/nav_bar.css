@@ -60,6 +60,7 @@
   border-bottom-left-radius: 10%;
   padding: 11px;
   float: left;
+  cursor: pointer;
 }
 
 .search-input {
@@ -67,6 +68,7 @@
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   width: 800px;
+  color: rgba(0, 0, 0, 0.9);
   background: #fff;
   padding: 10px;
   float: left;
@@ -79,6 +81,7 @@
   height: 40px;
   overflow: hidden;
   margin-right: -10px;
+  cursor: pointer;
 }
 
 .search-submit-img {

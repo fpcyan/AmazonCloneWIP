@@ -1,6 +1,11 @@
 var ShowImageIndex = React.createClass({
   getInitialState: function () {
-    return (this.parseImages());
+    return (this.parseImages(this.props.images));
+  },
+
+  componentWillReceiveProps: function(nextProps) {
+    this.setState(this.parseImages(nextProps.images));
+    this.forceUpdate();
   },
 
   parseImages: function () {

@@ -4,13 +4,21 @@ var ShowProduct = React.createClass({
     return ({ product: { product_name: "", price: 0, description: "", specs: [], stock: false} });
   },
 
+  componentWillReceiveProps: function (nextProps) {
+    if (this.props.params.productId !== nextProps.params.productId) {
+      ApiUtil.fetchSingleProduct(nextProps.params.productId);
+    }
+  },
+
   componentDidMount: function () {
+
     ApiUtil.fetchSingleProduct(this.props.params.productId);
     ShowStore.addChangeListener(this._onChange);
   },
 
   componentWillUnmount: function () {
-    ShowStore.removeChangeListener(_onChange);
+    ShowStore.removeChangeListener(this._onChange);
+    this.setState({ product: { product_name: "", price: 0, description: "", specs: [], stock: false} });
   },
 
   _onChange: function () {

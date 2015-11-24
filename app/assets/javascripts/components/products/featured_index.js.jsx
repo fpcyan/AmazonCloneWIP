@@ -10,7 +10,7 @@ var FeaturedIndex = React.createClass({
         <div key={product.id}>
           <FeaturedItem
             item={product.image[0]}
-            capture={this.handleClickProduct} />
+            productId={product.id} />
         </div>
       );
     });
@@ -48,9 +48,6 @@ var FeaturedIndex = React.createClass({
     e.preventDefault();
   },
 
-  handleProductClick: function (e) {
-
-  },
 
 // saving for later. done with carousel attemps for now
   jQVars: function () {

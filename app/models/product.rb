@@ -45,7 +45,7 @@ class Product < ActiveRecord::Base
     if self.quantity === 0
       self.stock = false
     elsif self.quantity < 15
-      self.stock = @product.quantity
+      self.stock = self.quantity
     else
       self.stock = true
     end
