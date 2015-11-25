@@ -2,12 +2,14 @@ var UserForm = React.createClass({
 
   onSubmit: function (e) {
     e.preventDefault();
-    var attrs = $(e.currentTarget).serializeJSON();
+    var user = $(e.currentTarget).serializeJSON();
+
     var path = this.props.location.pathname;
-    if (path === "/signin" || path === "/signup") {
+    if (path === "/sign_in" || path === "/sign_up") {
       path = "/";
     }
-    UserApiUtil.createUser(attrs, function () {
+
+    UserApiUtil.createUser({ user }, function () {
       this.history.pushState(null, path);
     }.bind(this));
   },
@@ -21,9 +23,9 @@ var UserForm = React.createClass({
 
           <h2 className="sign-header">Sign up</h2>
           <label id="sign-up-full-name" className="full-name-label form-label">
-            Your full name
+            Your name
           </label>
-          <input className="full-name-input form-input" type="text" name="full-name" tabIndex="1" placeholder="Maria Griffiths"></input>
+          <input className="full-name-input form-input" type="text" name="full_name" tabIndex="1" placeholder="Maria Griffiths"></input>
 
 
           <label id="sign-up-email" className="email-label form-label">

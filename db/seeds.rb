@@ -6,8 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 User.create!(
-  first_name: "Fiona",
-  last_name: "Conn",
+  full_name: "Fiona Conn",
   email: "fiona@example.com",
   email_confirmation: "fiona@example.com",
   password: "password",
@@ -17,14 +16,13 @@ User.create!(
 5.times do
   email = Faker::Internet.email
   user = User.create!(
-    first_name: Faker::Name.first_name,
-    last_name:  Faker::Name.last_name,
+    full_name: Faker::Name.name,
     email:      email,
     email_confirmation: email,
     password:   "password",
     password_confirmation: "password"
   )
-  puts "User: " + user.first_name + " " + user.last_name
+  puts "User: " + user.full_name
 end
 
 def construct_products_and_images(current_dir, category, *args)

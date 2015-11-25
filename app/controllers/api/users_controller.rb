@@ -10,7 +10,7 @@ class Api::UsersController < ApplicationController
 
     if @user.save
       sign_in(@user)
-      render :show
+      render "api/user/show"
     else
 
       render json: { errors: @user.errors.full_messages, status: 422 }
@@ -21,10 +21,9 @@ class Api::UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(
-        :first_name,
-        :last_name,
+        :full_name,
         :email,
-        :email_confirmation
+        :email_confirmation,
         :password,
         :password_confirmation
         )

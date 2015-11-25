@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   attr_accessor :password_confirmation, :email_confirmation
 
-  validates :email, :first_name, :last_name,
+  validates :email, :full_name,
     :password_digest, :session_token, presence: true
 
   validates :email, :session_token, uniqueness: true

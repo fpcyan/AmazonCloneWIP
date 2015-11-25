@@ -2,6 +2,10 @@ var NavBar = React.createClass({
 
   mixins: [ReactRouter.History],
 
+  getInitialState: function () {
+    return({ signedIn: false, username: null });
+  },
+
   onLucky: function (e) {
     var randNum = Math.floor(Math.random() * 19) + 1;
     return "#/products/" + randNum;

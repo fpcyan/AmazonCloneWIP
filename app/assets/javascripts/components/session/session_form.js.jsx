@@ -1,16 +1,16 @@
 var SessionForm = React.createClass({
 
+  mixins: [ReactRouter.History],
+
   onSubmit: function (e) {
     e.preventDefault();
     var path = this.props.location.pathname;
-    if (path === "/signin" || path === "/signup") {
+    if (path === "/sign_in" || path === "/sign_up") {
       path = "/";
     }
     var credentials = $(e.currentTarget).serializeJSON();
-    debugger
     UserApiUtil.signIn(credentials, function () {
       this.history.pushState(null, path);
-      debugger
     }.bind(this));
   },
 
@@ -44,7 +44,7 @@ var SessionForm = React.createClass({
             <div className="divider"></div>
 
             <p className="border-overlay">New here?</p>
-            <button className="create-account-button">Create an account</button>
+            <button className="create-account-button"><a href="#/sign_up">Create an account</a></button>
           </div>
 
         </fieldset>
