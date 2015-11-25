@@ -1,5 +1,7 @@
 var UserForm = React.createClass({
 
+  mixins: [ReactRouter.History],
+
   onSubmit: function (e) {
     e.preventDefault();
     var user = $(e.currentTarget).serializeJSON();

@@ -1,7 +1,5 @@
 var NavBar = React.createClass({
 
-  mixins: [ReactRouter.History],
-
   getInitialState: function () {
     return({ signedIn: false, username: null });
   },
