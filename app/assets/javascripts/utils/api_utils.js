@@ -32,6 +32,21 @@ var ApiUtil = {
         ShowActions.receiveProduct(data);
       }
     });
+  },
+
+  fetchCart: function () {
+    $.ajax({
+      url: "api/shopping_cart_items",
+      type: "get",
+      success: function (data) {
+        debugger;
+        cart = CartActions.mergeCartWithCookie(data);
+        CartActions.receiveCart(data);
+      },
+      error: function (data) {
+        debugger
+      }
+    });
   }
 
 
