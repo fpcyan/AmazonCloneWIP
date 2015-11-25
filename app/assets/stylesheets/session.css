@@ -1,0 +1,32 @@
+
+.direct-route-background {
+  display: block;
+  width: 100%;
+  background: rgba(255, 255, 255, 1)
+}
+
+.direct-disabled {
+  background: rgba(255, 255, 255, 0)
+}
+
+.direct-enabled {
+  display: block;
+  background: rgba(255, 255, 255, 1)
+}
+
+.f-box-inner {
+  display: block;
+  margin: auto;
+  min-width: 350px;
+  max-width: 350px;
+  min-height: 400px;
+  max-height: 400px;
+  color: black;
+  background: white;
+}
+
+.form-button {
+  display: block;
+  background: lightblue;
+  padding: 10px 5px;
+}

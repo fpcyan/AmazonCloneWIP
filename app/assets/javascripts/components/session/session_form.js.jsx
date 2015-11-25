@@ -3,24 +3,24 @@ var SessionForm = React.createClass({
   onSubmit: function (e) {
     e.preventDefault();
     var path = this.props.location.pathname;
-    if (path === "/sign_in" || path === "/sign_up") {
+    if (path === "/signin" || path === "/signup") {
       path = "/";
     }
-    var credentials = ($.currentTarget).serializeJSON();
+    var credentials = $(e.currentTarget).serializeJSON();
     UserApiUtil.signIn(credentials, function () {
       this.history.pushState(null, path);
     }.bind(this));
   },
 
   render: function () {
-    var klass = "disabled";
+    var klass = "direct-disabled";
     if (this.props.location.pathname === "/sign_in") {
-      klass = "enabled";
+      klass = "direct-enabled";
     }
     return (
       <section className={"direct-route-background " + klass}>
         <nav className="nav-logo"><a href="#/">Bazaar</a></nav>
-        <fieldset className="box-inner">
+        <fieldset className="f-box-inner">
 
           <form className="sign-in rt-form" onSubmit={this.onSubmit}>
 
@@ -36,6 +36,7 @@ var SessionForm = React.createClass({
             </label>
             <input className="password-input form-input" type="password" name="password" tabIndex="4"></input>
 
+            <button className="form-button">Create your Bazaar account</button>
           </form>
           <div className="divider-section">
             <div className="divider"></div>

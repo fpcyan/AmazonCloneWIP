@@ -7,13 +7,13 @@ class Api::SessionsController < ApplicationController
 
   def create
     @user = User.find_by_credentials(
-      params[:user][:email],
-      params[:user][:password]
+      params[:email],
+      params[:password]
     )
 
     if @user
       sign_in(@user)
-      render "api/users/show"
+      render "api/session/show"
     else
       render json: { errors: @user.errors.full_messages, status: 401 }
     end

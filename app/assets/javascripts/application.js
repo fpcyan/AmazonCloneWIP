@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.serializeJSON
+//= require jquery.serializejson
 //= require react
 //= require react_ujs
 //= require react_router

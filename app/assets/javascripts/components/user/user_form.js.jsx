@@ -2,9 +2,9 @@ var UserForm = React.createClass({
 
   onSubmit: function (e) {
     e.preventDefault();
-    var attrs = ($.currentTarget).serializeJSON();
+    var attrs = $(e.currentTarget).serializeJSON();
     var path = this.props.location.pathname;
-    if (path === "/sign_in" || path === "/sign_up") {
+    if (path === "/signin" || path === "/signup") {
       path = "/";
     }
     UserApiUtil.createUser(attrs, function () {
