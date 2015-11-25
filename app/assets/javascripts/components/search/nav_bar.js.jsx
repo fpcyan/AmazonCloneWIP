@@ -24,17 +24,17 @@ var NavBar = React.createClass({
         </div>
 
         <div className="nav-main group">
-          <a className="nav-dept">Shop by <strong>Deparment</strong></a>
+          <a className="nav-dept nav-drop-button">Shop by <strong>Department</strong></a>
           <small className="dem-links-wrapper">
-            <a href={this.onLucky()} className="feeling-lucky">I'm Feeling Lucky</a>
-            <a className="adopt">Adopt a Cat</a>
-            <a className="about">About</a>
+            <a href={this.onLucky()} className="nav-bar-link">I'm Feeling Lucky</a>
+            <a className="nav-bar-link">Adopt a Cat</a>
+            <a className="nav-bar-link">About</a>
           </small>
 
           <div className="right-hand-wrapper">
-            <a href="#" className="sign-in">Sign in</a>
-            <a href="#" className="wish-list">Wish list</a>
-            <a href="#" className="cart"><img className="nav-button" src={appImages.shoppingCart} alt="Shopping cart" /></a>
+            <a href="#" className="sign-in nav-drop-button">Sign in</a>
+            <a href="#" className="wish-list nav-drop-button">Wish list</a>
+            <a href="#" className="cart nav-drop-button"><img className="nav-button" src={appImages.shoppingCart} alt="Shopping cart" /></a>
           </div>
         </div>
       </header>
