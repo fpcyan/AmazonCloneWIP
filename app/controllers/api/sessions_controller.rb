@@ -2,6 +2,7 @@ class Api::SessionsController < ApplicationController
 
 
   def show
+    @user = current_user.shopping_cart_items.includes(:product)
     render "api/session/show"
   end
 

@@ -1,5 +1,10 @@
 var App = React.createClass({
 
+  _onProductAddedToCart: function () {
+    if (this.state.id) {
+    }
+  },
+
   _onSignIn: function () {
     if (CurrentUserStore.signedIn()) {
       var user = CurrentUserStore.currentUser();
