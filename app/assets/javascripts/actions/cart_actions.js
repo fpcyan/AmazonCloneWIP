@@ -9,7 +9,14 @@ var CartActions = {
   receiveCart: function (data) {
     AppDispatcher.dispatch({
       actionType: CartConstants.CART_RECEIVED,
-      cart: data
+      products: data
     });
   },
+
+  appProduct: function (product) {
+    AppDispatcher.dispatch({
+      actionType: CartConstants.PRODUCT_ADDED,
+      product: product
+    });
+  }
 };

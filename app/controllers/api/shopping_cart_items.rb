@@ -4,4 +4,16 @@ class Api::ShoppingCartsController < ApplicationController
     @shopping_cart_items = current_user.shopping_cart_items
     render :index
   end
+
+  def create
+
+  end
+
+  def update
+
+  end
+
+  def destroy
+
+  end
 end

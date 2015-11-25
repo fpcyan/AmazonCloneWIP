@@ -75,6 +75,11 @@
   color: rgba(255, 255, 255, 1);
 }
 
+.cart-button:active {
+  border: 1px solid rgba(115, 55, 15, 1);
+  box-shadow: 0 0 10px rgba(115, 55, 15, 1);
+}
+
 .cart-button-img {
   display: none;
 }
@@ -87,6 +92,7 @@
 }
 .js-qty-enabled {
   opacity: 1;
+  cursor: pointer;
 }
 
 .js-qty-disabled {
@@ -101,4 +107,5 @@
   font-size: 16px;
   text-align: center;
   padding: 10px 0;
+  cursor: pointer;
 }

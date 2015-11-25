@@ -30,6 +30,10 @@
           _resetCartProducts(payload.products);
           CartStore.emit(CHANGE_EVENT);
           break;
+        case CartConstants.PRODUCT_ADDED:
+          _addProduct(payload.product);
+          CartStore.emit(CHANGE_EVENT);
+          break;
       }
     })
 
