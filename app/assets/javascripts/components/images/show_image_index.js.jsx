@@ -41,7 +41,6 @@ var ShowImageIndex = React.createClass({
   },
 
   render: function () {
-    console.log("render!");
     var thumbnails = <button className="button-thumb rt-thumb-hover"><img className="alt-thumb-image" src={appImages.loadingGif} /></button>;
 
     if (this.props.images) {

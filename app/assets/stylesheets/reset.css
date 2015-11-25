@@ -6,8 +6,8 @@ button, article, footer, small {
   padding: 0;
   border: 0;
   outline: 0;
-  font: inherit;
 
+  font: inherit;
   box-sizing: border-box;
   text-align: inherit;
   text-decoration: inherit;
@@ -17,7 +17,7 @@ button, article, footer, small {
 }
 
 body {
-  font-family: Helvetica sans-serif;
+  font-family: Helvetica;
   font-size: 16px;
   line-height: 1;
   color: #000;

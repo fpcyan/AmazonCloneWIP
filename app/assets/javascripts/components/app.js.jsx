@@ -1,48 +1,32 @@
 var App = React.createClass({
 
+  _onSignIn: function () {
+    if (CurrentUserStore.signedIn()) {
+      var user = CurrentUserStore.currentUser();
+      this.setState({ id: user.id, full_name: user.full_name });
+    } else {
+      this.setState({ id: null, full_name: "", cart: [] });
+    }
+  },
+
   getInitialState: function () {
-    return ({ user: null, cart: CartStore.all() });
+    return ({ id: null, full_name: "", cart: [] });
   },
 
   componentDidMount: function () {
-    CurrentUserStore.addChangeListener(this._handleSession);
-    CartStore.addChangeListener(this._onCartChange);
-    ApiUtil.fetchCurrentUser();
+    UserApiUtil.fetchCurrentUser();
+    CurrentUserStore.addChangeListener(this._onSignIn);
   },
 
   componentWillUnmount: function () {
-    CurrentUserStore.removeChangeListener(this._handleSession);
-    CartStore.removeChangeListener(this._onCartChange);
+    CurrentUserStore.removeChangeListener(this.onSignIn);
   },
-
-  _handleSession: function () {
-    if (CurrentUserStore.checkSignedIn) {
-      return this.setState({ user: CurrentUserStore.user() });
-    } else {
-      ApiUtil.saveCurrentCart(CartStore.allProductIds);
-      this.setState({ user: CurrentUserStore.user() });
-    }
-  },
-
-  _onCartChange: function () {
-    if (this.state.user && CartStore.all().length > 0) {
-      ApiUtil.saveCurrentCart(CartStore.allProductIds);
-    } else if (!this.state.user) {
-      cookie.save('sessionCart', CartStore.all());
-    }
-
-    return this.setState({ cart: CartStore.all() });
-  },
-
-
-
 
   render: function () {
 
     return (
       <main>
-        <NavBar />
-        <ShoppingCart />
+        <NavBar userName={this.state.full_name} />
         { this.props.children }
       </main>
     );

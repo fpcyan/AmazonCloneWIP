@@ -1,14 +1,23 @@
 var NavBar = React.createClass({
 
-  mixins: [ReactRouter.History],
+  getInitialState: function () {
+    return({ hover: false, dept: null, signIn: null, wishList: null, cart: null });
+  },
 
-  onLucky: function (e) {
-    e.preventDefault();
+
+  feelingLucky: function () {
     var randNum = Math.floor(Math.random() * 19) + 1;
-    this.history.pushState(null, "products/" + randNum);
+    return "#/products/" + randNum;
+  },
+
+  handleDropdown: function (e) {
+    console.log("hoVERING");
   },
 
   render: function (){
+    var signInGreeting = this.props.userName ? this.props.userName.split(" ")[0] : "Sign in to";
+
+
     return (
       <header className="header">
 
@@ -23,17 +32,33 @@ var NavBar = React.createClass({
         </div>
 
         <div className="nav-main group">
-          <a className="nav-dept">Shop by <strong>Deparment</strong></a>
+          <ul onMouseEnter={this.handleDropdown}  className="nav-drop">
+            <a className="nav-dept nav-drop-link"><small>Shop by</small>
+            <strong>Department</strong></a>
+          </ul>
           <small className="dem-links-wrapper">
-            <a href="#" onClick={this.onLucky} className="feeling-lucky">I'm Feeling Lucky</a>
-            <a className="adopt">Adopt a Cat</a>
-            <a className="about">About</a>
+            <a href={this.feelingLucky()} className="nav-bar-link">I'm Feeling Lucky</a>
+            <a className="nav-bar-link">Adopt a Cat</a>
+            <a className="nav-bar-link">About</a>
           </small>
 
           <div className="right-hand-wrapper">
-            <a href="#" className="sign-in">Sign in</a>
-            <a href="#" className="wish-list">Wish list</a>
-            <a href="#" className="cart"><img className="nav-button" src={appImages.shoppingCart} alt="Shopping cart" /></a>
+            <ul onMouseEnter={this.handleDropdown} className="nav-drop">
+              <a href="#/sign_in" className="sign-in-link nav-drop-link">
+                <small>{ signInGreeting }</small>
+                <strong>Your Account</strong>
+              </a>
+                { this.state.signIn }
+            </ul>
+            <ul onMouseEnter={this.handleDropdown}  className="nav-drop">
+              <a href="#" className="wish-list nav-drop-link">
+                <small>Your</small>
+                <strong>Wish list</strong>
+              </a>
+            </ul>
+            <ul onMouseEnter={this.handleDropdown}  className="nav-drop">
+              <a href="#" className="cart nav-drop-link"><img className="nav-button-image" src={appImages.shoppingCart} alt="Shopping cart" /></a>
+            </ul>
           </div>
         </div>
       </header>
