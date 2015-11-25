@@ -29,7 +29,7 @@ var ProductMgmtForm = React.createClass({
     }
 
     return (
-      <div className="mgmt-box-inner">
+      <fieldset className="box-inner">
         <form className="mgmt-form">
           <span className="product-price-summary">
             <strong className="product-price">${(this.props.product.price / 100).toFixed(2)}</strong>
@@ -57,7 +57,7 @@ var ProductMgmtForm = React.createClass({
 
           <button className="wish-list-button">Add to Wish List</button>
         </form>
-      </div>
+      </fieldset>
     );
 
   }

@@ -3,7 +3,7 @@
 
 var UserApiUtil = {
 
-  createUser: function (attrs, callback) {
+  createUser: function (attrs) {
     $.ajax({
       url: "api/users",
       type: "post",

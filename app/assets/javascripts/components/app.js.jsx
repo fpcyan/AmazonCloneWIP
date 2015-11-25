@@ -5,7 +5,7 @@ var App = React.createClass({
     return (
       <main>
         <NavBar />
-        <ShoppingCart />
+
         { this.props.children }
       </main>
     );
