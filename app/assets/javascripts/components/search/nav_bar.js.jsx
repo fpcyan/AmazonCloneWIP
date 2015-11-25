@@ -33,7 +33,8 @@ var NavBar = React.createClass({
 
         <div className="nav-main group">
           <ul onMouseEnter={this.handleDropdown}  className="nav-drop">
-            <a className="nav-dept nav-drop-link">Shop by <strong>Department</strong></a>
+            <a className="nav-dept nav-drop-link"><small>Shop by</small>
+            <strong>Department</strong></a>
           </ul>
           <small className="dem-links-wrapper">
             <a href={this.feelingLucky()} className="nav-bar-link">I'm Feeling Lucky</a>
@@ -50,10 +51,13 @@ var NavBar = React.createClass({
                 { this.state.signIn }
             </ul>
             <ul onMouseEnter={this.handleDropdown}  className="nav-drop">
-            <a href="#" className="wish-list nav-drop-link">Wish list</a>
+              <a href="#" className="wish-list nav-drop-link">
+                <small>Your</small>
+                <strong>Wish list</strong>
+              </a>
             </ul>
             <ul onMouseEnter={this.handleDropdown}  className="nav-drop">
-            <a href="#" className="cart nav-drop-link"><img className="nav-button-image" src={appImages.shoppingCart} alt="Shopping cart" /></a>
+              <a href="#" className="cart nav-drop-link"><img className="nav-button-image" src={appImages.shoppingCart} alt="Shopping cart" /></a>
             </ul>
           </div>
         </div>
