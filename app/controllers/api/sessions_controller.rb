@@ -9,16 +9,15 @@ class Api::SessionsController < ApplicationController
 
     if @user
       sign_in(@user)
-      redirect_to root_url
+      render "api/users/show"
     else
-      # flash.now[:errors] = "Incorrect email or password."
-      render :new
+      render json: { errors: @user.errors.full_messages, status: 401 }
     end
   end
 
   def destroy
     sign_out!
-    redirect_to root_url
+    render json: {}
   end
 
 end
