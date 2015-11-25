@@ -3,7 +3,7 @@
 
 var UserApiUtil = {
 
-  createUser: function (attrs) {
+  createUser: function (attrs, success) {
     $.ajax({
       url: "api/users",
       type: "post",
@@ -11,7 +11,7 @@ var UserApiUtil = {
       data: attrs,
       success: function (user) {
         UserActions.receiveCurrentUser(user);
-        // callback??
+        success && success();
       }
     });
   },
@@ -24,7 +24,7 @@ var UserApiUtil = {
       data: credentials,
       success: function (user) {
         UserActions.receiveCurrentUser(user);
-        // success && success(); ??
+        success && success();
       }
     });
   },
