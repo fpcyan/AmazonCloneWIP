@@ -43,10 +43,8 @@ var UserApiUtil = {
       url: "api/session",
       type: "get",
       dataType: "json",
-      data: credentials,
       success: function (user) {
         UserActions.receiveCurrentUser(user);
-        // success && success(); ??
       }
     });
   }

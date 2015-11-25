@@ -13,6 +13,14 @@
       return $.extend({}, _user);
     },
 
+    signedIn: function () {
+      if (typeof _user.id === undefined) {
+        return false;
+      }
+
+      return true;
+    },
+
     addChangeListener: function (callback) {
       this.on(CHANGE_EVENT, callback);
     },
@@ -25,7 +33,7 @@
       switch (payload.actionType) {
         case UserConstants.CURRENT_USER_RECEIVED:
           _resetUser(payload.user);
-          ShowStore.emit(CHANGE_EVENT);
+          CurrentUserStore.emit(CHANGE_EVENT);
           break;
       }
     })

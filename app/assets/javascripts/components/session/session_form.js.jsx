@@ -38,7 +38,7 @@ var SessionForm = React.createClass({
             </label>
             <input className="password-input form-input" type="password" name="password" tabIndex="4"></input>
 
-            <button className="form-button">Create your Bazaar account</button>
+            <button className="form-button">Sign in</button>
           </form>
           <div className="divider-section">
             <div className="divider"></div>

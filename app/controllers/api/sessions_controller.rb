@@ -2,7 +2,7 @@ class Api::SessionsController < ApplicationController
 
 
   def show
-    render :show
+    render json: current_user
   end
 
   def create
