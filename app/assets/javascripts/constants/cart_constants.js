@@ -1,5 +1,5 @@
 
 
 var CartConstants = {
-  CART RECEIVED: "cart received"
+  CART_RECEIVED: "cart received"
 };
