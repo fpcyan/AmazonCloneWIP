@@ -1,6 +1,3 @@
-
-
-
 var UserApiUtil = {
 
   createUser: function (attrs, success) {
@@ -23,7 +20,6 @@ var UserApiUtil = {
       dataType: "json",
       data: credentials,
       success: function (user) {
-        debugger;
         UserActions.receiveCurrentUser(user);
         success && success();
       }

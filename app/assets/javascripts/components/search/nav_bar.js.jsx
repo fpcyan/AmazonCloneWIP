@@ -3,9 +3,8 @@ var NavBar = React.createClass({
   mixins: [ReactRouter.History],
 
   onLucky: function (e) {
-    e.preventDefault();
     var randNum = Math.floor(Math.random() * 19) + 1;
-    this.history.pushState(null, "products/" + randNum);
+    return "#/products/" + randNum;
   },
 
   render: function (){
@@ -25,7 +24,7 @@ var NavBar = React.createClass({
         <div className="nav-main group">
           <a className="nav-dept">Shop by <strong>Deparment</strong></a>
           <small className="dem-links-wrapper">
-            <a href="#" onClick={this.onLucky} className="feeling-lucky">I'm Feeling Lucky</a>
+            <a href={this.onLucky()} className="feeling-lucky">I'm Feeling Lucky</a>
             <a className="adopt">Adopt a Cat</a>
             <a className="about">About</a>
           </small>

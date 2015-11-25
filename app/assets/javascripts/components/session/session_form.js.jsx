@@ -7,8 +7,10 @@ var SessionForm = React.createClass({
       path = "/";
     }
     var credentials = $(e.currentTarget).serializeJSON();
+    debugger
     UserApiUtil.signIn(credentials, function () {
       this.history.pushState(null, path);
+      debugger
     }.bind(this));
   },
 

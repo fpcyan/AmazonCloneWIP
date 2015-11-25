@@ -1,4 +1,5 @@
 (function (root) {
+  CHANGE_EVENT = "change event";
 
   var _user = {};
 
@@ -21,7 +22,6 @@
     },
 
     dispatcherId: AppDispatcher.register(function (payload) {
-
       switch (payload.actionType) {
         case UserConstants.CURRENT_USER_RECEIVED:
           _resetUser(payload.user);
