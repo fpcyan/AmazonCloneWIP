@@ -18,6 +18,12 @@ var ProductMgmtForm = React.createClass({
     }
   },
 
+  addToCart: function (e) {
+    e.preventDefault();
+    $(e.currentTarget).addClass("clicked");
+    debugger;
+  },
+
   render: function () {
 
     var qtyMinusClass = "js-qty-enabled";
@@ -50,7 +56,7 @@ var ProductMgmtForm = React.createClass({
               </button>
             </div>
 
-            <button className="cart-button">
+            <button onClick={this.addToCart} className="cart-button">
               <p className={"cart-button-txt " + qtyMinusClass}>Add to Cart</p>
             </button>
           </div>

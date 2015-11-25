@@ -43,8 +43,9 @@ var UserApiUtil = {
       url: "api/session",
       type: "get",
       dataType: "json",
-      success: function (user) {
-        UserActions.receiveCurrentUser(user);
+      success: function (data) {
+        UserActions.receiveCurrentUser(data.user);
+        CartActions.mergeCartWithCookie(data.cart);
       }
     });
   }

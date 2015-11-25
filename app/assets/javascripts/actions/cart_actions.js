@@ -1,8 +1,9 @@
 
 
 var CartActions = {
-  mergeCartWithCookie: function (data) {
-
+  mergeCartWithCookie: function (cart) {
+    var newCart = cart.concat(CartStore.all());
+    CartActions.receiveCart(newCart);
   },
 
   receiveCart: function (data) {

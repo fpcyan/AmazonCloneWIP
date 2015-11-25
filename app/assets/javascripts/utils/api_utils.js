@@ -32,23 +32,5 @@ var ApiUtil = {
         ShowActions.receiveProduct(data);
       }
     });
-  },
-
-  fetchCurrentUser: function (sessionCart) {
-    $.ajax({
-      url: "api/shopping_cart_items",
-      type: "get",
-      success: function (data) {
-        debugger;
-
-        cart = CartActions.mergeCartWithCookie(data.cart, sessionCart);
-        CartActions.receiveCart(data);
-      },
-      error: function (data) {
-        debugger
-      }
-    });
   }
-
-
 };

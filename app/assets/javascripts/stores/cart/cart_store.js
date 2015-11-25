@@ -12,7 +12,7 @@
   CartStore = root.CartStore = $.extend({}, EventEmitter.prototype, {
 
     all: function () {
-      _products.slice();
+      return _products.slice();
     },
 
     addChangeListener: function (callback) {

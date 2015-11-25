@@ -60,28 +60,29 @@ var ShowProduct = React.createClass({
 
     return(
       <main className="show-product-main">
+        <section className="product-image-specs-cart-wrapper group">
+          <div className="product-image-specs-wrapper">
+            <div className="product-image-index">
+              { imageIndex }
+            </div>
 
-        <section className="product-image-specs-wrapper">
-          <div className="product-image-index">
-            { imageIndex }
-          </div>
+            <div className="product-specs-wrapper">
+              <h1 className="product-name">{this.state.product.product_name}</h1>
+              <span className="review-summary">Placeholder text</span>
 
-          <div className="product-specs-wrapper">
-            <h1 className="product-name">{this.state.product.product_name}</h1>
-            <span className="review-summary">Placeholder text</span>
+              <span className="stock">{this.state.product.stock}</span>
 
-            <span className="stock">{this.state.product.stock}</span>
+              { specs }
 
-            { specs }
-
+            </div>
           </div>
 
           <div className="form-outer-box">
             <ProductMgmtForm product={this.state.product} />
           </div>
-
         </section>
         <div className="divider"></div>
+
         <section className="product-description-index">
         <h2 className="description-header"> Product Description </h2>
           { description }
