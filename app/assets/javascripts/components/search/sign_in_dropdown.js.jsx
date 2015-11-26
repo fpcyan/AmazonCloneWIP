@@ -4,10 +4,6 @@ var SignInDropdown = React.createClass({
 
   },
 
-  shouldComponentUpdate: function (nextProps, nextState) {
-    return false;
-  },
-
   render: function () {
     var signInGreeting, signInNav, signDropdown;
     if (this.props.userName) {
@@ -25,7 +21,6 @@ var SignInDropdown = React.createClass({
           <div key="sign-out-3" className="nav-sign-up drop-item"> <a key="small-button-4" href="#/sign_up" className="small-button">Sign up!</a> </div>,
       ]);
     }
-
 
 
     return (

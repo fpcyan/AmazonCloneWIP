@@ -18,7 +18,6 @@ var WishListDropdown = React.createClass({
         <div key="sign-out-wl-2" className="nav-sign-in drop-item"> <a href="#/sign_in" className="small-button"> Sign in!</a> </div>
       ]);
     }
-    
     return (
       <div key="wish-list-nav-1" className="nav-drop">
         <div>
@@ -26,12 +25,13 @@ var WishListDropdown = React.createClass({
             <small>Your</small>
             <strong>Wish list</strong>
           </a>
-        </div>
-          <div className="nav-drop-box">
-            <div className="drop-box-inner">
+
+          <div key="wl-dropdown-box-1" className="nav-drop-box">
+            <div key="wl-dropdown-box-2" className="drop-box-inner">
               { wishList }
             </div>
           </div>
+        </div>
       </div>
     );
 
