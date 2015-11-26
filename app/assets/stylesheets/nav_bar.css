@@ -142,7 +142,7 @@
   font-size: 14px;
 }
 
-.nav-dept > small {
+.nav-all > small {
   text-align: left;
 }
 
@@ -185,14 +185,18 @@
 .nav-drop {
   position: relative;
 }
+
 .nav-drop-link {
+  display: block;
+}
+.nav-all {
   display: block;
   border: 1px solid #4D0C02;
   cursor: pointer;
 
 }
 
-.nav-drop-link:hover {
+.nav-all:hover {
   border: 1px inset rgba(255, 255, 255, 0.6);
 }
 
@@ -243,7 +247,7 @@
   transition: all 0.5s ease-in-out 0.5;
 }
 
-.nav-drop-link:hover + .nav-drop-box {
+.nav-all:hover > .nav-drop-box {
   display: block;
   transition: all 0.5s ease-in-out 2s;
 }
@@ -262,7 +266,7 @@
   bottom: -8px;
 }
 
-.nav-drop-link:hover > strong::before {
+.nav-all:hover > .nav-drop-link > strong::before {
   display: block;
 }
 

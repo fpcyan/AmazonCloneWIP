@@ -18,13 +18,13 @@ var CartDropdown = React.createClass({
           </div>
         );
       });
-      cartPreviewList.push(<div key="full-ct-1" className="nav-emphasis drop-item">Order Total: ${(totalPrice / 100).toFixed(2)}</div>);
-      cartPreviewList.push(<div key="full-ct-2" className="nav-cart drop-item"><a href="#/cart" className="small-button">See your cart.</a></div>);
+      cartPreviewList.push(<div key="full-ct-1" className="nav-all emphasis drop-item">Order Total: ${(totalPrice / 100).toFixed(2)}</div>);
+      cartPreviewList.push(<div key="full-ct-2" className="nav-all drop-item"><a href="#/cart" className="small-button">See your cart.</a></div>);
     } else {
 
       cartPreviewList = ([
-        <div key="empty-ct-1" className="nav-cart drop-item">Nothing in your cart!</div>,
-        <div key="empty-ct-2" className="nav-cart drop-item">Click "Add to Cart" on a product to get started.</div>
+        <div key="empty-ct-1" className="nav-all drop-item">Nothing in your cart!</div>,
+        <div key="empty-ct-2" className="nav-all drop-item">Click "Add to Cart" on a product to get started.</div>
       ]);
 
     }

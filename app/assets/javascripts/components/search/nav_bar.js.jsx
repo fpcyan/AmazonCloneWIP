@@ -20,7 +20,7 @@ var NavBar = React.createClass({
 
     departmentList = ["Jewelry", "Kittens for Adoption", "Luxury Items", "Electronics"].map( function(dept) {
       return (
-        <div key={dept + 219} className="nav-dept drop-item">
+        <div key={dept + 219} className="nav-dept nav-all drop-item">
           {dept}
         </div>
       );
@@ -44,8 +44,8 @@ var NavBar = React.createClass({
         <section className="nav-main group">
 
           <div key="dept-nav-1" className="nav-drop">
-            <div>
-              <a className="nav-dept nav-drop-link">
+            <div className="nav-dept nav-all">
+              <a href="#" className="nav-drop-link">
                 <small>Shop by</small>
                 <strong>Department</strong>
               </a>
@@ -69,11 +69,13 @@ var NavBar = React.createClass({
             <WishListDropdown userName={this.props.userName} />
 
             <div key="cart-prev-nav-1" className="nav-drop">
-              <a href="#" className="cart nav-drop-link">
-                {cartSize}
+              <div className="cart nav-all">
+                <a href="#" className="nav-drop-link">
+                  {cartSize}
                 <img className="cart-button-image" src={appImages.shoppingCart} alt="Shopping cart" />
+                </a>
                 <CartDropdown cart={this.props.cart} />
-              </a>
+              </div>
             </div>
 
           </div>
