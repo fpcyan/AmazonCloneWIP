@@ -148,6 +148,7 @@
 
 .nav-drop-link > strong {
   display: block;
+  position: relative;
   font-weight: 600;
 }
 
@@ -188,32 +189,92 @@
   display: block;
   border: 1px solid #4D0C02;
   cursor: pointer;
+
 }
 
 .nav-drop-link:hover {
   border: 1px inset rgba(255, 255, 255, 0.6);
 }
 
+.nav-drop-link > strong::after {
+  display: block;
+  content: "";
+  position: relative;
+  right: -5px;
+  top: 8px;
+  width: 0;
+  height: 0;
+  border-bottom: none;
+  border-top: 5px solid rgba(255, 255, 255, 0.7);
+  border-left: 5px solid rgba(0, 0, 0, 0);
+  border-right: 5px solid rgba(0, 0, 0, 0);
+  float: right;
+
+  transition-property: all;
+  transition-delay: 0.5s;
+}
+/*
+.nav-drop-link > img:after {
+  display: block;
+  content: "";
+  right: -5px;
+  top: 8px;
+  width: 0;
+  height: 0;
+  border-bottom: none;
+  border-top: 5px solid rgba(255, 255, 255, 0.7);
+  border-left: 5px solid rgba(0, 0, 0, 0);
+  border-right: 5px solid rgba(0, 0, 0, 0);
+  float: right;
+}*/
+
 /* modal styling */
 
 .nav-drop-box {
-  display: block;
+  display: none;
   position:absolute;
+  top: 50%;
+  left: 3px;
+  z-index: 10;
+
+  color: black;
+  transition: all 0.5s ease-in-out 0.5;
 }
-.drop-arrow {
+
+.nav-drop-link:hover > .nav-drop-box {
   display: block;
+  transition: all 0.5s ease-in-out 2s;
+}
+
+.nav-drop-link > strong::before {
+  content: "";
+  position: absolute;
+  display: none;
   width: 0;
   height: 0;
   border-top: none;
-  border-bottom: 5px solid rgba(255, 255, 255, 1);
-  border-left: 5px solid rgba(0, 0, 0, 0);
-  border-right: 5px solid rgba(0, 0, 0, 0);
+  border-bottom: 10px solid rgba(240, 240, 240, 1);
+  border-left: 10px solid rgba(0, 0, 0, 0);
+  border-right: 10px solid rgba(0, 0, 0, 0);
+  right: -10px;
+  bottom: -8px;
+}
+
+.nav-drop-link:hover > strong::before {
+  display: block;
 }
 
 .drop-box-inner {
-  display: block;
-  background: rgba(255, 255, 255, 1);
+  position: absolute;
+  top: 21px;
+
+  width: 250px;
+  background: rgba(240, 240, 240, 1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+  border-radius: 3px;
 }
+
+
 
 .nav-drop-modal {
   display: block;
