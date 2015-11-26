@@ -1,10 +1,6 @@
 
 
 var CartActions = {
-  mergeCartWithCookie: function (cart) {
-    var newCart = cart.concat(CartStore.all());
-    CartActions.receiveCart(newCart);
-  },
 
   receiveCart: function (data) {
     AppDispatcher.dispatch({
@@ -13,7 +9,7 @@ var CartActions = {
     });
   },
 
-  appProduct: function (product) {
+  addProduct: function (product) {
     AppDispatcher.dispatch({
       actionType: CartConstants.PRODUCT_ADDED,
       product: product

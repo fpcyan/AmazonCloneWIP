@@ -1,3 +1,4 @@
+require 'byebug'
 class User < ActiveRecord::Base
   attr_accessor :password_confirmation, :email_confirmation
 
@@ -12,6 +13,20 @@ class User < ActiveRecord::Base
 
   has_many :shopping_cart_items, inverse_of: :user, dependent: :destroy
   has_many :products, through: :shopping_cart_items, source: :product
+
+
+## Shopping Cart
+
+  def update_shopping_cart(items)
+    items.each do |item|
+      unless !!self.shopping_cart_items.where(product_id: item["product_id"])
+        debugger
+        self.shopping_cart_items.create!(product_id: item["product_id"], quantity: item["quantity"])
+      end
+    end
+    nil
+  end
+
 
 ## Auth
 

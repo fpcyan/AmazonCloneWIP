@@ -4,6 +4,9 @@ var NavBar = React.createClass({
     return({ hover: false, dept: null, signIn: null, wishList: null, cart: null });
   },
 
+  componentWillReceiveProps: function (nextProps) {
+    console.log(this.props, nextProps);
+  },
 
   feelingLucky: function () {
     var randNum = Math.floor(Math.random() * 19) + 1;
@@ -16,8 +19,8 @@ var NavBar = React.createClass({
 
   render: function (){
     var signInGreeting = this.props.userName ? this.props.userName.split(" ")[0] : "Sign in to";
-
-
+    var cartSize = this.props.cart.length ? <p className="cart-qty">this.props.cart.length</p> : null;
+    console.log("navbar render");
     return (
       <header className="header">
 
@@ -57,7 +60,7 @@ var NavBar = React.createClass({
               </a>
             </ul>
             <ul onMouseEnter={this.handleDropdown}  className="nav-drop">
-              <a href="#" className="cart nav-drop-link"><img className="nav-button-image" src={appImages.shoppingCart} alt="Shopping cart" /></a>
+              <a href="#" className="cart nav-drop-link">{cartSize}<img className="cart-button-image" src={appImages.shoppingCart} alt="Shopping cart" /></a>
             </ul>
           </div>
         </div>

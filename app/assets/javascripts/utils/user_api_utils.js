@@ -20,7 +20,8 @@ var UserApiUtil = {
       dataType: "json",
       data: credentials,
       success: function (user) {
-        UserActions.receiveCurrentUser(user);
+        UserActions.receiveCurrentUser(data.user);
+        CartActions.mergeCartWithCookie(data.cart);
         success && success();
       }
     });
@@ -33,7 +34,7 @@ var UserApiUtil = {
       dataType: "json",
       success: function () {
         UserActions.receiveCurrentUser({});
-        // success && success(); ??
+        CartActions.receiveCart([]);
       }
     });
   },
@@ -44,9 +45,9 @@ var UserApiUtil = {
       type: "get",
       dataType: "json",
       success: function (data) {
-        debugger
+        debugger;
         UserActions.receiveCurrentUser(data.user);
-        CartActions.mergeCartWithCookie(data.cart);
+        CartActions.receiveCart(data.cart);
       }
     });
   }
