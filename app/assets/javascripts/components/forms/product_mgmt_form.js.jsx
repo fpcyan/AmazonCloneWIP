@@ -20,7 +20,7 @@ var ProductMgmtForm = React.createClass({
 
   addToCart: function (e) {
     e.preventDefault();
-    CartActions.addProduct(this.props.product);
+    CartActions.addProduct({product: this.props.product, quantity: this.state.qty });
   },
 
   render: function () {

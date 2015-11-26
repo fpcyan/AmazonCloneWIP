@@ -172,9 +172,11 @@
 .cart-qty {
   display: block;
   position: absolute;
-  font-size: 15px;
-  top: 17.5;
-  left: 20px;
+  font-size: 23px;
+  top: 5px;
+  left: 17px;
+  color: rgba(255, 255, 255, 1);
+  transform: rotate(27deg);
 }
 
 /* modal interactive units */

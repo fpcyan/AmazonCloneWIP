@@ -10,6 +10,11 @@
   }
 
   function _addProduct(newProduct) {
+    for (var i = 0; i < _products.length; i++) {
+      if (newProduct.product.id === _products[i].product.id) {
+        return _products[i].quantity += newProduct.quantity;
+      }
+    }
     _products.push(newProduct);
   }
 

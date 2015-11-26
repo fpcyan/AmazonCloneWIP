@@ -1,4 +1,3 @@
-require 'byebug'
 class User < ActiveRecord::Base
   attr_accessor :password_confirmation, :email_confirmation
 
@@ -19,9 +18,14 @@ class User < ActiveRecord::Base
 
   def update_shopping_cart(items)
     items.each do |item|
-      unless !!self.shopping_cart_items.where(product_id: item["product_id"])
-        debugger
+    query = self.shopping_cart_items.where(product_id: item["product_id"])
+    query_len = query.length
+      if query_len === 0
         self.shopping_cart_items.create!(product_id: item["product_id"], quantity: item["quantity"])
+      elsif query_len === 1
+        query[0].update(quantity: item["quantity"])
+      else
+        raise "TWO OF A KIND~~~"
       end
     end
     nil

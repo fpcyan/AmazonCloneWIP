@@ -45,7 +45,6 @@ var UserApiUtil = {
       type: "get",
       dataType: "json",
       success: function (data) {
-        debugger;
         UserActions.receiveCurrentUser(data.user);
         CartActions.receiveCart(data.cart);
       }

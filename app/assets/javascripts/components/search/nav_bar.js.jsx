@@ -5,7 +5,6 @@ var NavBar = React.createClass({
   },
 
   componentWillReceiveProps: function (nextProps) {
-    console.log(this.props, nextProps);
   },
 
   feelingLucky: function () {
@@ -14,12 +13,11 @@ var NavBar = React.createClass({
   },
 
   handleDropdown: function (e) {
-    console.log("hoVERING");
   },
 
   render: function (){
     var signInGreeting = this.props.userName ? this.props.userName.split(" ")[0] : "Sign in to";
-    var cartSize = this.props.cart.length ? <p className="cart-qty">this.props.cart.length</p> : null;
+    var cartSize = this.props.cart.length ? <p className="cart-qty">{this.props.cart.length}</p> : null;
     console.log("navbar render");
     return (
       <header className="header">
