@@ -233,6 +233,8 @@
 .nav-drop-box {
   display: none;
   position:absolute;
+  height: 100%;
+  width: 100%;
   top: 50%;
   left: 3px;
   z-index: 10;
@@ -241,7 +243,7 @@
   transition: all 0.5s ease-in-out 0.5;
 }
 
-.nav-drop-link:hover > .nav-drop-box {
+.nav-drop-link:hover + .nav-drop-box {
   display: block;
   transition: all 0.5s ease-in-out 2s;
 }

@@ -22,17 +22,7 @@ var DepartmentDropdown = React.createClass({
 
 
     return (
-      <ul key="sign-in-nav-1" className="nav-drop">
-        <a key="sign-in-parent" href={this.props.nav} className="sign-in-link nav-drop-link">
-          <small>{this.props.greeting}</small>
-          <strong>Your Account</strong>
-          <div className="nav-drop-box">
-            <div className="drop-box-inner">
-              {this.props.dropdown}
-            </div>
-          </div>
-        </a>
-      </ul>
+      <div></div>
     );
 
   }
