@@ -1,4 +1,4 @@
-class Api::ProductsController < ApplicationController
+class Api::ProductsController < Api::ApiController
 
   def index
     if params[:home]

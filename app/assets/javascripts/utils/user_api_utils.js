@@ -19,9 +19,9 @@ var UserApiUtil = {
       type: "post",
       dataType: "json",
       data: credentials,
-      success: function (user) {
+      success: function (data) {
         UserActions.receiveCurrentUser(data.user);
-        CartActions.mergeCartWithCookie(data.cart);
+        CartActions.receiveCart(data.cart);
         success && success();
       }
     });
@@ -47,6 +47,10 @@ var UserApiUtil = {
       success: function (data) {
         UserActions.receiveCurrentUser(data.user);
         CartActions.receiveCart(data.cart);
+      },
+      error: function (data) {
+        debugger
+        UserActions.setAnonymousUser();
       }
     });
   }

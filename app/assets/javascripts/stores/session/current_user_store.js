@@ -35,6 +35,10 @@
           _resetUser(payload.user);
           CurrentUserStore.emit(CHANGE_EVENT);
           break;
+        case UserConstants.ANONYMOUS_USER_RECEIVED:
+          _resetUser({});
+          CurrentUserStore.emit(CHANGE_EVENT);
+          break;
       }
     })
 

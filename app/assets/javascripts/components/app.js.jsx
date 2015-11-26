@@ -35,7 +35,6 @@ var App = React.createClass({
   },
 
   render: function () {
-
     return (
       <main>
         <NavBar userName={this.state.full_name} cart={this.state.cart} />

@@ -1,4 +1,4 @@
-class Api::ShoppingCartItemsController < ApplicationController
+class Api::ShoppingCartItemsController < Api::ApiController
 
   def index
     render "api/shopping_cart_items/index"

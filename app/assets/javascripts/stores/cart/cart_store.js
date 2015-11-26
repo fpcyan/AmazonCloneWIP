@@ -61,8 +61,11 @@
           }
           break;
         case CartConstants.PRODUCT_ADDED:
-          _addProduct(payload.product);
-          CartStore.emit(CHANGE_EVENT);
+          if (_addProduct(payload.product)) {
+            CartStore.emit(CHANGE_EVENT);
+          } else {
+            debugger;
+          }
           break;
       }
     })

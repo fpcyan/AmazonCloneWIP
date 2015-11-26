@@ -68,6 +68,10 @@ class User < ActiveRecord::Base
     save!
   end
 
+  def self.generate_session_token!
+    return SecureRandom::urlsafe_base64
+  end
+
   private
 
     def ensure_session_token

@@ -1,5 +1,7 @@
 var Home = React.createClass({
 
+  mixins: [ReactRouter.History],
+
   getInitialState: function () {
     return ({ features: FeaturedStore.allFeatures() });
   },
