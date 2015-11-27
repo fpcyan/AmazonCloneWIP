@@ -28,7 +28,7 @@ var CartItem = React.createClass({
 
     linkBack = "#/products/" + this.props.product.id;
     productName = this.props.product.product_name;
-
+    debugger;
     return (
       <div>
         <a href={linkBack} className="cart-prev carousel-card">
@@ -38,7 +38,7 @@ var CartItem = React.createClass({
         <div className="product-summary-box">
           <span className="same-day-delivery">{productName}</span>
           <span className="small-stock">{inStock}</span>
-
+          <span className="small-price">{this.props.product.price}</span>
           <div className="qty-button-wrapper">
             <button className={"i-minus " + qtyMinusClass}
               onClick={this.props.downClick}>
