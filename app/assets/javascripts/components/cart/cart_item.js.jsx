@@ -11,6 +11,7 @@ var CartItem = React.createClass({
     return true;
   },
 
+
   render: function () {
     var linkBack, productName, inStock;
 
@@ -44,7 +45,7 @@ var CartItem = React.createClass({
                 <img title="minus one quantity" src={appImages.minusSign}/>
               </button>
               <div className="quantity-indicator">{this.props.qty}</div>
-              <button className={"i-plus " + qtyPlusClass} onClick={this.upClick}>
+              <button className={"i-plus " + qtyPlusClass} onClick={this.props.upClick}>
                 <img title="plus one quantity" src={appImages.plusSign} />
               </button>
             </div>

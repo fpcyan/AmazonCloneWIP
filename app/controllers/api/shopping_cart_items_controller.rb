@@ -26,6 +26,8 @@ class Api::ShoppingCartItemsController < Api::ApiController
   end
 
   def destroy
-
+    current_user.shopping_cart_items.destroy_all
+    @shopping_cart_items = []
+    render "api/shopping_cart_items/index"
   end
 end

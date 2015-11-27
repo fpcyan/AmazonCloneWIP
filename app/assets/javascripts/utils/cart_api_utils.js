@@ -28,6 +28,18 @@ var CartApiUtils = {
         CartActions.receiveCartWithImages(data);
       }
     });
+  },
+
+  deleteCart: function (callback) {
+    $.ajax({
+      url: "api/shopping_cart_items/1",
+      type: "delete",
+      dataType: "json",
+      success: function (data) {
+        CartActions.receiveCart([]);
+        callback && callback();
+      }
+    });
   }
 
 

@@ -1,5 +1,7 @@
 var CartIndex = React.createClass({
 
+  mixins: [ReactRouter.History],
+
   _onCartChange: function () {
     if (CurrentUserStore.currentUser().hasOwnProperty("id") && this.state.cart !== CartStore.all_with_images()) {
       console.log(this.state.cart, CartStore.all_with_images());
@@ -15,6 +17,7 @@ var CartIndex = React.createClass({
 
   componentDidMount: function () {
     CartStore.addChangeListener(this._onCartChange);
+    this.setState({ cart: CartStore.all_with_images() });
   },
 
   componentWillUnmount: function () {
@@ -22,11 +25,15 @@ var CartIndex = React.createClass({
   },
 
   handlePlus: function(e) {
-    debugger;
   },
 
   handleMinus: function(e) {
-    debugger;
+  },
+
+  handleCheckout: function (e) {
+    CartApiUtils.deleteCart(function () {
+      this.history.pushState(null, "/");
+    }.bind(this));
   },
 
 
@@ -61,7 +68,7 @@ var CartIndex = React.createClass({
 
           <div className="cart-wrapper">
               <button className="cart-button">
-                <p className={"cart-button-txt"}>Checkout!</p>
+                <p className={"cart-button-txt"} onClick={this.handleCheckout}>Checkout!</p>
               </button>
           </div>
         </section>

@@ -1,5 +1,7 @@
 var ProductMgmtForm = React.createClass({
 
+  mixins: [ReactRouter.History],
+
   getInitialState: function () {
     return ({ qty: 1 });
   },
