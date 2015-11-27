@@ -11,7 +11,6 @@ var ShowProduct = React.createClass({
   },
 
   componentDidMount: function () {
-
     ApiUtil.fetchSingleProduct(this.props.params.productId);
     ShowStore.addChangeListener(this._onChange);
   },

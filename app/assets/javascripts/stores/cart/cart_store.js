@@ -5,6 +5,8 @@
 
   _products = [];
 
+  _products_with_images = [];
+
   function _resetCartProducts(newProducts) {
     _products = newProducts || [];
   }
@@ -42,6 +44,10 @@
 
     all: function () {
       return _products.slice();
+    },
+
+    all_with_image: function () {
+      return _products_with_images.slice();
     },
 
     addChangeListener: function (callback) {

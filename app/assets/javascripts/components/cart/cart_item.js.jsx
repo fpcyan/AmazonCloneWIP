@@ -12,7 +12,9 @@ var CartItem = React.createClass({
   },
 
   render: function () {
+    debugger;
     var linkBack, productName, inStock;
+
     var qtyMinusClass = "js-qty-enabled";
     var qtyPlusClass = "js-qty-enabled";
     if (this.props.qty === 0) {
@@ -21,9 +23,11 @@ var CartItem = React.createClass({
       qtyPlusClass = "js-qty-disabled";
     }
 
-    linkBack = "#/";
-    productName = "Test Product pls ignore";
-    inStock = "in Stock";
+    inStock = this.props.product.quantity ? "in Stock" : "not in Stock!";
+
+    linkBack = "#/products/" + this.props.product.id;
+    productName = this.props.product.product_name;
+
     return (
       <div>
         <a href={linkBack} className="cart-prev carousel-card">

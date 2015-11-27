@@ -1,6 +1,7 @@
 class Api::ShoppingCartItemsController < Api::ApiController
 
   def index
+    current_user.shopping_cart_items.includes( products: :images )
     render "api/shopping_cart_items/index"
   end
 

@@ -13,6 +13,18 @@ User.create!(
   password_confirmation: "password"
   )
 
+# Demo User #
+
+User.create!(
+  full_name: "Lily Jonathan Tommy Carl",
+  email: "sennacy@appacademyfriends.io",
+  email_confirmation: "sennacy@appacademyfriends.io",
+  password: "password",
+  password_confirmation: "password"
+)
+
+###
+
 5.times do
   email = Faker::Internet.email
   user = User.create!(
@@ -23,6 +35,7 @@ User.create!(
     password_confirmation: "password"
   )
   puts "User: " + user.full_name
+  
 end
 
 def construct_products_and_images(current_dir, category, *args)
