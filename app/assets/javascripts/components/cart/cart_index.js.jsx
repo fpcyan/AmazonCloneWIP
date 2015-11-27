@@ -14,7 +14,6 @@ var CartIndex = React.createClass({
   },
 
   componentDidMount: function () {
-    CartApiUtils.fetchUserCart();
     CartStore.addChangeListener(this._onCartChange);
   },
 
@@ -41,7 +40,7 @@ var CartIndex = React.createClass({
     cartItems = this.state.cart.map(function (product) {
       subtotal += (product.product.price * product.quantity);
       return (
-        <article key={product.id} className="cart-item-wrapper">
+        <article key={"cart-idx-item-" + product.id} className="cart-item-wrapper">
           <CartItem qty={product.quantity} upClick={this.handlePlus} downClick={this.handleMinus} product={product.product} />
         </article>
       );

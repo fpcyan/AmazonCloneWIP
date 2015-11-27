@@ -74,7 +74,7 @@ var NavBar = React.createClass({
                   {cartSize}
                 <img className="cart-button-image" src={appImages.shoppingCart} alt="Shopping cart" />
                 </a>
-                <CartDropdown cart={this.props.cart} />
+                <CartDropdown />
               </div>
             </div>
 

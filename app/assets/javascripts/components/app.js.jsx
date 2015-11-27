@@ -1,8 +1,7 @@
 var App = React.createClass({
 
   _onCartChange: function () {
-    if (this.state.id && this.state.cart !== CartStore.all()) {
-      console.log(this.state.cart, CartStore.all());
+    if (this.state.id) {
       CartApiUtils.updateRemoteCartItems(CartStore.all());
       this.setState({ cart: CartStore.all() });
     } else {
