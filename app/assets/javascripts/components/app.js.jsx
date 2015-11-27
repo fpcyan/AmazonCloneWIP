@@ -6,7 +6,7 @@ var App = React.createClass({
       CartApiUtils.updateRemoteCartItems(CartStore.all());
       this.setState({ cart: CartStore.all() });
     } else {
-      _updateCookieCartItems(CartStore.all());
+      // _updateCookieCartItems(CartStore.all());
     }
   },
 

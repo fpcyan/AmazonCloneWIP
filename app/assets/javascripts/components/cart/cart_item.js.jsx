@@ -14,7 +14,6 @@ var CartItem = React.createClass({
   },
 
   render: function () {
-    debugger;
     var linkBack, productName, inStock;
 
     var qtyMinusClass = "js-qty-enabled";
@@ -33,7 +32,7 @@ var CartItem = React.createClass({
     return (
       <div>
         <a href={linkBack} className="cart-prev carousel-card">
-          <img src={appImages.loadingGif} />
+          <img src={this.props.product.image.url} />
         </a>
 
         <div className="product-summary-box">

@@ -12,9 +12,8 @@ var CartApiUtils = {
       dataType: "json",
       data: { shopping_cart_items: JSON.stringify(parsedCart) },
       success: function (data) {
-        debugger;
         console.log("Remote Cart Updated");
-        console.log("Remote:", data.cart.length, " items.");
+        console.log("Remote:", data.length, " items.");
         console.log("Local:", CartStore.all().length, " items.");
       }
     });
@@ -26,7 +25,7 @@ var CartApiUtils = {
       type: "get",
       dataType: "json",
       success: function (data) {
-        debugger;
+        CartActions.receiveCartWithImages(data);
       }
     });
   }

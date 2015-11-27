@@ -40,6 +40,10 @@
     return false;
   }
 
+  function _resetCartProductsWithImages(newProducts) {
+    _products_with_images = newProducts;
+  }
+
   CartStore = root.CartStore = $.extend({}, EventEmitter.prototype, {
 
     all: function () {
@@ -68,6 +72,10 @@
           break;
         case CartConstants.PRODUCT_ADDED:
           _addProduct(payload.product);
+          CartStore.emit(CHANGE_EVENT);
+          break;
+        case CartConstants.CART_WITH_IMAGES_RECEIVED:
+          _resetCartProductsWithImages(payload.products);
           CartStore.emit(CHANGE_EVENT);
           break;
       }

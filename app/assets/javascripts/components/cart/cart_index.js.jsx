@@ -5,7 +5,7 @@ var CartIndex = React.createClass({
       console.log(this.state.cart, CartStore.all_with_images());
       this.setState({ cart: CartStore.all_with_images() });
     } else {
-      _updateCookieCartItems(CartStore.all_with_images());
+      // _updateCookieCartItems(CartStore.all_with_images());
     }
   },
 
