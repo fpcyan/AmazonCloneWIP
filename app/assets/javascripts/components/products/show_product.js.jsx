@@ -43,16 +43,16 @@ var ShowProduct = React.createClass({
       <ul className="desc-list">
         <article className="desc-body">{this.state.product.description}</article>
         <li className="desc-item">
-          <p><strong className="desc-tagline">Product Dimensions:</strong> 7.6 x 5 x 1.4 inches</p>
+          <p><strong className="desc-tagline">Product Dimensions:</strong> {((Math.random() * (20 - 2)) + 2).toFixed(1)} x {((Math.random() * (20 - 2)) + 2).toFixed(2)} x {((Math.random() * (20 - 2)) + 2).toFixed(2)} inches</p>
         </li>
         <li className="desc-item">
-          <p><strong className="desc-tagline">Shipping Weight:</strong> 9.9 ounces</p>
+          <p><strong className="desc-tagline">Shipping Weight:</strong> {((Math.random() * (20 - 2)) + 2).toFixed(1)} ounces</p>
         </li>
         <li className="desc-item">
-          <p><strong className="desc-tagline">Date released:</strong> July 25, 2014</p>
+          <p><strong className="desc-tagline">Date released:</strong> July {Math.floor(((Math.random() * (30 - 2)) + 2))}, 2014</p>
         </li>
         <li className="desc-item">
-          <p><strong className="desc-tagline">Best Sellers Rank:</strong> #923 in Jewelry</p>
+          <p><strong className="desc-tagline">Best Sellers Rank:</strong> #{Math.floor(((Math.random() * (1000 - 1)) + 1))} in Jewelry</p>
         </li>
       </ul>
     );
@@ -67,7 +67,7 @@ var ShowProduct = React.createClass({
 
             <div className="product-specs-wrapper">
               <h1 className="product-name">{this.state.product.product_name}</h1>
-              <span className="review-summary">Placeholder text</span>
+
 
               <span className="stock">{this.state.product.stock}</span>
 
@@ -87,13 +87,22 @@ var ShowProduct = React.createClass({
           { description }
         </section>
         <div className="divider"></div>
-        <section className="review-wrapper">
-            <ReviewIndex />
-          <div className="form-outer-box">
-            <ReviewForm />
-          </div>
-        </section>
+
       </main>
     );
+  },
+
+  reviews: function () {
+    details = <span className="review-summary">Placeholder text</span>;
+
+    reviewsSection = (
+      <section className="review-wrapper">
+          <ReviewIndex />
+        <div className="form-outer-box">
+          <ReviewForm />
+        </div>
+      </section>
+    );
+
   }
 });
