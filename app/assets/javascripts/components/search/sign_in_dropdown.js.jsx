@@ -31,7 +31,7 @@ var SignInDropdown = React.createClass({
             <strong>Your Account</strong>
           </a>
           <div key="sign-in-dropdown-1" className="nav-drop-box">
-            <div key="sign-in-dropdown-2" className="drop-box-inner">
+            <div key="sign-in-dropdown-2" className="drop-box-inner .sign-in-db">
               {signDropdown}
             </div>
           </div>

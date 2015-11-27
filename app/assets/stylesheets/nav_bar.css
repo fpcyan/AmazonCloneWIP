@@ -159,6 +159,7 @@
 }
 
 .nav-dept {
+  text-align: left;
   margin-left: 5px;
   margin-right: 33px;
 }
@@ -276,6 +277,7 @@
 .drop-box-inner {
   position: absolute;
   top: 21px;
+  text-align: center;
 
   width: 250px;
   min-height: 200px;
@@ -300,4 +302,43 @@
 
   background: rgba(122, 85, 163, 0.8);
   z-index: 1;
+}
+
+.sign-in-db {
+  width: 150px;
+  height: 80px;
+}
+.cart-prev-drop {
+  padding: 10px 10px 0 10px;
+  width: 100%;
+  text-align: left;
+}
+
+.cart-prev-drop > img {
+  width: 80px;
+}
+
+.cart-prev-drop > span {
+  padding-left: 5px;
+  font-size: 14px;
+}
+
+.small-button {
+  display: block;
+  margin: auto;
+  width: 120px;
+  height: 35px;
+  border: 1px solid rgba(200, 100, 25, 1);
+  color: rgba(255, 255, 255, 1);
+  background: rgba(200, 100, 25, 1);
+  cursor: pointer;
+}
+
+a.small-button {
+  padding-top: 10px;
+}
+
+.small-button:active {
+  border: 1px solid rgba(115, 55, 15, 1);
+  box-shadow: 0 0 10px rgba(115, 55, 15, 1);
 }

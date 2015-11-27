@@ -1,13 +1,11 @@
 var CartItem = React.createClass({
 
   componentWillReceiveProps: function (nextProps) {
-    if (this.props.params.productId !== nextProps.params.productId) {
-      ApiUtil.fetchSingleProduct(nextProps.params.productId);
-    }
+
   },
 
   shouldComponentUpdate: function (nextProps, nextState) {
-    if (this.props.qty === nextProps.qty && this.props.product === nextProps.product) {
+    if (this.props.qty === nextProps.qty && this.props.product.id === nextProps.product.id) {
       return false;
     }
     return true;

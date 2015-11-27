@@ -31,13 +31,13 @@ var CartDropdown = React.createClass({
         var price = item.product.price * item.quantity;
         subtotal += price;
         return (
-          <div key={"item-sum-" + item.product.product_name} className="nav-cart drop-item">
-            <img key={"item-sum-img-" + item.product.product_name} className="thumb-preview" src={item.product.image.thumb_url} />
-            <span key={"item-sum-name-" + item.product.product_name} className="thumb-prev-text">{item.product.product_name}</span>
+          <div key={"item-sum-" + item.product.product_name} className="cart-prev-drop group">
+            <img key={"item-sum-img-" + item.product.product_name} src={item.product.image.thumb_url} />
+            <span key={"item-sum-name-" + item.product.product_name} >{item.product.product_name}</span>
           </div>
           );
         });
-        cartPreviewList.push(<div key="full-ct-1" className="nav-all emphasis drop-item">Order Total: ${(subtotal / 100).toFixed(2)}</div>);
+        cartPreviewList.push(<div key="full-ct-1" className="nav-all drop-item">Order Total: ${(subtotal / 100).toFixed(2)}</div>);
         cartPreviewList.push(<div key="full-ct-2" className="nav-all drop-item"><a href="#/cart" className="small-button">See your cart.</a></div>);
     } else {
       cartPreviewList = ([
