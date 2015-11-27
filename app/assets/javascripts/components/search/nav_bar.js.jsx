@@ -27,7 +27,6 @@ var NavBar = React.createClass({
     });
     cartSize = (this.props.cart.length) ? <p className="cart-qty">{this.props.cart.length}</p> : null;
 
-    console.log("navbar render");
     return (
       <header className="header">
 
