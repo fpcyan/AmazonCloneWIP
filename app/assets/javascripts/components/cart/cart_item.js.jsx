@@ -1,0 +1,53 @@
+var CartItem = React.createClass({
+
+  componentWillReceiveProps: function (nextProps) {
+
+  },
+
+  shouldComponentUpdate: function (nextProps, nextState) {
+    if (this.props.qty === nextProps.qty && this.props.product === nextProps.product) {
+      return false;
+    }
+    return true;
+  },
+
+  render: function () {
+    var linkBack, productName, inStock;
+    var qtyMinusClass = "js-qty-enabled";
+    var qtyPlusClass = "js-qty-enabled";
+    if (this.props.qty === 0) {
+      qtyMinusClass = "js-qty-disabled";
+    } else if (this.props.qty === 5) {
+      qtyPlusClass = "js-qty-disabled";
+    }
+
+    linkBack = "#/";
+    productName = "Test Product pls ignore";
+    inStock = "in Stock";
+    return (
+      <div>
+        <a href={linkBack} className="cart-prev carousel-card">
+          <img src={appImages.loadingGif} />
+        </a>
+
+        <div className="product-summary-box">
+          <span className="same-day-delivery">{productName}</span>
+          <span className="small-stock">{inStock}</span>
+
+          <div className="qty-button-wrapper">
+            <button className={"i-minus " + qtyMinusClass}
+              onClick={this.props.downClick}>
+              <img title="minus one quantity" src={appImages.minusSign}/>
+            </button>
+            <div className="quantity-indicator">{this.props.qty}</div>
+            <button className={"i-plus " + qtyPlusClass} onClick={this.upClick}>
+              <img title="plus one quantity" src={appImages.plusSign} />
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+
+});

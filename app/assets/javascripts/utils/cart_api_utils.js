@@ -12,7 +12,6 @@ var CartApiUtils = {
       dataType: "json",
       data: { shopping_cart_items: JSON.stringify(parsedCart) },
       success: function (data) {
-        CartActions.receiveCart(data.cart);
       }
     });
   },

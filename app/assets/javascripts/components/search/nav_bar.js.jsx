@@ -70,7 +70,7 @@ var NavBar = React.createClass({
 
             <div key="cart-prev-nav-1" className="nav-drop">
               <div className="cart nav-all">
-                <a href="#" className="nav-drop-link">
+                <a href="#/cart" className="nav-drop-link">
                   {cartSize}
                 <img className="cart-button-image" src={appImages.shoppingCart} alt="Shopping cart" />
                 </a>

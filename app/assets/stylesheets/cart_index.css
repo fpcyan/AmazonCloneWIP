@@ -1,0 +1,32 @@
+.cart-index {
+  display: block;
+  margin-top: 100px;
+  margin: 100px 50px 0 50px;
+}
+
+.cart-index > h2 {
+  display: block;
+  font-size: 24px;
+}
+
+.cart-items {
+  display: block;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  float: left;
+  min-width: 800px;
+  width: calc(100% - 320px);
+  height: 400px;
+}
+
+.checkout-form {
+  display: block;
+  float: right;
+  width: 300px;
+  margin-left: 20px;
+  height: 400px;
+  border: 1px solid black;
+}
+
+.cart-prev {
+  float: left;
+}
