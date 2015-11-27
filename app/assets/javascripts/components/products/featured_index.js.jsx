@@ -19,12 +19,7 @@ var FeaturedIndex = React.createClass({
           <div className="featured" id={this.props.feature.title.toLowerCase()}>
             <h2 className="featured-dept"><a href="#" className="dept-link">{this.props.feature.title}</a></h2>
 
-            <button className="arrow-button slide-left" onClickCapture={this.handleButtonClick}>
-              <img src={appImages.leftArrow} alt="left arrow" />
-            </button>
-            <button className="arrow-button slide-right" onClickCapture={this.handleButtonClick} >
-              <img src={appImages.rightArrow} alt="right arrow" />
-            </button>
+
 
             <div className="carousel">
               <ul className="carousel-viewport" onMouseEnter={this.handleHover} onMouseLeave={this.handleStopHover}>
@@ -37,7 +32,18 @@ var FeaturedIndex = React.createClass({
   },
 
   handleHover: function (e) {
+    var holdThis = (
+      <div>
 
+      <button className="arrow-button slide-left" onClickCapture={this.handleButtonClick}>
+        <img src={appImages.leftArrow} alt="left arrow" />
+      </button>
+      <button className="arrow-button slide-right" onClickCapture={this.handleButtonClick} >
+        <img src={appImages.rightArrow} alt="right arrow" />
+      </button>
+
+      </div>
+    );
   },
 
   handleStopHover: function (e) {

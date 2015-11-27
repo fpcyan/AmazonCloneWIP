@@ -4,6 +4,12 @@ var SignInDropdown = React.createClass({
 
   },
 
+  signOut: function () {
+    UserApiUtil.signOut(function () {
+      this.history.pushState(null, "/");
+    }.bind(this));
+  },
+
   render: function () {
     var signInGreeting, signInNav, signDropdown;
     if (this.props.userName) {

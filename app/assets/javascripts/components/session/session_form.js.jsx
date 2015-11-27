@@ -41,7 +41,6 @@ var SessionForm = React.createClass({
             <button className="form-button">Sign in</button>
           </form>
           <div className="divider-section">
-            <div className="divider"></div>
 
             <p className="border-overlay">New here?</p>
             <button className="create-account-button"><a href="#/sign_up">Create an account</a></button>

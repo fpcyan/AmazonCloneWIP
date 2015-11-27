@@ -27,7 +27,7 @@ var UserApiUtil = {
     });
   },
 
-  signOut: function () {
+  signOut: function (success) {
     $.ajax({
       url: "api/session",
       type: "delete",
@@ -35,6 +35,7 @@ var UserApiUtil = {
       success: function () {
         UserActions.receiveCurrentUser({});
         CartActions.receiveCart([]);
+        success && success;
       }
     });
   },

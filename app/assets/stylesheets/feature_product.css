@@ -10,7 +10,7 @@
 .featured {
   position: relative;
   width: 100%;
-  padding: 10px 20px;
+  padding: 50px 20px 0 20px;;
 
 }
 
@@ -18,7 +18,13 @@
   display: block;
   font-size: 24px;
   position: relative;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  color: rgba(0, 0, 0, 0.8);
+}
 
+.featured-dept:hover {
+  color: rgba(122, 85, 163, 1);
 }
 
 .carousel {

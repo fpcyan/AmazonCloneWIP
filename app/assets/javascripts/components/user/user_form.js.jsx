@@ -19,7 +19,7 @@ var UserForm = React.createClass({
   render: function () {
 
     return (
-      <fieldset className="box-inner">
+      <fieldset className="f-box-inner">
 
         <form className="sign-up rt-form" onSubmit={this.onSubmit}>
 
@@ -54,7 +54,6 @@ var UserForm = React.createClass({
 
         </form>
         <div className="divider-section">
-          <div className="divider"></div>
 
           <p>
 
