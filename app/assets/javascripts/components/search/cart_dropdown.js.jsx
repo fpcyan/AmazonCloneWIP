@@ -48,8 +48,8 @@ var CartDropdown = React.createClass({
     }
 
     return (
-      <div className="nav-drop-box">
-        <div className="drop-box-inner">
+      <div className="nav-drop-box right-box">
+        <div className="drop-box-inner right-box-inner">
           { cartPreviewList }
         </div>
       </div>

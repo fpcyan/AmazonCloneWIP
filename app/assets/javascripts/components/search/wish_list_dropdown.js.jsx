@@ -9,8 +9,7 @@ var WishListDropdown = React.createClass({
 
     if (this.props.userName) {
       wishList = ([
-        <div key="sign-in-wl-1" className="nav-all drop-item">Last item added:</div>,
-        <div key="sign-in-wl-3" className="nav-all drop-item"> <a href="#/wish_list" key="small-button-2" className="small-button">See your wish list.</a></div>,
+        <div key="sign-in-wl-1" className="nav-all drop-item">Nothing in your wish list!</div>
       ]);
     } else {
       wishList = ([
@@ -27,7 +26,7 @@ var WishListDropdown = React.createClass({
           </a>
 
           <div key="wl-dropdown-box-1" className="nav-drop-box">
-            <div key="wl-dropdown-box-2" className="drop-box-inner">
+            <div key="wl-dropdown-box-2" className="drop-box-inner right-box-inner">
               { wishList }
             </div>
           </div>
