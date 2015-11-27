@@ -27,7 +27,7 @@ var CartItem = React.createClass({
     linkBack = "#/products/" + this.props.product.id;
     productName = this.props.product.product_name;
     return (
-      <div>
+      <div className="cart-item-wrapper group">
         <a href={linkBack} className="cart-prev carousel-card">
           <img src={this.props.product.image.url} />
         </a>
@@ -36,17 +36,19 @@ var CartItem = React.createClass({
           <span className="same-day-delivery">{productName}</span>
           <span className="small-stock">{inStock}</span>
           <span className="small-price">${(this.props.product.price / 100).toFixed(2)}</span>
-          <div className="qty-button-wrapper">
-            <button className={"i-minus " + qtyMinusClass}
-              onClick={this.props.downClick}>
-              <img title="minus one quantity" src={appImages.minusSign}/>
-            </button>
-            <div className="quantity-indicator">{this.props.qty}</div>
-            <button className={"i-plus " + qtyPlusClass} onClick={this.upClick}>
-              <img title="plus one quantity" src={appImages.plusSign} />
-            </button>
-          </div>
         </div>
+          <div className="cart-qty-wrap">
+            <div className="qty-button-wrapper">
+              <button className={"i-minus " + qtyMinusClass}
+                onClick={this.props.downClick}>
+                <img title="minus one quantity" src={appImages.minusSign}/>
+              </button>
+              <div className="quantity-indicator">{this.props.qty}</div>
+              <button className={"i-plus " + qtyPlusClass} onClick={this.upClick}>
+                <img title="plus one quantity" src={appImages.plusSign} />
+              </button>
+            </div>
+          </div>
       </div>
     );
   }
