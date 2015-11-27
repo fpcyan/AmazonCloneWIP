@@ -46,7 +46,7 @@
       return _products.slice();
     },
 
-    all_with_image: function () {
+    all_with_images: function () {
       return _products_with_images.slice();
     },
 

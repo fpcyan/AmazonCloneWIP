@@ -1,19 +1,20 @@
 var CartIndex = React.createClass({
 
   _onCartChange: function () {
-    if (CurrentUserStore.currentUser().hasOwnProperty("id") && this.state.cart !== CartStore.all()) {
-      console.log(this.state.cart, CartStore.all());
-      this.setState({ cart: CartStore.all() });
+    if (CurrentUserStore.currentUser().hasOwnProperty("id") && this.state.cart !== CartStore.all_with_images()) {
+      console.log(this.state.cart, CartStore.all_with_images());
+      this.setState({ cart: CartStore.all_with_images() });
     } else {
-      _updateCookieCartItems(CartStore.all());
+      _updateCookieCartItems(CartStore.all_with_images());
     }
   },
 
   getInitialState: function () {
-    return({ cart: CartStore.all() });
+    return({ cart: CartStore.all_with_images() });
   },
 
   componentDidMount: function () {
+    CartApiUtils.fetchUserCart();
     CartStore.addChangeListener(this._onCartChange);
   },
 
