@@ -1,6 +1,6 @@
 class CreateShippingAddresses < ActiveRecord::Migration
   def change
-    create_table :create_shipping_addresses do |t|
+    create_table :shipping_addresses do |t|
       t.integer :user_id, null: false
       t.string :full_name, null: false
       t.string :address_one, null: false
@@ -12,6 +12,6 @@ class CreateShippingAddresses < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    add_index :create_shipping_addresses, :user_id
+    add_index :shipping_addresses, :user_id
   end
 end
