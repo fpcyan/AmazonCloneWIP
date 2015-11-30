@@ -13,10 +13,13 @@
       <Router>
         <Route path="/" component={App}>
           <IndexRoute component={Home} />
+          <Route path="products/:productId" component={ShowProduct} />
           <Route path="sign_in" component={SessionForm} />
           <Route path="sign_up" component={UserForm} />
           <Route path="cart" component={CartIndex} />
-          <Route path="products/:productId" component={ShowProduct} />
+          <Route path="checkout" component={Checkout}>
+            <Route path="shipping" component={Shipping} />
+          </Route>
         </Route>
       </Router>
     );
