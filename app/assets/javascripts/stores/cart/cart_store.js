@@ -9,26 +9,6 @@
     _products = newProducts || [];
   }
 
-  function _verifyChange(nextProducts) {
-    if (nextProducts.length === 0) {
-      _resetCartProducts(nextProducts);
-    }
-    var newCart = nextProducts.filter( function (item) {
-      for (var i = 0; i < CartStore.all().length; i++) {
-        if (CartStore.all()[i].product.id === item.product.id) {
-          return false;
-        }
-      }
-      return true;
-    });
-    if (newCart.length > 0) {
-      var newNewCart = newCart.concat(CartStore.all());
-      _resetCartProducts(newNewCart);
-      return true;
-    }
-    return false;
-  }
-
   CartStore = root.CartStore = $.extend({}, EventEmitter.prototype, {
 
     all: function () {
@@ -47,19 +27,15 @@
 
       switch (payload.actionType) {
         case CartConstants.CART_RECEIVED:
-          if (_verifyChange(payload.products)) {
-            CartStore.emit(CHANGE_EVENT);
-          }
+          _resetCartProducts(payload.products);
+          CartStore.emit(CHANGE_EVENT);
+
           break;
         case CartConstants.PRODUCT_ADDED:
           _addProduct(payload.product);
           CartStore.emit(CHANGE_EVENT);
           break;
-        case CartConstants.CART_WITH_IMAGES_RECEIVED:
-          debugger;
-          _resetCartProductsWithImages(payload.products);
-          CartStore.emit(CHANGE_EVENT);
-          break;
+
       }
     })
 

@@ -24,8 +24,9 @@ var ProductMgmtForm = React.createClass({
     e.preventDefault();
     var newCart = CartStore.all();
     newCart.push({product: this.props.product, quantity: this.state.qty });
-
-    CartApiUtils.updateRemoteCartItems(newCart);
+    CartApiUtils.updateRemoteCartItems(newCart, function () {
+      this.history.pushState(null, "/cart");
+    }.bind(this));
   },
 
   render: function () {
