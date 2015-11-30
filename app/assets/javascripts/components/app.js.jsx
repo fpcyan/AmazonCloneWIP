@@ -2,7 +2,6 @@ var App = React.createClass({
 
   _onCartChange: function () {
     if (this.state.id) {
-      CartApiUtils.updateRemoteCartItems(CartStore.all());
       this.setState({ cart: CartStore.all() });
     } else {
       // _updateCookieCartItems(CartStore.all());

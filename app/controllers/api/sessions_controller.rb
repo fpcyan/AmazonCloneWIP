@@ -4,7 +4,7 @@ class Api::SessionsController < Api::ApiController
   def show
     if current_user
     @user = current_user
-    @user.shopping_cart_items.includes(:product)
+    @user.shopping_cart_items.includes(product: :images).load
     render "api/session/show"
     else
     #   debugger

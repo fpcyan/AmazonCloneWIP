@@ -22,7 +22,10 @@ var ProductMgmtForm = React.createClass({
 
   addToCart: function (e) {
     e.preventDefault();
-    CartActions.addProduct({product: this.props.product, quantity: this.state.qty });
+    var newCart = CartStore.all();
+    newCart.push({product: this.props.product, quantity: this.state.qty });
+
+    CartApiUtils.updateRemoteCartItems(newCart);
   },
 
   render: function () {

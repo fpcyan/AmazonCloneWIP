@@ -14,7 +14,6 @@ class Api::ShoppingCartItemsController < Api::ApiController
     items = JSON.parse(shopping_cart_items)
     current_user.update_shopping_cart(items)
     @shopping_cart_items = current_user.shopping_cart_items.includes( product: :images ).load
-    end
     render "api/shopping_cart_items/index"
   end
 
