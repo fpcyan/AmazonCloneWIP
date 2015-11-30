@@ -19,7 +19,7 @@ Here is the day-by-day dev blog:
  * [Day 1][day-1]
 
 [project-proposal]: ./docs/project_proposal.md
-[day-9]:
+[day-9]: http://fpcyan.tumblr.com/post/134278919430/w9d5
 [day-8]: http://fpcyan.tumblr.com/post/134056134070/w9d4
 [day-7]: http://fpcyan.tumblr.com/post/133972751090/w9d3
 [day-6]: http://fpcyan.tumblr.com/post/133907376090/w9d2
