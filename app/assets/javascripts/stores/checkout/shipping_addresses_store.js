@@ -25,7 +25,7 @@
     dispatcherId: AppDispatcher.register(function (payload) {
 
       switch (payload.actionType) {
-        case ShippingAddressConstants.ADDRESSES_RECEIVED:
+        case CheckoutConstants.ADDRESSES_RECEIVED:
           _resetShippingAddressProducts(payload.addresses);
           ShippingAddressStore.emit(CHANGE_EVENT);
           break;

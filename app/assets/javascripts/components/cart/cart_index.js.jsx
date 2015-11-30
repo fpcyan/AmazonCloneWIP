@@ -1,49 +1,17 @@
 var CartIndex = React.createClass({
 
-  mixins: [ReactRouter.History],
+  componentWillReceiveProps: function (nextProps) {
 
-  _onCartChange: function () {
-    if (CurrentUserStore.currentUser().hasOwnProperty("id") && this.state.cart !== CartStore.all()) {
-      this.setState({ cart: CartStore.all() });
-    } else {
-      // _updateCookieCartItems(CartStore.all_with_images());
-    }
   },
-
-  getInitialState: function () {
-    return({ cart: CartStore.all() });
-  },
-
-  componentDidMount: function () {
-    CartStore.addChangeListener(this._onCartChange);
-    this.setState({ cart: CartStore.all()});
-  },
-
-  componentWillUnmount: function () {
-    CartStore.removeChangeListener(this._onCartChange);
-  },
-
-  handlePlus: function(e) {
-  },
-
-  handleMinus: function(e) {
-  },
-
-  handleCheckout: function (e) {
-    CartApiUtils.deleteCart(function () {
-      this.history.pushState(null, "/");
-    }.bind(this));
-  },
-
 
   render: function () {
     var numItems, subtotal, cartItems;
 
-    numItems = this.state.cart.length === 1 ? " item" : " items";
-    numItems = this.state.cart.length + numItems;
+    numItems = this.props.cart.length === 1 ? " item" : " items";
+    numItems = this.props.cart.length + numItems;
 
     subtotal = 0;
-    cartItems = this.state.cart.map(function (product) {
+    cartItems = this.props.cart.map(function (product) {
       subtotal += (product.product.price * product.quantity);
       return (
         <article key={"cart-idx-item-" + product.id}>
@@ -67,7 +35,7 @@ var CartIndex = React.createClass({
 
           <div className="cart-wrapper">
               <button className="cart-button">
-                <p className={"cart-button-txt"} onClick={this.handleCheckout}>Checkout!</p>
+                <a href="#/checkout"><p className="cart-button-txt">Checkout!</p></a>
               </button>
           </div>
         </section>

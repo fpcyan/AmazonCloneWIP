@@ -33,10 +33,13 @@ var App = React.createClass({
   },
 
   render: function () {
+    var newChildren = React.Children.map(this.props.children, function (child) {
+      return React.cloneElement(child, { cart: this.state.cart, userId: this.state.id });
+    }.bind(this));
     return (
       <main>
         <NavBar userName={this.state.full_name} cart={this.state.cart} />
-        { this.props.children }
+        { newChildren }
       </main>
     );
   }

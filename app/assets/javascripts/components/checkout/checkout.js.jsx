@@ -1,18 +1,22 @@
 var Checkout = React.createClass({
 
+  _onAddressChange: function () {
+    this.setState({ shippingAddresses: ShippingAddressStore.all() });
+  },
+
   getInitialState: function () {
     return ({ cart: CartStore.all(), shippingAddresses: [], payments: [] });
   },
 
   componentDidMount: function () {
-    CheckoutApiUtils.fetchShippingAddresses(CurrentUserStore.currentUser().id);
-    ShippingAddressStore.addChangeListener(this.onAddressChange);
+    CheckoutApiUtils.fetchShippingAddresses();
+    ShippingAddressStore.addChangeListener(this._onAddressChange);
   },
 
   componentWillUnmount: function () {
-    ShippingAddressStore.removeChangeListener(this.onAddressChange);
+    ShippingAddressStore.removeChangeListener(this._onAddressChange);
   },
-  
+
   render: function () {
 
     return (

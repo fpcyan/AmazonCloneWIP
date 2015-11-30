@@ -1,11 +1,12 @@
 var CheckoutApiUtils = {
 
-  fetchShippingAddresses: function (userId) {
+  fetchShippingAddresses: function () {
     $.ajax({
-      url: "api/users/" + userId + "/shipping_addresses",
+      url: "api/shipping_addresses",
       type: "get",
       dataType: "json",
       success: function (data) {
+        debugger
         CheckoutActions.receiveShippingAddresses(data);
       }
     });
