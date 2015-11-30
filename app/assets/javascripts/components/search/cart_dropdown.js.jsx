@@ -1,33 +1,15 @@
 var CartDropdown = React.createClass({
 
-  _onCartChange: function () {
-    if (CurrentUserStore.currentUser().hasOwnProperty("id") && this.state.cart !== CartStore.all_with_images()) {
-      console.log(this.state.cart, CartStore.all_with_images());
-      this.setState({ cart: CartStore.all_with_images() });
-    } else {
-      // _updateCookieCartItems(CartStore.all_with_images());
-    }
-  },
+  componentWillReceiveProps: function (nextProps) {
 
-  getInitialState: function () {
-    return({ cart: [] });
-  },
-
-  componentDidMount: function () {
-    CartApiUtils.fetchUserCart();
-    CartStore.addChangeListener(this._onCartChange);
-  },
-
-  componentWillUnmount: function () {
-    CartStore.removeChangeListener(this._onCartChange);
   },
 
   render: function () {
     var cartPreviewList, totalPrice;
 
-    if (this.state.cart.length > 0) {
+    if (this.props.cart.length > 0) {
       subtotal = 0;
-      cartPreviewList = this.state.cart.map(function (item) {
+      cartPreviewList = this.props.cart.map(function (item) {
         var price = item.product.price * item.quantity;
         subtotal += price;
         return (

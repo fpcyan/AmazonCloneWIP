@@ -1,18 +1,11 @@
 var NavBar = React.createClass({
 
-  getInitialState: function () {
-    return({ hover: false, dept: null, signIn: null, wishList: null, cart: null });
-  },
-
   componentWillReceiveProps: function (nextProps) {
   },
 
   feelingLucky: function () {
     var randNum = Math.floor(Math.random() * 19) + 1;
     return "#/products/" + randNum;
-  },
-
-  handleDropdown: function (e) {
   },
 
   render: function (){
@@ -73,7 +66,7 @@ var NavBar = React.createClass({
                   {cartSize}
                 <img className="cart-button-image" src={appImages.shoppingCart} alt="Shopping cart" />
                 </a>
-                <CartDropdown />
+                <CartDropdown cart={this.props.cart}/>
               </div>
             </div>
 

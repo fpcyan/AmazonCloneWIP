@@ -35,10 +35,6 @@
       return _products.slice();
     },
 
-    all_with_images: function () {
-      return _products_with_images.slice();
-    },
-
     addChangeListener: function (callback) {
       this.on(CHANGE_EVENT, callback);
     },
