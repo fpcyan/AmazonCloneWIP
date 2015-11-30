@@ -5,19 +5,8 @@
 
   _products = [];
 
-  _products_with_images = [];
-
   function _resetCartProducts(newProducts) {
     _products = newProducts || [];
-  }
-
-  function _addProduct(newProduct) {
-    for (var i = 0; i < _products.length; i++) {
-      if (newProduct.product.id === _products[i].product.id) {
-        return _products[i].quantity += newProduct.quantity;
-      }
-    }
-    _products.push(newProduct);
   }
 
   function _verifyChange(nextProducts) {
@@ -38,10 +27,6 @@
       return true;
     }
     return false;
-  }
-
-  function _resetCartProductsWithImages(newProducts) {
-    _products_with_images = newProducts;
   }
 
   CartStore = root.CartStore = $.extend({}, EventEmitter.prototype, {
@@ -75,6 +60,7 @@
           CartStore.emit(CHANGE_EVENT);
           break;
         case CartConstants.CART_WITH_IMAGES_RECEIVED:
+          debugger;
           _resetCartProductsWithImages(payload.products);
           CartStore.emit(CHANGE_EVENT);
           break;
