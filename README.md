@@ -1,8 +1,8 @@
 # The Bazaar
 
-[Heroku link][heroku]
+[Website link][heroku]
 
-[heroku]: http://the-bazaar.herokuapp.com
+[heroku]: http://www.the-bazaar.xyz/
 
 *Last Updated: End of Day One*
 
