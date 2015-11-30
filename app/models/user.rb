@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
   has_many :shopping_cart_items, inverse_of: :user, dependent: :destroy
   has_many :products, through: :shopping_cart_items, source: :product
 
+  has_many :shipping_addresses, inverse_of: :user, dependent: :destroy
 
 ## Shopping Cart
 
