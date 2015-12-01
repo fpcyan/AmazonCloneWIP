@@ -19,7 +19,6 @@ var Checkout = React.createClass({
 
   shippingClick: function (e) {
     e.preventDefault();
-    debugger;
     if (this.state.shippingAddresses.length > 0) {
       this.setState({ showForm: true });
     } else {
@@ -37,7 +36,7 @@ var Checkout = React.createClass({
       <section className="checkout-landing group">
         <ul className="order-summary-wrapper">
           <li>
-            <ShippingView shippingAddresses={this.state.ShippingAddresses} shippingClick={this.shippingClick} expand={this.state.expand}/>
+            <ShippingView shippingAddresses={this.state.shippingAddresses} shippingClick={this.shippingClick} expand={this.state.expand}/>
           </li>
 
           <li className="payment expand-box group">

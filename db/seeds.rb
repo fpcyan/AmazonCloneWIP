@@ -13,6 +13,15 @@ User.create!(
   password_confirmation: "password"
   )
 
+User.first.shipping_addresses.create!(
+  full_name: User.first.full_name,
+  address_one: "589 Broadway",
+  address_two: "Fl 6",
+  city: "New York",
+  region: "NY",
+  zip: 10012
+  )
+
 # Demo User #
 
 User.create!(
@@ -35,7 +44,7 @@ User.create!(
     password_confirmation: "password"
   )
   puts "User: " + user.full_name
-  
+
 end
 
 def construct_products_and_images(current_dir, category, *args)
