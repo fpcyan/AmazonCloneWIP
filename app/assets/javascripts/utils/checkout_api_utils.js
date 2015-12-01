@@ -6,7 +6,6 @@ var CheckoutApiUtils = {
       type: "get",
       dataType: "json",
       success: function (data) {
-        debugger
         CheckoutActions.receiveShippingAddresses(data);
       }
     });

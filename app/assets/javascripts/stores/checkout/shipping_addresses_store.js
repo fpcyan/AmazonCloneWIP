@@ -26,7 +26,7 @@
 
       switch (payload.actionType) {
         case CheckoutConstants.ADDRESSES_RECEIVED:
-          _resetShippingAddressProducts(payload.addresses);
+          _resetShippingAddresses(payload.addresses);
           ShippingAddressStore.emit(CHANGE_EVENT);
           break;
       }

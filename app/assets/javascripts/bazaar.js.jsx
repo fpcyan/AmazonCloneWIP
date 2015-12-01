@@ -17,9 +17,7 @@
           <Route path="sign_in" component={SessionForm} />
           <Route path="sign_up" component={UserForm} />
           <Route path="cart" component={CartIndex} />
-          <Route path="checkout" component={Checkout}>
-            <Route path="shipping" component={Shipping} />
-          </Route>
+          <Route path="checkout" component={Checkout} />
         </Route>
       </Router>
     );
