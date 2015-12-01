@@ -4,7 +4,7 @@
 
 [heroku]: http://www.the-bazaar.xyz/
 
-The Bazaar is a web application clone of Amazon.com. Some features and design choices are inspired by Jet.com. Main development occurred over the course of 9 business days and 2 weekend days.
+The Bazaar is a web application clone of Amazon.com. Some features and design choices are inspired by Jet.com. Main development took place over the course of 9 "business" days and 2 weekend days.
 
 You can find the original project proposal [here][project-proposal].
 Here is the day-by-day dev blog:
