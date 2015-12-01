@@ -17,10 +17,19 @@ var Checkout = React.createClass({
     ShippingAddressStore.removeChangeListener(this._onAddressChange);
   },
 
+  shippingClick: function (e) {
+    e.preventDefault();
+    if (this.state.shippingAddresses.length > 0) {
+      this.setState({ showForm: true });
+    } else {
+      this.setState({ shippingExpand: true });
+    }
+  },
+
   render: function () {
     var shippingView, formModal;
     if (!this.state.shippingExpand) {
-      shippingView = <ShippingMain address={this.state.shippingAddresses[0]} />;
+      shippingView = <ShippingMain address={this.state.shippingAddresses[0]} shipClick={this.shippingClick} changeActive={this.activeShipping}/>;
     } else {
       shippingView = <Shipping addresses={this.state.shippingAddresses} />;
     }
@@ -121,6 +130,10 @@ var Checkout = React.createClass({
       </section>
     );
 
+  },
+
+  activeShipping: function (e) {
+    e.preventDefault();
   }
 
 });
