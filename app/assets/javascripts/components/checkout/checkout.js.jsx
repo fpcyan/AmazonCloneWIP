@@ -28,12 +28,7 @@ var Checkout = React.createClass({
   },
 
   render: function () {
-    var shippingView, formModal;
-    if (!this.state.expand) {
-      shippingView = <ShippingMain address={this.state.shippingAddresses[0]} shipClick={this.shippingClick} changeActive={this.activeShipping}/>;
-    } else {
-      shippingView = <Shipping addresses={this.state.shippingAddresses} />;
-    }
+    var formModal;
     if (this.state.form) {
       formModal = (this.state.showForm === "shipping") ? <ShippingForm /> : "payment form";
     }
@@ -42,7 +37,7 @@ var Checkout = React.createClass({
       <section className="checkout-landing group">
         <ul className="order-summary-wrapper">
           <li>
-            { shippingView }
+            <ShippingView shippingAddresses={this.state.ShippingAddresses} shippingClick={this.shippingClick} />
           </li>
 
           <li className="payment expand-box group">
