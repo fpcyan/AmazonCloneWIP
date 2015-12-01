@@ -5,7 +5,7 @@ var Checkout = React.createClass({
   },
 
   getInitialState: function () {
-    return ({ shippingAddresses: [], shippingExpand: false, showForm: false, payments: [] });
+    return ({ shippingAddresses: [], expand: null, form: null, payments: [] });
   },
 
   componentDidMount: function () {
@@ -19,6 +19,7 @@ var Checkout = React.createClass({
 
   shippingClick: function (e) {
     e.preventDefault();
+    debugger;
     if (this.state.shippingAddresses.length > 0) {
       this.setState({ showForm: true });
     } else {
@@ -28,12 +29,12 @@ var Checkout = React.createClass({
 
   render: function () {
     var shippingView, formModal;
-    if (!this.state.shippingExpand) {
+    if (!this.state.expand) {
       shippingView = <ShippingMain address={this.state.shippingAddresses[0]} shipClick={this.shippingClick} changeActive={this.activeShipping}/>;
     } else {
       shippingView = <Shipping addresses={this.state.shippingAddresses} />;
     }
-    if (this.state.showForm) {
+    if (this.state.form) {
       formModal = (this.state.showForm === "shipping") ? <ShippingForm /> : "payment form";
     }
 
@@ -65,8 +66,12 @@ var Checkout = React.createClass({
           </li>
 
           <li className="review static-box">
-            <div className="left-col"><h3>3</h3> </div>
-            <div className="left-col"><h3>Review items and shipping</h3></div>
+            <div className="expand-box group">
+              <div className="left-col"><h3>3</h3> </div>
+              <div className="left-col"><h3>Review items and shipping</h3></div>
+              <div className="left-col"></div>
+            </div>
+
             <div className="display-info group">
 
               <div className="left-col">
