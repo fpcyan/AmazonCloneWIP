@@ -17,10 +17,7 @@ class Image < ActiveRecord::Base
 
 
   def already_exists(product)
-    image = Image.find_by(image_file_name: self.image_file_name)
-    if product.images.include?(image)
-      return image
-    end
+    Image.find_by(image_file_name: self.image_file_name)
   end
 
 end
