@@ -14,6 +14,11 @@ class Api::ShippingAddressesController < Api::ApiController
     end
   end
 
+  def update
+    address = ShippingAddresses.find(params[:shippingId])
+    address.update(address_params) if current_user.shipping_addresses.include?(address)
+  end
+
   def destroy
     address = ShippingAddresses.find(params[:shippingId])
     address.destroy if current_user.shipping_addresses.include?(address)
