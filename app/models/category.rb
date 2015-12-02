@@ -17,10 +17,8 @@ class Category < ActiveRecord::Base
       specs: params[3],
       quantity: params[4]
     )
-    unless product.errors.empty?
-      return product.already_exists(self)
-    end
-    return product
+
+    product.already_exists(self) unless product.errors.empty?
   end
 
   private
