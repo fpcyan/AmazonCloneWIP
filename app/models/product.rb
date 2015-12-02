@@ -38,10 +38,7 @@ class Product < ActiveRecord::Base
       main_image: main,
       image: image_file
     )
-    unless image.errors.empty?
-      return image.already_exists(self)
-    end
-    return image
+    image.already_exists(self) unless image.errors.empty?
   end
 
   def in_stock?
@@ -52,7 +49,6 @@ class Product < ActiveRecord::Base
     else
       self.stock = true
     end
-    return self
   end
 
 end
