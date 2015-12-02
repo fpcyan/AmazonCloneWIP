@@ -1,6 +1,7 @@
 class Api::PaymentsController < Api::ApiController
 
   def index
+    render "api/payments/index"
   end
 
   def create
