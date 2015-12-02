@@ -25,25 +25,16 @@ class User < ActiveRecord::Base
         self.shopping_cart_items.create!(product_id: item["product_id"], quantity: item["quantity"])
       elsif query_len === 1
         query[0].update(quantity: item["quantity"])
-      else
-        raise "TWO OF A KIND~~~"
       end
     end
-    nil
   end
 
 
 ## Auth
 
   def self.find_by_credentials(email, password)
-    user = User.find_by(email: email)
-    return nil if user.nil?
-
-    if user.password_digest.is_password?(password)
-      user
-    else
-      nil
-    end
+    return nil unless user = User.find_by(email: email)
+    user.is_password?(password) ? user : nil
   end
 
   def password=(password)
@@ -70,7 +61,7 @@ class User < ActiveRecord::Base
   end
 
   def self.generate_session_token!
-    return SecureRandom::urlsafe_base64
+    SecureRandom::urlsafe_base64
   end
 
   private
