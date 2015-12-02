@@ -2,8 +2,7 @@ class Product < ActiveRecord::Base
 
   attr_accessor :stock
 
-  validates :product_name, :price, :description, :specs,
-    :quantity, presence: true
+  validates :product_name, :price, :description, :specs, :quantity, presence: true
   validates :product_name, uniqueness: true
 
   has_many :products_categories, inverse_of: :product

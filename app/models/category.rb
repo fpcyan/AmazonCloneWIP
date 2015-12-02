@@ -28,4 +28,5 @@ class Category < ActiveRecord::Base
         errors.add(:department_id, "can't be a parent department")
       end
     end
+    
 end
