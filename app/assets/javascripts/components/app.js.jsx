@@ -21,6 +21,14 @@ var App = React.createClass({
     return ({ id: null, full_name: "", cart: [] });
   },
 
+  totalPrice: function () {
+    sum = 0;
+    this.state.cart.forEach(function (item) {
+      sum += (item.quantity * item.product.price);
+    });
+    return sum;
+  },
+
   componentDidMount: function () {
     UserApiUtil.fetchCurrentUser();
     CurrentUserStore.addChangeListener(this._onSignIn);
@@ -34,11 +42,11 @@ var App = React.createClass({
 
   render: function () {
     var newChildren = React.Children.map(this.props.children, function (child) {
-      return React.cloneElement(child, { cart: this.state.cart, userId: this.state.id });
+      return React.cloneElement(child, { cart: this.state.cart, userId: this.state.id, subtotal: this.totalPrice() });
     }.bind(this));
     return (
       <main>
-        <NavBar userName={this.state.full_name} cart={this.state.cart} />
+        <NavBar userName={this.state.full_name} cart={this.state.cart} subtotal={this.totalPrice()}/>
         { newChildren }
       </main>
     );

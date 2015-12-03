@@ -2,7 +2,6 @@ class Api::CheckoutsController < Api::ApiController
 
   def create
     @order = params[:token]
-
     customer = Stripe::Customer.create(
       email:  @order[:email],
       source: @order[:id]
@@ -14,6 +13,10 @@ class Api::CheckoutsController < Api::ApiController
       description:  'Rails Stripe customer',
       currency:     'usd'
     )
+    # users table:
+    #   stripe_customer_id : string
+    # order
+    debugger
   end
 
 end

@@ -78,7 +78,7 @@ full_name   | string    | not null
 expiration  | datetime  | not null
 cc_token    | string    | not null
 
-## order_manifests
+## order
 column name   | data type | details
 --------------|-----------|-----------------------
 id            | integer   | not null, primary key

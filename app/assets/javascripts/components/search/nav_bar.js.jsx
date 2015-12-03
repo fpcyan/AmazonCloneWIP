@@ -51,8 +51,6 @@ var NavBar = React.createClass({
 
           <small className="dem-links-wrapper">
             <a href={this.feelingLucky()} className="nav-bar-link">I'm Feeling Lucky</a>
-            <a className="nav-bar-link">Adopt a Cat</a>
-            <a className="nav-bar-link">About</a>
           </small>
 
           <div className="right-hand-wrapper">
@@ -66,7 +64,7 @@ var NavBar = React.createClass({
                   {cartSize}
                 <img className="cart-button-image" src={appImages.shoppingCart} alt="Shopping cart" />
                 </a>
-                <CartDropdown cart={this.props.cart}/>
+                <CartDropdown cart={this.props.cart} subtotal={this.props.subtotal}/>
               </div>
             </div>
 

@@ -19,7 +19,7 @@ var CartDropdown = React.createClass({
           </div>
           );
         });
-        cartPreviewList.push(<div key="full-ct-1" className="nav-all drop-item">Order Total: ${(subtotal / 100).toFixed(2)}</div>);
+        cartPreviewList.push(<div key="full-ct-1" className="nav-all drop-item">Order Total: ${(this.props.subtotal / 100).toFixed(2)}</div>);
         cartPreviewList.push(<div key="full-ct-2" className="nav-all drop-item"><a href="#/cart" className="small-button">See your cart.</a></div>);
     } else {
       cartPreviewList = ([

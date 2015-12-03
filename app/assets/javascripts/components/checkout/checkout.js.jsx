@@ -9,9 +9,10 @@ var Checkout = React.createClass({
       key: 'pk_test_2AHgFTRGwryvPz1z1yhnCb4s',
       image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
       locale: 'auto',
+      allowRememberMe: false,
       token: function(token) {
         var that = this;
-        CheckoutApiUtils.createFinishedPayment(token, 2000, function () {
+        CheckoutApiUtils.createFinishedPayment(token, this.props.subtotal, function () {
           that.history.pushState(null, "/");
         });
       }.bind(this)
@@ -48,7 +49,7 @@ var Checkout = React.createClass({
       name: 'Bazaar',
       email: CurrentUserStore.currentUser().email,
       description: desc,
-      amount: 2000
+      amount: this.props.subtotal
     });
     e.preventDefault();
   },
@@ -100,7 +101,7 @@ var Checkout = React.createClass({
                 <button onClick={this.handleCheckout} className="small-button">Place your order</button>
               </div>
               <div className="left-col">
-                <h3 className="red-price">Order total: $100.00</h3>
+                <h3 className="red-price">Order total: ${(this.props.subtotal / 100).toFixed(2)}</h3>
               </div>
             </div>
           </li>
@@ -128,7 +129,7 @@ var Checkout = React.createClass({
               </li>
               <li className="small-line-item">
                 <p className="left-text red-price">Order total:</p>
-                <p className="right-text">$44.00</p>
+                <p className="right-text">${(this.props.subtotal / 100).toFixed(2)}</p>
               </li>
             </ul>
 
