@@ -50,7 +50,6 @@ var UserApiUtil = {
         CartActions.receiveCart(data.cart);
       },
       error: function (data) {
-        debugger
         UserActions.setAnonymousUser();
       }
     });

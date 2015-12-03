@@ -11,8 +11,7 @@ var Checkout = React.createClass({
       locale: 'auto',
       token: function(token) {
         var that = this;
-        CheckoutApiUtils.createFinishedPayment(token, function () {
-          debugger;
+        CheckoutApiUtils.createFinishedPayment(token, amount, function () {
           that.history.pushState(null, "/");
         });
       }.bind(this)

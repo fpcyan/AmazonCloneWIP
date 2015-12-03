@@ -24,7 +24,6 @@ var CartApiUtils = {
       type: "get",
       dataType: "json",
       success: function (data) {
-        debugger;
         CartActions.receiveCartWithImages(data);
       }
     });

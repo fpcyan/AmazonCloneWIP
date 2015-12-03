@@ -11,15 +11,14 @@ var CheckoutApiUtils = {
     });
   },
 
-  createFinishedPayment: function(token, success) {
-    debugger;
+  createFinishedPayment: function(token, amount, success) {
     $.ajax({
       url: "api/checkout",
       type: "post",
       dataType: "json",
-      data: { token: token },
+      data: { token: token, amount: amount },
       success: function (data) {
-        debugger;
+
         CheckoutActions.receiveShippingAddresses(data);
         success && success();
       }
