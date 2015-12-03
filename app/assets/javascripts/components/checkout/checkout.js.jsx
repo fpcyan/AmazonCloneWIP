@@ -5,7 +5,20 @@ var Checkout = React.createClass({
   },
 
   getInitialState: function () {
-    return ({ shippingAddresses: [], expand: null, form: null, payments: [] });
+    var handler = StripeCheckout.configure({
+      key: 'pk_test_2AHgFTRGwryvPz1z1yhnCb4s',
+      image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+      locale: 'auto',
+      token: function(token) {
+        var that = this;
+        CheckoutApiUtils.createFinishedPayment(token, function () {
+          debugger;
+          that.history.pushState(null, "/");
+        });
+      }.bind(this)
+    });
+
+    return ({ shippingAddresses: [], handler: handler });
   },
 
   componentDidMount: function () {
@@ -26,6 +39,21 @@ var Checkout = React.createClass({
     }
   },
 
+  handleCheckout: function(e) {
+    var numItems = CartStore.all().length;
+    var desc = numItems.toString() + " item";
+    if (numItems > 1) {
+      desc += "s";
+    }
+    this.state.handler.open({
+      name: 'Bazaar',
+      email: CurrentUserStore.currentUser().email,
+      description: desc,
+      amount: 2000
+    });
+    e.preventDefault();
+  },
+
   render: function () {
     var formModal;
     if (this.state.form) {
@@ -39,29 +67,10 @@ var Checkout = React.createClass({
             <ShippingView shippingAddresses={this.state.shippingAddresses} shippingClick={this.shippingClick} expand={this.state.expand}/>
           </li>
 
-          <li className="payment expand-box group">
-            <div className="left-col"><h3>2</h3> </div>
-            <div className="left-col"><h3>Payment Method</h3></div>
-            <div className="left-col">
-              <ul className="display-info">
-                <li className="small-line-item">
-                  <p className="left-text">Amazon Visa ending in 4444</p>
-                </li>
-                <li className="small-line-item">
-                  <p className="left-text">Billing Address: Fiona Conn, 3755 77th st, Apt 2J, Jackson He...</p>
-              </li>
-              </ul>
-            </div>
-            <div className="left-col">
-              <button className="clear-button">
-                <p>Change</p>
-              </button>
-            </div>
-          </li>
 
           <li className="review static-box">
             <div className="expand-box group">
-              <div className="left-col"><h3>3</h3> </div>
+              <div className="left-col"><h3>2</h3> </div>
               <div className="left-col"><h3>Review items and shipping</h3></div>
               <div className="left-col"></div>
             </div>
@@ -86,7 +95,10 @@ var Checkout = React.createClass({
 
             <div className="inner-box group">
               <div className="left-col">
-                <button className="small-button">Place your order</button>
+                <h3>3</h3>
+              </div>
+              <div className="left-col">
+                <button onClick={this.handleCheckout} className="small-button">Place your order</button>
               </div>
               <div className="left-col">
                 <h3 className="red-price">Order total: $100.00</h3>

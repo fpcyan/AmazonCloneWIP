@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :shipping_addresses, only: [:index, :create, :destroy]
 
     resources :shopping_cart_items, only: [:index, :create, :destroy]
+    resource :checkout, only: [:create, :destroy]
     resource :session, only: [:show, :create, :destroy]
   end
 

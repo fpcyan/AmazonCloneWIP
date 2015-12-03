@@ -17,6 +17,8 @@ class Product < ActiveRecord::Base
   has_many :shopping_cart_items, inverse_of: :product, dependent: :destroy
   has_many :users, through: :shopping_cart_items, source: :user
 
+  scope :in_stock, -> { where("quantity > 0") }
+
   def self.featured_products ## finds the 2 subdepartments with the most products
     Department.featured_products
   end
