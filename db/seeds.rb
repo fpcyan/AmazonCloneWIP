@@ -68,7 +68,6 @@ def construct_products_and_images(current_dir, category, *args)
           rand(0...100)
         )
       end
-
       image_file = File.new(current_dir.path + "/" + imagery)
       if prod
         puts "Product: " + prod.product_name + " in Category: " +

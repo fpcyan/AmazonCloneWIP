@@ -10,7 +10,7 @@ class Category < ActiveRecord::Base
 
 
   def create_product(*params)
-    product = self.products.create(
+    product = products.create(
       product_name: params[0],
       price: params[1],
       description: params[2],
@@ -18,7 +18,7 @@ class Category < ActiveRecord::Base
       quantity: params[4]
     )
 
-    product.already_exists(self) unless product.errors.empty?
+    product.errors.empty? ? product : product.already_exists(self)
   end
 
   private
@@ -28,5 +28,5 @@ class Category < ActiveRecord::Base
         errors.add(:department_id, "can't be a parent department")
       end
     end
-    
+
 end

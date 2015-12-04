@@ -33,7 +33,7 @@ class Product < ActiveRecord::Base
       main_image: main,
       image: image_file
     )
-    image.already_exists(self) unless image.errors.empty?
+    image.errors.empty? ? image : image.already_exists(self)
   end
 
   def in_stock?
