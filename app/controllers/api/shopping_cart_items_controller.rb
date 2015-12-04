@@ -8,8 +8,8 @@ class Api::ShoppingCartItemsController < Api::ApiController
 
   def create
     shopping_cart_items = params[:shopping_cart_items]
-    items = JSON.parse(shopping_cart_items)
-    current_user.update_shopping_cart(items)
+    current_user.update_shopping_cart(JSON.parse(shopping_cart_items))
+    load_shopping_cart
     render "api/shopping_cart_items/index"
   end
 
