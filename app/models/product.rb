@@ -13,7 +13,6 @@ class Product < ActiveRecord::Base
 
   has_many :images, inverse_of: :product
 
-
   has_many :shopping_cart_items, inverse_of: :product, dependent: :destroy
   has_many :users, through: :shopping_cart_items, source: :user
 
@@ -23,17 +22,14 @@ class Product < ActiveRecord::Base
 
   def already_exists(category)
     product = Product.find_by(product_name: self.product_name)
-    if category.products.include?(product)
-      return nil
-    else
-      category.products << product
-      return product
-    end
+    return nil if category.products.include?(product)
+
+    product.tap { category.products << product }
   end
 
   def create_image(main, image_file)
-    image = self.images.create(
-      alt: self.product_name,
+    image = images.create(
+      alt: product_name,
       main_image: main,
       image: image_file
     )
@@ -41,10 +37,11 @@ class Product < ActiveRecord::Base
   end
 
   def in_stock?
-    if self.quantity === 0
+    case self.quantity
+    when 0
       self.stock = false
-    elsif self.quantity < 15
-      self.stock = self.quantity
+    when 1..15
+      self.stock = quantity
     else
       self.stock = true
     end
