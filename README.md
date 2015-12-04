@@ -6,6 +6,14 @@
 
 The Bazaar is a web application clone of Amazon.com. Some features and design choices are inspired by Jet.com. Main development took place over the course of 9 "business" days and 2 weekend days.
 
+Current feature being built:
+- [ ] Anonymous user shopping
+
+Recently implemented features:
+- [x] Demo user sign-in buttons!
+- [x] Checkout and purchasing (front end and back end)
+- [x] Integration with [Stripe][stripe-link]
+
 You can find the original project proposal [here][project-proposal].
 Here is the day-by-day dev blog:
  * [Day 9][day-9]
@@ -17,6 +25,8 @@ Here is the day-by-day dev blog:
  * [Day 3][day-3]
  * [Day 2][day-2]
  * [Day 1][day-1]
+
+[stripe-link]: https://stripe.com/
 
 [project-proposal]: ./docs/project_proposal.md
 [day-9]: http://fpcyan.tumblr.com/post/134278919430/w9d5

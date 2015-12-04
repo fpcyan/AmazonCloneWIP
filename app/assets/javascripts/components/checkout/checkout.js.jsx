@@ -115,19 +115,11 @@ var Checkout = React.createClass({
             <ul className="subtotal-summary">
               <li className="small-line-item">
                 <p className="left-text">Items:</p>
-                <p className="right-text">$99.99</p>
+                <p className="right-text">${(this.props.subtotal / 100).toFixed(2)}</p>
               </li>
               <li className="small-line-item">
-                <p className="left-text">Shipping & Handling:</p>
-                <p className="right-text">$9.50</p>
-              </li>
-              <li className="small-line-item">
-                <p className="left-text">Total before tax:</p>
-                <p className="right-text">$109.49</p>
-              </li>
-              <li className="small-line-item">
-                <p className="left-text">Estimate tax:</p>
-                <p className="right-text">$44.00</p>
+                <p className="left-text">Shipping: </p>
+                <p className="right-text">$0.00</p>
               </li>
               <li className="small-line-item">
                 <p className="left-text red-price">Order total:</p>
