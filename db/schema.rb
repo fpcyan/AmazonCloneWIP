@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151130012955) do
+ActiveRecord::Schema.define(version: 20151204034718) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,18 @@ ActiveRecord::Schema.define(version: 20151130012955) do
     t.datetime "image_updated_at"
     t.text     "image_meta"
   end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "product_id",       null: false
+    t.datetime "purchase_date",    null: false
+    t.integer  "price",            null: false
+    t.integer  "quantity",         null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "stripe_charge_id"
+  end
+
+  add_index "orders", ["product_id"], name: "index_orders_on_product_id", using: :btree
 
   create_table "products", force: :cascade do |t|
     t.string   "product_name", null: false
@@ -94,12 +106,13 @@ ActiveRecord::Schema.define(version: 20151130012955) do
   add_index "shopping_cart_items", ["user_id"], name: "index_shopping_cart_items_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",           null: false
-    t.string   "password_digest", null: false
-    t.string   "session_token",   null: false
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.string   "full_name",       null: false
+    t.string   "email",              null: false
+    t.string   "password_digest",    null: false
+    t.string   "session_token",      null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "full_name",          null: false
+    t.string   "stripe_customer_id"
   end
 
   add_index "users", ["session_token"], name: "index_users_on_session_token", using: :btree

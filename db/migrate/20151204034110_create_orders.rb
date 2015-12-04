@@ -1,10 +1,10 @@
 class CreateOrders < ActiveRecord::Migration
   def change
     create_table :orders do |t|
-      t.integer :product_id
-      t.datetime :purchase_date
-      t.integer :price
-      t.integer :quantity
+      t.integer :product_id, null: false
+      t.datetime :purchase_date, null: false
+      t.integer :price, null: false
+      t.integer :quantity, null: false
 
       t.timestamps null: false
     end
