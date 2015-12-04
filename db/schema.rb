@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151204170340) do
+ActiveRecord::Schema.define(version: 20151204181930) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,17 +47,20 @@ ActiveRecord::Schema.define(version: 20151204170340) do
     t.text     "image_meta"
   end
 
+  add_index "images", ["product_id"], name: "index_images_on_product_id", using: :btree
+
   create_table "orders", force: :cascade do |t|
-    t.integer  "product_id",                       null: false
-    t.integer  "price",                            null: false
-    t.integer  "quantity",                         null: false
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
-    t.string   "stripe_charge_id",                 null: false
-    t.boolean  "refunded",         default: false, null: false
+    t.integer  "product_id",                     null: false
+    t.integer  "price",                          null: false
+    t.integer  "quantity",                       null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.boolean  "refunded",       default: false, null: false
+    t.integer  "user_orders_id",                 null: false
   end
 
   add_index "orders", ["product_id"], name: "index_orders_on_product_id", using: :btree
+  add_index "orders", ["user_orders_id"], name: "index_orders_on_user_orders_id", using: :btree
 
   create_table "products", force: :cascade do |t|
     t.string   "product_name", null: false
@@ -106,13 +109,14 @@ ActiveRecord::Schema.define(version: 20151204170340) do
   add_index "shopping_cart_items", ["user_id"], name: "index_shopping_cart_items_on_user_id", using: :btree
 
   create_table "user_orders", force: :cascade do |t|
-    t.integer  "user_id",    null: false
-    t.integer  "order_id",   null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "user_id",          null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "purchase_total",   null: false
+    t.string   "stripe_charge_id", null: false
   end
 
-  add_index "user_orders", ["order_id"], name: "index_user_orders_on_order_id", using: :btree
+  add_index "user_orders", ["stripe_charge_id"], name: "index_user_orders_on_stripe_charge_id", using: :btree
   add_index "user_orders", ["user_id"], name: "index_user_orders_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
@@ -126,5 +130,6 @@ ActiveRecord::Schema.define(version: 20151204170340) do
   end
 
   add_index "users", ["session_token"], name: "index_users_on_session_token", using: :btree
+  add_index "users", ["stripe_customer_id"], name: "index_users_on_stripe_customer_id", using: :btree
 
 end
