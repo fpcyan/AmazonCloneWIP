@@ -19,13 +19,12 @@ class User < ActiveRecord::Base
 ## Shopping Cart
 
   def update_shopping_cart(items)
-    byebug
     items.each do |item|
-      product = self.shopping_cart_items.find_by_product_id(item["product_id"])
+      product = shopping_cart_items.find_by_product_id(item["product_id"])
       if product
         product.update(quantity: item["quantity"])
       else
-        self.shopping_cart_items.create!(
+        shopping_cart_items.create!(
           product_id: item["product_id"],
           quantity: item["quantity"]
           )
@@ -58,7 +57,7 @@ class User < ActiveRecord::Base
   end
 
   def is_password?(password)
-    self.password_digest.is_password?(password)
+    password_digest.is_password?(password)
   end
 
   def reset_session_token!
