@@ -16,11 +16,7 @@ class Product < ActiveRecord::Base
   has_many :shopping_cart_items, inverse_of: :product, dependent: :destroy
   has_many :users, through: :shopping_cart_items, source: :user
 
-  def self.featured_products ## finds the 2 subdepartments with the most products
-    Department.featured_products
-  end
-
-  def already_exists(category)
+  def already_exists(category) # called when a product fails to be created on a category
     product = Product.find_by(product_name: self.product_name)
     return nil if category.products.include?(product)
 

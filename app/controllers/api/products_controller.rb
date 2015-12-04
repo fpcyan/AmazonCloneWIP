@@ -2,7 +2,7 @@ class Api::ProductsController < Api::ApiController
 
   def index
     if params[:home]
-      @feature_products = Product.featured_products.load
+      @feature_products = Department.featured_products.load
       @products
     else
       @feature_products
