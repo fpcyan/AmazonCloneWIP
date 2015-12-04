@@ -17,6 +17,36 @@ class User < ActiveRecord::Base
 
   has_many :user_orders, inverse_of: :user
   has_many :orders, through: :user_orders, source: :orders
+
+## Checkout
+
+  def create_stripe_customer(order_id)
+    customer = Stripe::Customer.create(email: email, source: order_id)
+    self.stripe_customer_id = customer.id
+    save!
+  end
+
+  def log_checkout(amount)
+    charge = save_stripe_charge(amount)
+    user_orders
+      .create(purchase_total: charge.amount, stripe_charge_id: charge.id)
+      .save_order_manifest(shopping_cart_items)
+    empty_shopping_cart
+  end
+
+  def save_stripe_charge(amount)
+    Stripe::Charge.create(
+      customer:     stripe_customer_id,
+      amount:       amount,
+      description:  'Rails Stripe customer',
+      currency:     'usd'
+    )
+  end
+
+  def empty_shopping_cart
+    user.shopping_cart_items.destroy_all
+  end
+
 ## Shopping Cart
 
   def update_shopping_cart(items)

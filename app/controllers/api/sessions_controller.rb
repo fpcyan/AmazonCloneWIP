@@ -3,15 +3,12 @@ class Api::SessionsController < Api::ApiController
 
   def show
     if current_user
-    @user = current_user
-    @user.shopping_cart_items.includes(product: :images).load
-    render "api/session/show"
+      @user = current_user
+      @user.shopping_cart_items.includes(product: :images).load
     else
-    #   debugger
       @user = User.new(id: nil, full_name: nil, shopping_cart_items: [])
-    #   render json: {}, status: 499
-    render "api/session/show"
     end
+    render "api/session/show"
   end
 
   def create
