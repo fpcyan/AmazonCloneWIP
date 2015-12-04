@@ -15,19 +15,25 @@ class User < ActiveRecord::Base
 
   has_many :shipping_addresses, inverse_of: :user, dependent: :destroy
 
+
 ## Shopping Cart
 
   def update_shopping_cart(items)
+    byebug
     items.each do |item|
-    query = self.shopping_cart_items.where(product_id: item["product_id"])
-    query_len = query.length
-      if query_len === 0
-        self.shopping_cart_items.create!(product_id: item["product_id"], quantity: item["quantity"])
-      elsif query_len === 1
-        query[0].update(quantity: item["quantity"])
+      product = self.shopping_cart_items.find_by_product_id(item["product_id"])
+      if product
+        product.update(quantity: item["quantity"])
+      else
+        self.shopping_cart_items.create!(
+          product_id: item["product_id"],
+          quantity: item["quantity"]
+          )
       end
     end
   end
+
+
 
 
 ## Auth
