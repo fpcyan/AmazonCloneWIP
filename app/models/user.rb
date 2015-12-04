@@ -44,7 +44,7 @@ class User < ActiveRecord::Base
   end
 
   def empty_shopping_cart
-    user.shopping_cart_items.destroy_all
+    shopping_cart_items.destroy_all
   end
 
 ## Shopping Cart

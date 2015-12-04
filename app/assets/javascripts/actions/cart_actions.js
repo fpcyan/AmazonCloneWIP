@@ -14,12 +14,5 @@ var CartActions = {
       actionType: CartConstants.PRODUCT_ADDED,
       product: product
     });
-  },
-
-  receiveCartWithImages: function (data) {
-    AppDispatcher.dispatch({
-      actionType: CartConstants.CART_WITH_IMAGES_RECEIVED,
-      products: data
-    });
   }
 };

@@ -18,8 +18,7 @@ var CheckoutApiUtils = {
       dataType: "json",
       data: { token: token, amount: amount },
       success: function (data) {
-        debugger;
-        CheckoutActions.receiveShippingAddresses(data);
+        CartActions.receiveCart(data.cart);
         success && success();
       }
     });

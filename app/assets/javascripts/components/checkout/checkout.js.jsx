@@ -1,5 +1,7 @@
 var Checkout = React.createClass({
 
+  mixins: [ReactRouter.History],
+
   _onAddressChange: function () {
     this.setState({ shippingAddresses: ShippingAddressStore.all() });
   },
