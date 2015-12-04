@@ -15,7 +15,8 @@ class User < ActiveRecord::Base
 
   has_many :shipping_addresses, inverse_of: :user, dependent: :destroy
 
-
+  has_many :user_orders, inverse_of: :user
+  has_many :orders, through: :user_orders, source: :orders
 ## Shopping Cart
 
   def update_shopping_cart(items)

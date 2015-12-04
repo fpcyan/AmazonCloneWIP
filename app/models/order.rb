@@ -4,5 +4,5 @@ class Order < ActiveRecord::Base
   validates :quantity, numericality: { greater_than: 0,
     message: "Quantity must be at least one" }
 
-  
+  belongs_to :user_order, inverse_of: :orders 
 end
