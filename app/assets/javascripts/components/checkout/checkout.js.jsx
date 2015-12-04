@@ -135,8 +135,8 @@ var Checkout = React.createClass({
               </li>
             </ul>
 
-            <button id="order-button" className="some-button">
-              <p className="some-button-txt">Place your order</p>
+            <button id="order-button" className="some-button" onClick={this.handleCheckout}>
+              <p className="some-button-txt" >Place your order</p>
             </button>
           </div>
         </div>
