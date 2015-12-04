@@ -57,7 +57,11 @@ var UserForm = React.createClass({
 
           <p>
 
-            Already have an account? </p><a href="#" className="normal-link">Sign in</a>
+            Already have an account? </p><a href="#/sign_in" className="normal-link">Sign in</a>
+        </div>
+        <div className="divider-section">
+          <p className="border-overlay">Don't feel like putting in your credentials?</p>
+          <a href="#/sign_in?demoUser=true"className="form-button">Sign in as Demo User</a>
         </div>
 
       </fieldset>

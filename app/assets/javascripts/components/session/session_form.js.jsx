@@ -2,6 +2,13 @@ var SessionForm = React.createClass({
 
   mixins: [ReactRouter.History],
 
+  getInitialState: function () {
+    if (this.props.location.query.demoUser) {
+      return({ email: "sennacy@appacademyfriends.io", password: "password" });
+    }
+    return({ email: "", password: "" });
+  },
+
   onSubmit: function (e) {
     e.preventDefault();
     var path = this.props.location.pathname;
@@ -12,6 +19,21 @@ var SessionForm = React.createClass({
     UserApiUtil.signIn(credentials, function () {
       this.history.pushState(null, path);
     }.bind(this));
+  },
+
+  setDemoUser: function (e) {
+    e.preventDefault();
+    this.setState({ email: "sennacy@appacademyfriends.io", password: "password" });
+  },
+
+  handleInput: function(e) {
+    var inputType = e.currentTarget.name;
+    var input = e.currentTarget.value;
+    if (inputType === "email") {
+      this.setState({ email: input });
+    } else {
+      this.setState({ password: input });
+    }
   },
 
   render: function () {
@@ -31,12 +53,16 @@ var SessionForm = React.createClass({
             <label id="sign-in-email" className="email-label form-label">
               Email
             </label>
-            <input className="email-input form-input" type="email" name="email" tabIndex="2"></input>
+            <input className="email-input form-input"
+              type="email" name="email" tabIndex="2"
+              onChange={this.handleInput} value={this.state.email}></input>
 
             <label id="sign-in-password" className="password-label form-label">
               Password
             </label>
-            <input className="password-input form-input" type="password" name="password" tabIndex="4"></input>
+            <input className="password-input form-input"
+              type="password" name="password" tabIndex="4"
+              onChange={this.handleInput} value={this.state.password}></input>
 
             <button className="form-button">Sign in</button>
           </form>
@@ -44,6 +70,11 @@ var SessionForm = React.createClass({
 
             <p className="border-overlay">New here?</p>
             <button className="create-account-button"><a href="#/sign_up">Create an account</a></button>
+          </div>
+
+          <div className="divider-section">
+            <p className="border-overlay">Don't feel like putting in your credentials?</p>
+            <button onClick={this.setDemoUser} className="form-button">Sign in as Demo User</button>
           </div>
 
         </fieldset>

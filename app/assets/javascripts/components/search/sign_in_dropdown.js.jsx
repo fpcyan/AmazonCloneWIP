@@ -25,6 +25,8 @@ var SignInDropdown = React.createClass({
           <div key="sign-out-1" className="nav-all drop-item"><a key="small-button-3" href="#/sign_in" className="small-button">Sign in!</a> </div>,
           <div key="sign-out-2" className="nav-all drop-item">Don't have an account?</div>,
           <div key="sign-out-3" className="nav-all drop-item"> <a key="small-button-4" href="#/sign_up" className="small-button">Sign up!</a> </div>,
+          <div key="sign-out-4" className="nav-all drop-item">Want to do neither? Sign in as a</div>,
+          <div key="sign-out-5" className="nav-all drop-item"> <a key="small-button-4" href="#/sign_in?demoUser=true" className="small-button">Demo User</a> </div>
       ]);
     }
 

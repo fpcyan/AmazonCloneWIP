@@ -28,7 +28,7 @@ var NavBar = React.createClass({
 
           <label className="search-form group">
             <button className="search-department">All</button>
-            <input className="search-input" type="text" placeholder="Search" />
+            <input className="search-input" type="text" placeholder="Search" defaultValue="Search hasn't actually been implemented yet. Click 'I'm feeling lucky'." />
             <button className="search-submit"><img className="search-submit-img" src={appImages.magnifyingGlass} alt="Go Search" /></button>
           </label>
         </section>
