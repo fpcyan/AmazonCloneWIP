@@ -26,9 +26,7 @@ RSpec.describe Product, :type => :model do
     end
 
     context 'when the category already has the product' do
-      it "returns nil" do
-        expect subject_two.already_exists(category).to be_nil
-      end
+      it "returns nil"
     end
   end
 end
