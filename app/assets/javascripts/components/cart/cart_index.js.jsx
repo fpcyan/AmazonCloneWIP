@@ -5,7 +5,7 @@ var CartIndex = React.createClass({
   },
 
   render: function () {
-    var numItems, subtotal, cartItems;
+    var numItems, subtotal, cartItems, checkoutNav;
 
     numItems = this.props.cart.length === 1 ? " item" : " items";
     numItems = this.props.cart.length + numItems;
@@ -19,6 +19,12 @@ var CartIndex = React.createClass({
         </article>
       );
     }.bind(this));
+
+    if (this.props.userId) {
+      checkoutNav = "#/checkout";
+    } else {
+      checkoutNav = "#/sign_in?redirect=checkout";
+    }
 
     return (
       <main className="cart-index group">
@@ -35,7 +41,7 @@ var CartIndex = React.createClass({
 
           <div className="cart-wrapper">
               <button className="cart-button">
-                <a href="#/checkout"><p className="cart-button-txt">Checkout!</p></a>
+                <a href={checkoutNav}><p className="cart-button-txt">Checkout!</p></a>
               </button>
           </div>
         </section>
