@@ -43,10 +43,7 @@ var Checkout = React.createClass({
 
   handleCheckout: function(e) {
     var numItems = CartStore.all().length;
-    var desc = numItems.toString() + " item";
-    if (numItems > 1) {
-      desc += "s";
-    }
+    var desc = "# 4242 4242 4242 4242, 09/18, 999";
     this.state.handler.open({
       name: 'Bazaar',
       email: CurrentUserStore.currentUser().email,

@@ -12,6 +12,8 @@ var UserForm = React.createClass({
     }
 
     UserApiUtil.createUser({ user }, function () {
+      CartApiUtils.updateRemoteCartItems(CartStore.all());
+      reactCookie.remove('cookieCart');
       this.history.pushState(null, path);
     }.bind(this));
   },
@@ -43,7 +45,7 @@ var UserForm = React.createClass({
           <label id="sign-up-password" className="password-label form-label">
             Password
           </label>
-          <input className="password-input form-input" type="password" name="password" tabIndex="4" placeholder="at leader 8 characters"></input>
+          <input className="password-input form-input" type="password" name="password" tabIndex="4" placeholder="at least 8 characters"></input>
 
           <label id="sign-up-password" className="password-label form-label">
             Password again

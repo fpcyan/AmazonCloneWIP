@@ -19,7 +19,6 @@ var NavBar = React.createClass({
       );
     });
     cartSize = (this.props.cart.length) ? <p className="cart-qty">{this.props.cart.length}</p> : null;
-
     return (
       <header className="header">
 
@@ -54,7 +53,7 @@ var NavBar = React.createClass({
           </small>
 
           <div className="right-hand-wrapper">
-            <SignInDropdown userName={this.props.userName} />
+            <SignInDropdown userName={this.props.userName} loc={this.props.location.pathname}/>
 
             <WishListDropdown userName={this.props.userName} />
 

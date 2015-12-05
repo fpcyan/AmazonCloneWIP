@@ -25,8 +25,14 @@ var App = React.createClass({
     return sum;
   },
 
+  redirectFromCheckout: function () {
+    if (this.props.location.pathname === "/checkout") {
+      this.props.history.pushState(null, "/sign_in?redirect=checkout");
+    }
+  },
+
   componentDidMount: function () {
-    UserApiUtil.fetchCurrentUser();
+    UserApiUtil.fetchCurrentUser(this.redirectFromCheckout);
     CurrentUserStore.addChangeListener(this._onSignIn);
     CartStore.addChangeListener(this._onCartChange);
   },
@@ -42,7 +48,7 @@ var App = React.createClass({
     }.bind(this));
     return (
       <main>
-        <NavBar userName={this.state.full_name} cart={this.state.cart} subtotal={this.totalPrice()}/>
+        <NavBar userName={this.state.full_name} cart={this.state.cart} subtotal={this.totalPrice()} location={this.props.location}/>
         { newChildren }
       </main>
     );

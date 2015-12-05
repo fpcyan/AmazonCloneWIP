@@ -21,8 +21,7 @@ var UserApiUtil = {
       data: credentials,
       success: function (data) {
         UserActions.receiveCurrentUser(data.user);
-        CartActions.receiveCart(data.cart);
-        success && success();
+        success && success(data.cart);
       }
     });
   },
@@ -40,7 +39,7 @@ var UserApiUtil = {
     });
   },
 
-  fetchCurrentUser: function () {
+  fetchCurrentUser: function (callback) {
     $.ajax({
       url: "api/session",
       type: "get",
@@ -51,6 +50,7 @@ var UserApiUtil = {
           CartActions.receiveCart(data.cart);
         } else {
           CartApiUtils.fetchCookieCart();
+          callback && callback();
         }
       },
     });

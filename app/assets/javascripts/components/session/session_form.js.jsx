@@ -11,12 +11,15 @@ var SessionForm = React.createClass({
 
   onSubmit: function (e) {
     e.preventDefault();
-    var path = this.props.location.pathname;
-    if (path === "/sign_in" || path === "/sign_up") {
+    var path = "/" + this.props.location.query.redirect;
+    if (path === "/undefined") {
       path = "/";
     }
     var credentials = $(e.currentTarget).serializeJSON();
-    UserApiUtil.signIn(credentials, function () {
+    UserApiUtil.signIn(credentials, function (cart) {
+      var newCart = cart.concat(CartStore.all());
+      CartApiUtils.updateRemoteCartItems(newCart);
+      reactCookie.remove('cookieCart');
       this.history.pushState(null, path);
     }.bind(this));
   },
