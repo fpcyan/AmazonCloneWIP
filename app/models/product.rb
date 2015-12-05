@@ -35,11 +35,11 @@ class Product < ActiveRecord::Base
   def in_stock?
     case self.quantity
     when 0
-      self.stock = false
+      self.stock = "Out of stock."
     when 1..15
-      self.stock = quantity
+      self.stock = "Only " + quantity.to_s + " left!"
     else
-      self.stock = true
+      self.stock = "In stock."
     end
     self
   end
