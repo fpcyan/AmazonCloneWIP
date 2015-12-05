@@ -1,7 +1,7 @@
 
 var CartApiUtils = {
 
-  updateRemoteCartItems: function (cart, callback) {
+  updateRemoteCartItems: function (cart, callback, updateCookieCart) {
     var parsedCart = [];
     cart.forEach( function(obj) {
       parsedCart.push({ product_id: obj.product.id, quantity: obj.quantity });
@@ -13,6 +13,7 @@ var CartApiUtils = {
       data: { shopping_cart_items: JSON.stringify(parsedCart) },
       success: function (data) {
         CartActions.receiveCart(data);
+        updateCookieCart && updateCookieCart(data);
         callback && callback();
       }
     });
@@ -27,6 +28,11 @@ var CartApiUtils = {
         CartActions.receiveCartWithImages(data);
       }
     });
+  },
+
+  fetchCookieCart: function () {
+    var cart = reactCookie.load('cookieCart');
+    CartActions.receiveCart(cart);
   },
 
   deleteCart: function (callback) {

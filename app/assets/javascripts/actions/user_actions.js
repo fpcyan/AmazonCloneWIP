@@ -13,7 +13,7 @@ var UserActions = {
   setAnonymousUser: function (user) {
     AppDispatcher.dispatch({
       actionType: UserConstants.ANONYMOUS_USER_RECEIVED
-    })
+    });
   }
 
 };

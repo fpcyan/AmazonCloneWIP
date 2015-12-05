@@ -47,11 +47,12 @@ var UserApiUtil = {
       dataType: "json",
       success: function (data) {
         UserActions.receiveCurrentUser(data.user);
-        CartActions.receiveCart(data.cart);
+        if (data.user.id) {
+          CartActions.receiveCart(data.cart);
+        } else {
+          CartApiUtils.fetchCookieCart();
+        }
       },
-      error: function (data) {
-        UserActions.setAnonymousUser();
-      }
     });
   }
 

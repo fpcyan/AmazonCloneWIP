@@ -77,7 +77,7 @@ var ShowProduct = React.createClass({
           </div>
 
           <div className="form-outer-box">
-            <ProductMgmtForm product={this.state.product} />
+            <ProductMgmtForm product={this.state.product} userId={this.props.userId} />
           </div>
         </section>
         <div className="divider"></div>

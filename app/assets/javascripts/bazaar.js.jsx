@@ -3,12 +3,10 @@
 
   $(document).ready(function () {
 
-    var Router, Route, IndexRoute, home, routes;
+    var Router, Route, IndexRoute, home, routes, cookie;
     Router = ReactRouter.Router;
     Route = ReactRouter.Route;
     IndexRoute = ReactRouter.IndexRoute;
-
-
     routes = (
       <Router>
         <Route path="/" component={App}>

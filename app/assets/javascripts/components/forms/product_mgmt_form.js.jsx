@@ -24,9 +24,21 @@ var ProductMgmtForm = React.createClass({
     e.preventDefault();
     var newCart = CartStore.all();
     newCart.push({product: this.props.product, quantity: this.state.qty });
+    if (this.props.userId) {
+      this.updateCart(newCart);
+    } else {
+      this.updateCart(newCart, this.updateCookieCart);
+    }
+  },
+
+  updateCart: function (newCart, updateCookieCart) {
     CartApiUtils.updateRemoteCartItems(newCart, function () {
       this.history.pushState(null, "/cart");
-    }.bind(this));
+    }.bind(this), updateCookieCart);
+  },
+
+  updateCookieCart: function (newCart) {
+    reactCookie.save('cookieCart', newCart);
   },
 
   render: function () {

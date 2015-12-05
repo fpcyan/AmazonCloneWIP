@@ -1,11 +1,7 @@
 var App = React.createClass({
 
   _onCartChange: function () {
-    if (this.state.id) {
-      this.setState({ cart: CartStore.all() });
-    } else {
-      // _updateCookieCartItems(CartStore.all());
-    }
+    this.setState({ cart: CartStore.all() });
   },
 
   _onSignIn: function () {
@@ -13,12 +9,12 @@ var App = React.createClass({
       var user = CurrentUserStore.currentUser();
       this.setState({ id: user.id, full_name: user.full_name, cart: CartStore.all() });
     } else {
-      this.setState({ id: null, full_name: "", cart: [] });
+      this.setState({ id: null, full_name: "", cart: CartStore.all() });
     }
   },
 
   getInitialState: function () {
-    return ({ id: null, full_name: "", cart: [] });
+    return ({ id: null, full_name: "", cart: reactCookie.load('cookieCart') || [] });
   },
 
   totalPrice: function () {

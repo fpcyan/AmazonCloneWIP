@@ -8,13 +8,13 @@ class Api::ShoppingCartItemsController < Api::ApiController
 
   def create
     shopping_cart_items = params[:shopping_cart_items]
-    current_user.update_shopping_cart(JSON.parse(shopping_cart_items))
-    load_shopping_cart
+    if current_user
+      current_user.update_shopping_cart(JSON.parse(shopping_cart_items))
+      load_shopping_cart
+    else
+      @shopping_cart_items = User.new.update_anon_cart(JSON.parse(shopping_cart_items))
+    end
     render "api/shopping_cart_items/index"
-  end
-
-  def update
-
   end
 
   def destroy

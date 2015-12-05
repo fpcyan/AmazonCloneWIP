@@ -63,6 +63,25 @@ class User < ActiveRecord::Base
     end
   end
 
+  def update_anon_cart(items)
+    temporary_shopping_cart(filter_duplicates(items))
+  end
+
+  def filter_duplicates(items)
+    items.reduce({}) do |accum, item|
+      if !accum[item["product_id"]] || accum[item["product_id"]] < item["quantity"]
+        accum[item["product_id"]] = item["quantity"]
+      end
+      accum
+    end
+  end
+
+  def temporary_shopping_cart(unique_cart_items)
+    unique_cart_items.each do |product_id, quantity|
+      shopping_cart_items.new(product_id: product_id, quantity: quantity).product.images.load
+    end
+    shopping_cart_items
+  end
 
 
 

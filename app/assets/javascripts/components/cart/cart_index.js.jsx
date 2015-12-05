@@ -14,7 +14,7 @@ var CartIndex = React.createClass({
     cartItems = this.props.cart.map(function (product) {
       subtotal += (product.product.price * product.quantity);
       return (
-        <article key={"cart-idx-item-" + product.id}>
+        <article key={"cart-idx-item-" + product.product.id}>
           <CartItem qty={product.quantity} upClick={this.handlePlus} downClick={this.handleMinus} product={product.product} />
         </article>
       );

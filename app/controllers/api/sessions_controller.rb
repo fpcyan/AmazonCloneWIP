@@ -6,7 +6,7 @@ class Api::SessionsController < Api::ApiController
       @user = current_user
       @user.shopping_cart_items.includes(product: :images).load
     else
-      @user = User.new(id: nil, full_name: nil, shopping_cart_items: [])
+      @user = User.new(id: nil, full_name: nil)
     end
     render "api/session/show"
   end
