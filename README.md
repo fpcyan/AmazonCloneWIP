@@ -7,9 +7,11 @@
 The Bazaar is a web application clone of Amazon.com. Some features and design choices are inspired by Jet.com. Main development took place over the course of 9 "business" days and 2 weekend days.
 
 Current feature being built:
-- [ ] Anonymous user shopping
+- [ ] search using pg_search
 
 Recently implemented features:
+- [x] Redirects back to wherever you were on sign in!
+- [x] Anonymous user shopping (post incoming for this one)
 - [x] Demo user sign-in buttons!
 - [x] Checkout and purchasing (front end and back end)
 - [x] Integration with [Stripe][stripe-link]
