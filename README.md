@@ -29,7 +29,7 @@ Here is the day-by-day dev blog:
  * [Day 1][day-1]
 
 
-[gues-link]: http://fpcyan.tumblr.com/post/134748563650/on-guest-accounts-and-eager-loading
+[guest-link]: http://fpcyan.tumblr.com/post/134748563650/on-guest-accounts-and-eager-loading
 [stripe-link]: https://stripe.com/
 
 [project-proposal]: ./docs/project_proposal.md
