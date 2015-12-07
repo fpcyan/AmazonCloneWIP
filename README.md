@@ -11,7 +11,7 @@ Current feature being built:
 
 Recently implemented features:
 - [x] Redirects back to wherever you were on sign in!
-- [x] Anonymous user shopping (post incoming for this one)
+- [x] Anonymous user shopping - [blog post][guest-link]
 - [x] Demo user sign-in buttons!
 - [x] Checkout and purchasing (front end and back end)
 - [x] Integration with [Stripe][stripe-link]
@@ -28,6 +28,8 @@ Here is the day-by-day dev blog:
  * [Day 2][day-2]
  * [Day 1][day-1]
 
+
+[gues-link]: http://fpcyan.tumblr.com/post/134748563650/on-guest-accounts-and-eager-loading
 [stripe-link]: https://stripe.com/
 
 [project-proposal]: ./docs/project_proposal.md
