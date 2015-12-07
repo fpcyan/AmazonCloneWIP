@@ -1,10 +1,10 @@
-# The Bazaar
+# Bazaar
 
 [Website link][heroku]
 
 [heroku]: http://www.the-bazaar.xyz/
 
-The Bazaar is a web application clone of Amazon.com. Some features and design choices are inspired by Jet.com. Main development took place over the course of 9 "business" days and 2 weekend days.
+Bazaar is a web application clone of Amazon.com. Some features and design choices are inspired by Jet.com. Main development took place over the course of 9 "business" days and 2 weekend days. Bazaar is a single page web app built using a postgres/Ruby on Rails backend. The front end is rendered using ReactJS structured on the Flux architecture. The front end interfaces with Rails primarily through AJAX requests to present a responsive experience with minimal visible load times. Bazaar is still a work in progress! Feel free to send any feedback through the issues tab. Happy browsing!
 
 Current feature being built:
 - [ ] search using pg_search
